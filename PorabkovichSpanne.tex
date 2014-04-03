@@ -1,0 +1,590 @@
+\documentclass[12pt]{article}
+\usepackage[cp1251]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath, amssymb, eucal}
+
+\usepackage[hypertex,unicode, bookmarks, pagebackref]{hyperref}%colorlinks,
+%\usepackage[pdftex, unicode, bookmarks, pagebackref]{hyperref}%colorlinks,
+
+\usepackage{esint}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\voffset=0mm \oddsidemargin=0mm \evensidemargin=0mm
+\textheight=210mm \textwidth=170mm
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtheorem{theorem}{\hskip\parindent Теорема}
+\newtheorem{lemma}{\hskip\parindent Лемма}
+\newtheorem{corollary}{\hskip\parindent Следствие}
+
+\newtheorem{remark}{\hskip\parindent Замечание\textrm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\let\le=\leqslant
+\let\ge=\geqslant
+\let\les=\lesssim
+
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\brac}[1]{\left(#1\right)}
+\newcommand{\fbrac}[1]{\left\{#1\right\}}
+\newcommand{\sbrac}[1]{\left[#1\right]}
+\newcommand{\abrac}[1]{\langle#1\rangle}
+
+\newcommand{\norma}[1]{\left\Vert #1 \right\Vert}% норма выражения #1
+\newcommand{\norm}[2]{\left\Vert #1 \right\Vert_{#2}}% норма выражения #1 в пространстве #2
+
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbC}{\mathbb{C}}
+
+\newcommand{\caA}{\mathcal{A}}
+\newcommand{\caB}{\mathcal{B}}
+\newcommand{\caL}{\mathcal{L}}
+\newcommand{\caN}{\mathcal{N}}
+\newcommand{\caO}{\mathcal{O}}
+\newcommand{\caS}{\mathcal{S}}
+\newcommand{\caC}{\mathcal{C}}
+
+\newcommand{\eps}{\varepsilon}
+\newcommand{\no}[1]{\overline{#1}}
+\newcommand{\loc}{\mathrm{loc}}
+\newcommand{\weak}{\mathrm{weak}}
+\newcommand{\dmu}{\,d\mu}
+
+\newcommand{\Rn}{\mathbb{R}^{n}}
+\newcommand{\eset}{\varnothing}
+
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\supp}{supp}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Основные обозначения}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Пусть $(X,d,\mu)$ --- метрическое пространство с метрикой $d$ и $\sigma$-конечной борелевской мерой $\mu$. Для $x\in X$ и $r>0$
+\begin{equation*}
+B(x,r)=\{y\in X:d(x,y)<r\}
+\end{equation*}
+обозначает открытый шар с центром $x$ радиуса $r$. При этом мы предполагаем, что мера любого шара положительна и конечна.
+
+Для шара $B\subset X$ обозначаем $r_B$ и $x_B$ соответственно его радиус и центр, кроме того, $\lambda B$ --- шар, концентрический с $B$, радиуса $\lambda r_B$.
+
+Говорят, что мера $\mu$ удовлетворяет условию удвоения, если существует такое число $a_{\mu}>0$, что
+
+\begin{equation}\label{eqDoublingCondition}
+\mu(B(x,2r))\le a_{\mu}\mu(B(x,r)),\quad  x\in X,\quad  r>0.
+\end{equation}
+Условию (\ref{eqDoublingCondition}) можно придать количественный вид --- при условии (\ref{eqDoublingCondition}) для некоторого $\gamma>0$
+выполнено неравенство
+\begin{equation}\label{eqQuantitativeDoublingCondition}
+\mu( B(x,R))\le c \brac{\frac{R}{r}}^{\gamma}\mu( B(x,r)),\quad  x\in X,\;0<r\le R.
+\end{equation}
+Это условие предполагается выполненным на протяжении всей работы. В таком случае тройка $(X,d,\mu)$ называется пространством
+однородного типа \cite{CoifmanWeiss}. Основные сведения о таких пространствах можно найти в \cite{Heinonen}.
+
+На протяжении всей работы будет использоваться обозначение
+\begin{equation*}%\label{eq}
+f_B=\fint \limits_Bf\dmu=\frac{1}{\mu(B)}\int\limits_{B}f\dmu
+\end{equation*}
+для среднего значения функции $f\in L^1_{\rm loc}(X)$ по любому шару $B\subset X$.
+
+Для $0\le \alpha<\beta<\infty$ определим $\Omega[\alpha,\beta)$ как множество положительных возрастающих функций
+$\eta:\mathbb{R}_+\to\mathbb{R}_+$, для которых $\eta(t)t^{-\alpha}$ почти возрастает и
+$\eta(t)t^{-\beta+\delta}$ почти убывает при некотором $0<\delta<\beta-\alpha$.
+Пусть еще
+\begin{equation*}%\label{}
+\Omega[\alpha,\infty)=\bigcup_{\beta>\alpha}\Omega[\alpha,\beta).
+\end{equation*}
+Отметим для дальнейшего, что для любой функции $\eta\in\Omega[\alpha,\beta)$, $0<\alpha<\beta$, выполнены неравенства
+\begin{equation}\label{eqBaryZygmundInequalities}
+\sum_{k=n}^{\infty}\eta(2^{-k})\les\eta(2^{-n}),\quad \sum_{k=0}^{n}2^{\beta k}\eta(2^{-k})\les2^{\beta n}\eta(2^{-n}).
+\end{equation}
+
+Мы будем использовать следующее соглашение. Запись $A\les B$ всегда означает, что $A\le cB$, где $c$ некоторая положительная постоянная зависящая, возможно, от некоторых параметров, но эти зависимости для нас несущественны (эти постоянные могут быть различными даже в пределах одной строки).
+
+Пусть $\Phi$ --- множество всех четных функций $\varphi:\bbR\to\bbR$, положительных и возрастающих на $(0,+\infty)$, удовлетворяющих условиям
+\begin{equation*}%\label{eq}
+\varphi(0)=\varphi(+0)=0,\quad\lim_{t\to+\infty}\varphi(t)=\infty,
+\end{equation*}
+$\Phi_1$ --- подкласс функций из $\Phi$, для которых $\varphi(t)/t$ убывает.
+
+Отметим для дальнейшего, что для $\varphi\in\Phi_1$ функция $\varphi^{-1}(t)/t$ возрастает, то есть
+\begin{equation}\label{eqConverseToPhiOverXIsIncreasing}
+\frac{\varphi^{-1}(t)}{t}\le\frac{\varphi^{-1}(s)}{s}\quad\text{при}\quad 0<t<s.
+\end{equation}
+Кроме того, функции класса $\Phi_1$ субаддитивны, то есть при $\varphi\in\Phi_1$
+\begin{equation}\label{eqSubadditivityOfFunctionsFromPhi1}
+\varphi(t+s)\le\varphi(t)+\varphi(s),\quad t,s>0.
+\end{equation}
+
+Если $\varphi\in\Phi$, то через $\varphi(L)$ будем обозначать множество измеримых функций $f:X\to\bbR$, для которых конечна величина
+\begin{equation*}
+\int_{X}\varphi(f)\dmu < \infty.
+\end{equation*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Локальные приближения постоянными}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{lemma}\label{lmDoublingConditionWithDifferentCenter}
+Пусть $0<r_1\le r_2$ и $B(x_1,r_1)\subset B(x_2,r_2)$. Тогда
+\begin{equation*}%\label{}
+\frac{\mu B(x_2,r_2)}{\mu B(x_1,r_1)}\les
+\brac{\frac{r_2}{r_1}}^{\gamma}.
+\end{equation*}
+\end{lemma}
+
+Доказательство см., например, в \cite[лемма 1]{IvanishkoKrotov}.
+
+Для $\eta\in\Omega$, $\varphi\in\Phi_1$ и $f\in\varphi(L)$ и шара $B\subset X$ введем
+\begin{equation*}%\label{eq}
+A_{\varphi}(f,B) = \inf_{c} \fint_B \varphi(|f(y)-c|)\dmu(y).
+\end{equation*}
+
+\begin{equation*}%\label{}
+\caN^{(\varphi)}_{\eta,\,t}f(x)=\sup_{B\ni x,\,r_B\le t}\frac{1}{\eta(r_B)} \fint_B \varphi(|f(x)-f(y)|)\dmu(y),\quad
+\caN^{(\theta)}_{\eta}f=\caN^{(\theta),}_{\eta,\,1}f.
+\end{equation*}
+
+Отметим также следующие простые неравенства
+\begin{equation}\label{eqEstimateNPhi0ByM1}
+\caN_{0,r}^{\varphi}f(x)\le2M_1(\varphi\circ f)(x),\quad\varphi\in\Phi_1,\quad f\in\varphi(L),\quad r>0.
+\end{equation}
+\begin{equation}\label{eqEstimateNPhiEtaByNEta0}
+\caN_{\eta}^{\varphi}f(x)\le\sup_{0<t<1 }\frac{\caN_{0,t}^{\varphi}f(x)}{\eta(t)}.
+\end{equation}
+
+\begin{equation*}%\label{}
+\caS^{(\varphi)}_{\eta}f(x)=\sup_{B\ni x}\frac{1}{\eta(r_B)}\fint_B \varphi(|f_B-f(y)|)\dmu(y).
+\end{equation*}
+
+\begin{equation}\label{eqSubadditivityOfL1WeakNorm}
+\norm{f_1+f_2}{L^1_{\weak}(X)}\le 2\brac{\norm{f_1}{L^1_{\weak}(X)}+\norm{f_2}{L^1_{\weak}(X)}}
+\end{equation}
+
+\begin{lemma}\label{lmThereExistsEta}
+Пусть $\varphi\in\Phi_1$и $f\in \varphi(L)(X)$. Тогда существует такая функция $\eta$, что $\caN^{(\varphi)}_{\eta}f\in L^1_{\weak}(X)$, в частности,
+ $\caN^{(\varphi)}_{\eta}f(x)<+\infty$ для почти всех $x\in X$.
+\end{lemma}
+
+\textbf{Доказательство}. Докажем сначала, что
+\begin{equation}\label{eqN0TendToZero}
+\lim_{t\to+0}\norm{\caN^{(\varphi)}_{0,\,t}f}{L^1_{\weak}(X)}=0.
+\end{equation}
+
+Для этого зададим $\eps>0$ и запишем $f=f_1+f_2$, где $f_1\in C_0(X)$, $\norm{\varphi\circ f}{L^1(X)}<\eps$. Тогда
+\begin{equation*}%\label{eq}
+\caN^{(\varphi)}_{0,\,t}f(x)\le\omega(t,f_1)
+\end{equation*}
+и, если шар $B_0$ содержит носитель функции $f_1$, то $\supp\caN^{(\varphi)}_{0,\,t}f\subset 2B_0$ при $0<t<r_{B_0}$, поэтому
+\begin{equation*}%\label{eq}
+\norm{\caN^{(\varphi)}_{0,\,t}f_1}{L^1_{\weak}(X)}\le\norm{\caN^{(\varphi)}_{0,\,t}f}{L^1(X)}\le\mu(2B_0)\varphi(\omega(t,f_1)).
+\end{equation*}
+Кроме того,
+\begin{equation*}%\label{eq}
+\norm{\caN^{(\varphi)}_{0,\,t}f_2}{L^1_{\weak}(X)}\les\norm{2M(\varphi\circ f_2)}{L^1(X)}\les\eps.
+\end{equation*}
+Следовательно, учитывая (\ref{eqSubadditivityOfL1WeakNorm}), получаем
+\begin{equation*}%\label{eq}
+\norm{\caN^{(\varphi)}_{0,\,t}f}{L^1_{\weak}(X)}\les
+\norm{\caN^{(\varphi)}_{0,\,t}f_1}{L^1_{\weak}(X)}+\norm{\caN^{(\varphi)}_{0,\,t}f_2}{L^1_{\weak}(X)}\les
+\end{equation*}
+\begin{equation*}%\label{eq}
+\les\eps+\mu(2B_0)\varphi(\omega(t,f_1))\les\eps
+\end{equation*}
+для достаточно малых $t$.
+
+Используя (\ref{eqN0TendToZero}), найдем последовательность $t_n\downarrow0$ так, чтобы при всех $n\in\bbN$
+\begin{equation*}%\label{eq}
+\norm{\caN^{(\varphi)}_{0,\,t_n}f}{L^1_{\weak}(X)}<4^{-n}.
+\end{equation*}
+
+Определим теперь функцию $\chi$ равенством $\chi(0)=1$ и
+\begin{equation}\label{eqDefinitionOfEta}
+\chi(t)=
+\left\{
+\begin{array}{l}
+\frac{1}{n} \text{ при } t=t_n,\\
+\\
+\text{линейна и непрерывна на } [t_{n},t_{n-1}]
+\end{array}
+\right.
+\quad (n\ge1).
+\end{equation}
+Тогда функция $\chi$ возрастает, $\chi(+0)=0$ и $\chi\in C(0,1]$. В качестве искомой функции $\eta$ можно взять выпуклую мажоранту равномерного модуля непрерывности для $\chi$ (см. \cite{Dzyadyk77}, с.153-154), тогда $\eta\in\Omega (1)\subset\Omega$ и $\eta(t)\ge\chi(t)$.
+
+\begin{equation*}%\label{eq}
+\norm{\caN_{\eta}^{\varphi}f}{L^1_{\weak}(X)}\le
+\norm{\max_{n\ge0}\sup_{t_{n+1}<t\le t_n}\frac{\caN_{0,t}^{\varphi}f}{\eta(t)}}{L^1_{\weak}(X)}\le
+\norm{\max_{n\ge0}\frac{\caN_{0,t_n}^{\varphi}f}{\eta(t_{n+1})}}{L^1_{\weak}(X)}\le
+\end{equation*}
+\begin{equation*}%\label{eqEstimateOfNPhiEta}
+\le\norm{\sum_{n=0}^{\infty}\frac{\caN_{0,t_n}^{\varphi}f}{\eta(t_{n+1})}}{L^1_{\weak}(X)}\le
+\sum_{n=0}^{\infty}2^{n+1}\norm{(n+1)\caN_{0,t_n}^{\varphi}f}{L^1_{\weak}(X)}\le\sum_{n=0}^{\infty}(n+1)2^{-n}.
+\end{equation*}
+
+Введем максимальную функцию
+\begin{equation*}%\label{}
+\caA^{(\varphi)}_{\eta,t}f(x)=\sup_{B\ni x,\,r_B\le t}\frac{A_{\varphi}(f,B)}{\eta(r_B)},\quad
+\caA^{(\varphi)}_{\eta}f=\caA^{(\varphi)}_{\eta,\,1}f.
+\end{equation*}
+
+\begin{lemma}\label{lmMBThereExists}
+Пусть $B\subset X$, $\varphi\in\Phi_1$ и $f\in \varphi(L)(X)$. Тогда существует такое число $I^{(\varphi)}_Bf \in \bbR$, что
+\begin{equation*}
+A_{\varphi}(f,B) = \fint_B \varphi(|f(y)-I^{(\varphi)}_Bf|)\dmu(y).
+\end{equation*}
+\end{lemma}
+
+\textbf{Доказательство}. Функция
+\begin{equation*}
+g(c)=\fint_B \varphi(|f(y)-c|) \dmu(y),\quad  c\in \bbR,
+\end{equation*}
+непрерывна на $\bbR$ и $\lim_{c \to \infty}g(c)=+\infty$. Поэтому вне некоторого отрезка $[-c_0, c_0]$ ее значения больше, чем $2\inf_c g(c)$. По теореме Вейерштрасса на этом отрезке функция $g$ принимает свое минимальное значение.
+
+Конечно, значение $I^{(\varphi)}_Bf$ определяется неоднозначно, в дальнейшем под $I^{(\varphi)}_Bf$ понимаем любое из его возможных значений. Кроме того, $I^{(\varphi)}_Bf$ зависит от $\varphi$. Чтобы подчеркнуть эту зависимость мы  будем использовать обозначение $I^{(\varphi)}_Bf$.
+
+\begin{lemma}\label{lmMBTendsToF}
+Для любой функции $f\in \varphi(L)_{\loc}(X)$
+\begin{equation}\label{eqMBTendsToF}
+\lim_{r\to+0}I^{(\varphi)}_{B(x,r)}=f(x)
+\end{equation}
+для почти всех $x\in X$.
+\end{lemma}
+
+\textbf{Доказательство}. Пусть $B\subset X$ --- произвольный шар. Запишем неравенство
+\begin{equation*}%\label{eq}
+\varphi(|f(x)-I^{(\varphi)}_Bf|)\leq \varphi(|f(x)-f(y)|)+\varphi(|f(y)-I^{(\varphi)}_Bf|)
+\end{equation*}
+и усредним его по $y\in B$, получая
+\begin{equation*}%\label{eq}
+\varphi(|f(x)-I^{(\varphi)}_Bf|)\les\fint_B \varphi(|f(x)-f(y)|)\dmu(y)+\fint_B \varphi(|f(y)-I^{(\varphi)}_Bf|)\dmu(y)\les
+\end{equation*}
+\begin{equation*}%\label{eq}
+\les2\fint_B \varphi(|f(x)-f(y)|)\dmu(y) \les 2\eta(r_B)\sbrac{\caN^{(\varphi)}_{\eta}f(x)}\to0
+\end{equation*}
+
+при $r_B\to+0$. Здесь функция выбрана так, чтобы $\caN^{(\theta)}_{\eta}f(x)<+\infty$ почти всюду.
+
+Точки, которых выполнено соотношение (\ref{eqMBTendsToF}), будем называть $\varphi$-точками Лебега.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Ообщение теорем Кампанато--Мейерса и Спанне}%\label{sc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Обозначим
+\begin{equation*}
+\mu_\varphi(f,t) \equiv \sup_{\substack{B\subset B_0\\ 0<r_B\le t}} \varphi^{-1}\brac{ A_{\varphi}(f,B)} = \sup_{\substack{B\subset B_0\\ 0<r_B\le t}} \inf_{c\in \bbR} \varphi^{-1}\brac{ \fint_B \varphi(|f(x)-c|) \dmu(x)}
+\end{equation*}
+
+Очевидно, что функция $\mu_\varphi(f,t)$ возрастает по $t$. В случае, если $\varphi=t^p$ пишем просто $\mu_p(f,t)$. Если $p=1$, то в качестве $\mu_1(f,t)$ можно использовать функцию
+
+\begin{equation*}
+\mu_1(f,t) \equiv \sup_{\substack{B\subset B_0\\ 0<r_B\le t}} \inf_{c\in \bbR} \fint_B |f(x)-f_B| \dmu(x).
+\end{equation*}
+Это вытекает из очевидных неравенств
+\begin{equation*}
+\fint_B |f(x)-f_B|\dmu(x) \le 2\fint_B |f(x)-I_{B}|\dmu(x),
+\end{equation*}
+\begin{equation*}
+\fint_B |f(x)-I_{B}|\dmu(x) \le \fint_B |f(x)-f_B|\dmu(x).
+\end{equation*}
+
+
+
+Для формулировки следующей теормы введем понятие модуля непрерывности функции $f\in C(X)$ как
+\begin{equation*}%\label{eq}
+\omega(f,\delta)=\max \limits_{d(x,y) \le \delta} |f(x) - f(y)|, \, 0<\delta< 1.
+\end{equation*}
+
+
+\begin{theorem}\label{thEsimateOfModulusByMuBeta}
+Пусть $\varphi \in \Phi_1$ и выполнено условие
+\begin{equation}\label{eqMainConditionOnMuBeta}
+\int\limits_{0}^{1} \varphi\brac{\mu_{\varphi}(f,t)}
+\,\frac{d t}{t}<\infty.
+\end{equation}
+
+Тогда $f$ эквивалентна некоторой функции $g\in C(X)$ и
+\begin{equation}\label{eqEsimateOfModulusByMuBeta}
+\omega(g,\delta)\le \varphi^{-1} \brac{ 2 (1+ a_\mu 2^\gamma) \int\limits_{0}^{\delta}  \varphi\brac{\mu_{\varphi}(f,t)}\,\frac{d t}{t}},\quad 0<\delta< 1.
+\end{equation}
+
+\end{theorem}
+
+\textbf{Доказательство.} Рассмотрим два шара $B_1, B_2 \in X$, таких, что $B_2 =2 B_1$. Тогда для любого $y \in B_1$ имеет место неравенство
+\begin{equation*}%\label{}
+\varphi(|I_{B_1}^{\varphi}-I_{B_2}^{\varphi}|) \le \varphi(|I_{B_1}^{\varphi}-f(y)|) +\varphi(|I_{B_2}^{\varphi}-f(y)|)
+\end{equation*}
+
+Интегрируя это неравенство по шару $B_1$, получим
+\begin{equation}\label{eqEstimateOfTwoMeansInPDegree}
+\varphi(|I_{B_1}^{\varphi}-I_{B_2}^{\varphi}|) \le \fint\limits_{B_1} \varphi(|f -  I_{B_1}^{\varphi}|)
+\dmu +\fint\limits_{B_1} \varphi(|f - I_{B_2}^{\varphi}|)
+\dmu.
+\end{equation}
+
+Так как  $B_1 \subset B_2$, то из \eqref{eqQuantitativeDoublingCondition} следует
+
+\begin{equation}\label{eqEstimateOfMeansIntegralsBeta}
+\fint\limits_{B_1} \varphi(|f - I_{B_2}^{\varphi} |) \dmu \le \frac{\mu(B_2)}{\mu(B_1)}\brac{\fint\limits_{B_2} \varphi(|f - I_{B_2}^{\varphi}|) \dmu} \le \beta \fint\limits_{B_2} \varphi(|f - I_{B_2}^{\varphi}|) \dmu,
+\end{equation}
+где $\beta=a_{\mu} 2^{\gamma}$.
+
+Из (\ref{eqEstimateOfTwoMeansInPDegree}) и (\ref{eqEstimateOfMeansIntegralsBeta}) очевидным образом следует, что
+
+\begin{equation*}%\label{ineqMu4}
+\varphi(|I_{B_1}^{\varphi}-I_{B_2}^{\varphi}|) \le \fint\limits_{B_1} \varphi(|f - I_{B_1}^{\varphi}|)
+\dmu + \beta \fint\limits_{B_2} \varphi(|f - I_{B_2}^{\varphi}|)
+\dmu.
+\end{equation*}
+
+Таким образом, в силу возрастания функции $\mu_{\varphi}(f,t)$ и предыдущего неравенства
+
+\begin{equation}\label{eqEstimateOfTwoMeansBeta}
+\varphi(|I_{B_1}^{\varphi}-I_{B_2}^{\varphi}|) \le  \varphi(\mu_{\varphi} (f,r_{B_1})) +  \beta\varphi(\mu_{\varphi}(f,r_{B_2})) \le  (1+\beta)\varphi(\mu_{\varphi}(f,r_{B_2})).
+\end{equation}
+
+%Или
+%\begin{equation}\label{eqEstimateOfTwoMeansBeta}
+%|I_{B_1}^{\varphi}-I_{B_2}^{\varphi}| \le \varphi^{-1}((1+\beta)\mu_{\varphi}(f,r_{B_2})).
+%\end{equation}
+
+Рассмотрим любую $\varphi$-точку Лебега $x\in X$ и $r>0$. Из леммы \eqref{lmMBTendsToF} следует, что $I_{B_k}^{\varphi}$ сходятся к $f(x)$ при $k\to\infty$ почти всюду. Это означает, что
+\begin{equation*}
+f(x)=\lim_{k\to\infty}I_{B_k}=I_{B(x,r)}^{\varphi}+\sum_{k=0}^\infty[I_{B_{k+1}}^{\varphi}-I_{B_k}^{\varphi}],
+\end{equation*}
+где $B_k=B(x, 2^{-k}r)$.
+
+Тогда в силу (\ref{eqEstimateOfTwoMeansBeta}) и (\ref{eqMainConditionOnMuBeta})
+\begin{equation*}
+\varphi(|f(x) - I_{B(x,r)}^{\varphi}|)=\varphi\brac{
+\abs{\sum_{k=0}^\infty[I_{B_{k+1}}^{\varphi}-I_{B_k}^{\varphi}]}} \le
+\end{equation*}
+\begin{equation*}
+\le  \sum_{k=0}^\infty (1+\beta)\varphi(\mu_{\varphi}(f,r_{B_k})) \le \sum_{k=0}^\infty \int\limits_{r_{B_{k+1}}}^{r_{B_k}}  (1+\beta)\varphi(\mu_{\varphi}(f,t)) \,\frac{d t}{t}  \le \int\limits_{0}^{r}  (1+\beta)\varphi(\mu_{\varphi}(f,r_{t}))\,\frac{d t}{t}<\infty.
+\end{equation*}
+
+Из этого следует, что для любых двух точек Лебега $x,y \in X$  и $r=d(x,y)$
+\begin{equation*}
+\varphi(|f(x) - f(y)|)\le \varphi(|I_{B(x, r)}^{\varphi}-f(x)|) + \varphi(|I_{B(x, r)}^{\varphi}-I_{B(y, 2 r)}^{\varphi}|) +\varphi(|I_{B(y, 2 r)}^{\varphi}-f(y)|) \le
+\end{equation*}
+
+
+\begin{equation*}
+\le \int \limits_{0}^{r} (1+\beta)\varphi(\mu_{\varphi}(f,r_{t}))\,\frac{d t}{t} + (1+\beta)\varphi(\mu_{\varphi}(f,2 r)) +\int\limits_{0}^{2 r} (1+\beta)\varphi(\mu_{\varphi}(f,t))\,\frac{d t}{t}\le
+\end{equation*}
+
+\begin{equation*}
+\le \int\limits_{0}^{r} (1+\beta)\varphi(\mu_{\varphi}(f,t))\,\frac{d t}{t} + \int\limits_{r}^{2 r} (1+\beta)\varphi(\mu_{\varphi}(f,t))\,\frac{d t}{t} +\int\limits_{0}^{2 r} (1+\beta)\varphi(\mu_{\varphi}(f,t))\,\frac{d t}{t} \le
+\end{equation*}
+
+\begin{equation*}
+ \le 2  (1+\beta) \int\limits_{0}^{2 r} \varphi(\mu_{\varphi}(f,t))\,\frac{d t}{t} < \infty.
+\end{equation*}
+что означает
+\begin{equation*}
+|f(x) - f(y)| \le \varphi^{-1} \brac{2  (1+\beta) \int\limits_{0}^{2 r} \varphi(\mu_{\varphi}(f,t))\,\frac{d t}{t}} < \infty.
+\end{equation*}
+Так как множество $\varphi$-точек Лебега для $f$ плотно в $X$, то $f$ можно единственным образом продолжить с множества точек Лебега на все пространство $X$ до функции $g$, удовлетворяющей неравенству
+\begin{equation*}
+|g(x_1)-g(x_2)| < \infty,\quad x_1,x_2\in X.
+\end{equation*}
+И теорема доказана.
+
+
+Сравним теорему \ref{thEsimateOfModulusByMuBeta} с предшествующими результатами. В частном случае $t^p$, $p=1$, $X=Q$ --- куб в $\bbR^n$ ее утверждение было получено другим, значительно более сложным способом в работе С.Спанне \cite{Spanne}. Наша теорема \ref{thEsimateOfModulusByMuBeta} дает усиление этого результата для функции $t^p$, $0<p\leq 1$,  так как условие (\ref{eqEsimateOfModulusByMuBeta}) тем сильнее, чем меньше $p$.
+
+
+
+В качестве следствия из теоремы \ref{thEsimateOfModulusByMuBeta} мы получим основной результат работы \cite{IvanishkoKrotovPorabkovich12}, дающий описание классов Гельдера в терминах поведения средних Стеклова.
+
+Для $\alpha>0$  определим $\Omega(\alpha)$ как класс положительных возрастающих функций $\eta:\mathbb{R}_+\to\mathbb{R}_+$, для которых при некотором $0<\delta<\alpha$ функция $\eta(t)t^{-\delta}$ возрастает, а функция $\eta(t)t^{-\alpha}$ убывает. Пусть еще
+\begin{equation*}%\label{eq}
+\Omega(\infty)=\bigcup_{\alpha>0}\Omega(\alpha).
+\end{equation*}
+
+Пусть $\eta\in\Omega(\infty)$. Будем говорить, что функция $f:X\to\mathbb{R}$ принадлежит обобщенному классу Гельдера $H^{\eta}(X)$, если для некоторого $r_0>0$
+\begin{equation*}%\label{eq}
+\sup\left\{\frac{|f(x)-f(y)|}{\eta(d(x,y))}:x,y\in X,\,0<d(x,y)<r_0\right\}<+\infty.
+\end{equation*}
+%В случае $\eta(t)=t^{\alpha}$, $\alpha>0$, будем писать $H^{\alpha}$ вместо $H^{\eta}$.
+
+%Обычно классы $H^{\eta}$ рассматриваются при условии $\eta\in\Omega(1)$. Это связано с тем, что если, например, $X=[0,1]^n$ и $\eta\in\Omega(\alpha)$ при некотором $\alpha>1$ (или, более общо, $\eta(t)=o(t)$ при $t\to+0$), то класс $H^{\eta}(X)$ состоит только из тождественных постоянных. В случае же общих метрических пространств $X$ возможны ситуации, когда классы $H^{\alpha}(X)$ нетривиальны при некоторых $\alpha>1$. Например, на кривой Коха это так при $0<\alpha\le\frac{\ln 4}{\ln 3}$ \cite{Jonsson}. Этим объясняется то, что мы рассматриваем классы $H^{\eta}(X)$ с $\eta\in\Omega(\infty)$.
+
+В \cite{IvanishkoKrotovPorabkovich12} доказано, что если $f\in L^1_{\loc}(X)$ и $\eta\in\Omega(\infty)$, $p> 0$, тогда если для некоторого $R_0>0$ выполнено условие
+\begin{equation}\label{eqCampanatoCondition}
+\sup_{B:r_B<R_0}\frac{1}{\eta(r_B)}\brac{\fint_{B}|f-f_B|^p\dmu}^{1/p}<+\infty,
+\end{equation}
+то $f$ эквивалентна некоторой функции класса $H^{\eta}(X)$. В частном случае $p=1$, $\eta(t)=t^{\alpha}$ и $X\subset\bbR^n$ этот результат --- классическая теорема К.Кампанато--Н.Мейерса \cite{Campanato}, \cite{Meyers} (см. также более поздний результат из \cite{Gorka}).
+
+Этот результат является простым следствием из теоремы \ref{thEsimateOfModulusByMuBeta}. Действительно, в силу условия (\ref{eqCampanatoCondition}) $\mu_p(f,t) \lesssim \eta(t)$. Интегрируя это неравенство по $t$ и используя (\ref{eqEsimateOfModulusByMuBeta}), получим
+\begin{equation*}
+\omega(f,\delta)\lesssim \int\limits_{0}^{\delta} \mu_p(f,t)\,\frac{d t}{t} \lesssim \int\limits_{0}^{\delta} \eta(t)\,\frac{d t}{t},\quad 0<\delta< 1.
+\end{equation*}
+Так как $\eta\in\Omega(\infty)$, то правая часть последнего неравенства оценивается сверху через $\eta(\delta)$
+и $\omega(f,\delta)\lesssim \eta(\delta),\quad 0<\delta< 1$.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{thebibliography}{9}
+
+%\bibitem{JohnNirenberg61}
+%John F., Nirenberg L.
+%On functions of bounded mean oscillation //
+%Comm. Pure Appl. Math.
+%1961. V. 14., \No 2 P. 415-426.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\bibitem{Aimar85}
+%Aimar H. Singular integrals and approximate identities on spaces of homogeneous type // TAMS. 1985. Vol. 292. P. 135-153.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibitem{IvanishkoKrotovPorabkovich12}
+Иванишко~И.А., Кротов~ В.Г., Порабкович А.И.
+Обобщение теоремы Кампанато-–Мейерса //
+Труды Института математики НАН Беларуси.
+2012. Т. 20, \No 2. C. 30--35.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibitem{Spanne}
+Spanne S. Some function spaces defined using the mean oscillation over cubes //
+Ann. Scuola norm. super. Pisa. 1965. V.~19, \No~4. P.~593--608.
+
+
+\bibitem{Campanato}
+Campanato C.  Proprieta di holderianita di alcune classi di funzioni.
+~Ann. Sc. Norm. Super. Pisa Cl. Sci. 1963. V. 17, \No 1-2. P. 175--188.
+
+\bibitem{Meyers}
+Meyers N. J.  Mean oscillation over cubes and H\"older continuity.
+~Proc. Amer. Math. Soc. 1964. V. 15, \No 5. P.717-–721.
+
+\bibitem{Gorka}
+Gorka P. Campanato theorem on metric measure spaces.
+Ann. Acad. Sci. Fenn. 2009. V. 34. P. 523--528.
+
+\bibitem{IvanishkoKrotov}
+Иванишко И.А., Кротов В.Г. Оценки максимальных функций Кальдерона--Коляды на пространствах однородного типа.
+Труды Института математики НАН Беларуси. 2004. Т. 12, \No 1. С. 64--67.
+
+\bibitem{Heinonen}
+Heinonen J. Lectures on analysis on metric spaces. Springer-Verlag. 2001.
+
+%\bibitem{Slavin13}
+%A. A. Logunov, L. Slavin, D. M. Stolyarov, V. Vasyunin, P. B. Zatitskiy. Weak integral conditions for BMO. 2013. arXiv:1309.6780v1.
+
+%\bibitem{Krotov10}
+%Кротов В.Г.
+%Количественная форма $C$-войства Лузина.
+%Укр. Мат. Журнал 2010. Т. 62, \No 3. С. 388-396.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibitem{Dzyadyk77}
+Дзядык В.К.
+Введение в теорию равномерного приближения функций полиномами.
+М.: Наука, 1977.
+
+
+\bibitem{CoifmanWeiss}
+Coifman R.R., Weiss G. Analyse harmonique non-commutative sur certain espaces homogen\'es.
+New York--Berlin--Heidelberg: Springer--Verlag, 1971. Lecture Notes in Math. V. 242.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{thebibliography}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textbf{Доказательство.}
+Построим последовательность чисел $\fbrac{t_n}$ по следующему правилу
+
+\begin{equation*}
+t_0=0, \, t_1=\inf\fbrac{x:\varphi(t)>2,t>x}
+\end{equation*}
+\begin{equation*}
+t_n=\inf\fbrac{x:(\varphi(t)>n+1,t>x),(x-t_{n-1}>2 (t_{n-1}-t_{n-2})) }
+\end{equation*}
+и определим функцию $\varphi$ следующим образом
+
+\begin{equation*}
+\varphi(x)=\sum \limits_{n=1}^{\infty}\brac{\frac{x-t_{n-1}}{t_n-t_{n-1}}+n-1}\chi_{[{t_{n-1},t_n]}}(x)
+\end{equation*}
+
+Тогда, $\varphi(x)\le \varphi(x)+1$ и $\varphi$ удовлетворяет условиям теоремы \ref{thJohnNirenberg}. Отсюда, учитывая что
+
+\begin{equation*}
+\sup_{B\subset B_0}\inf_{c}\brac{\fint_B \varphi(|f(x)-c|) \dmu(x)} \le  \sup_{B\subset B_0}\inf_{c}\brac{\fint_B \varphi(|f(x)-c|) \dmu(x)} +1<\infty,
+\end{equation*}
+получаем, что $f\in BMO(B_0)$.
+
+
+
+
+
+Приведем очень важное вспомогательное утверждение ,которое будет использовано в работе.
+\begin{lemma}
+Пусть $\varphi\in \Phi_1$, $B\subset X$, $f\in \widehat{BMO}_\varphi(B)$ - некоторая функция и дана последовательность шаров $B\supset B_1\supset B_2 \supset \ldots B_k \ldots$, таких что $B_k=2^{-k}B$. Тогда $I_{B_k}\to f(x)$ почти всюду.
+\end{lemma}
+\textbf{Доказательство}. Рассмотрим разность
+\begin{equation*}
+\varphi(|I_{B_k}-I_{B_{k+1}}|)\le \varphi(|f(x)-I_{B_k}|) + \varphi(|f(x)-I_{B_{k+1}}|)
+\end{equation*}
+
+Проинтегрировав ее по $B_{k+1}$, получим
+
+\begin{equation*}
+\varphi(|I_{B_k}-I_{B_{k+1}}|)\le \fint_{B_{k+1}} \varphi(|f(x)-I_{B_k}|) \dmu(x) + \fint_{B_{k+1}} \varphi(|f(x)-I_{B_{k+1}}|) \dmu(x) \le
+\end{equation*}
+\begin{equation*}
+\le K \fint_{B_k} \varphi(|f(x)-I_{B_k}|) \dmu(x) + \fint_{B_{k+1}} \varphi(|f(x)-I_{B_{k+1}}|) \dmu(x) \le \eta(r_{B_{k}}) \caC_{\eta}^{\varphi}(f) + \eta(r_{B_{k+1}}) \caC_{\eta}^{\varphi}(f),
+\end{equation*}
+где \begin{equation*}
+\caC_{\eta}^{\varphi}(f)=\sup_{B\subset B_0} \frac{1}{\eta(r_B)} \fint_{B} \varphi(|f(x)-I_{B}|)
+\end{equation*}
