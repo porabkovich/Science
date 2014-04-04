@@ -1,0 +1,137 @@
+\input{TrPreamble-1251.tex}
+\begin{center}\textit{Национальная академия наук Беларуси \\
+Труды Института математики. 2008. Том 16. \No~1. С.~\pageref{00b}--\pageref{00e}}{\rule[-1,5mm]{0pt}{1mm}}\\{\hrule\hrule}\end{center}\bigskip\bigskip
+{\footnotesize\sl УДК 517.518.14}
+\Nazva{ МОДИФИЦИРОВАННЫЕ ИНТЕГРАЛЫ И~ПРОИЗВОДНЫЕ~НА~ПОЛУОСИ }
+\Avtor{ И.~О.~Герасимов, Н.~В.~Зеленкевич } \vspace{-5mm}
+\begin{center}\textit{Белорусский государственный университет \\ e-mail: ionov@im.bas-net.by, proklov@im.bas-net.by \\ Поступила 00.00.2008}\end{center}
+\lhead[~]{~}
+\chead[~]{~}
+\rhead[~]{~}
+\lfoot[\thepage]{~}
+\cfoot[~]{~}
+\rfoot[~]{\thepage}
+\label{00b}
+\vspace{-5mm}
+
+\begin{abstract}\noindent
+Исследуются разрешимые линейные группы бесконечной центральной размерности и\linebreak
+бесконечного секционного $p$-ранга, $p\ge0,$ с ограничениями на собственные подгруппы.
+Получено описание строения разрешимых линейных групп данного класса.
+\end{abstract} \bigskip
+
+\textbf{1. О применении стилевых файлов.} Стилевые файлы caption2.sty, fancyheadings.sty и wrapfig.sty можно поместить в
+рабочий каталог рядом с создаваемыми tex-файлами.
+
+Не допускается вставка новых команд в файл TrPreamble.tex.
+Для применения другой кодировки русских букв строчка usepackage[cp866]{inputenc} в файле TrPreamble.tex заменяется
+альтернативной, например: usepackage[cp1251]{inputenc}.
+
+\textbf{Лемма 1.} \textit{Когда статья без рисунков, можно удалить строки преамбулы, обеспечивающие их вставку.}
+
+\textbf{Доказательство.} Можно отправить неиспользуемые команды в комментарии, при этом не подключаться некоторые из
+перечисленных выше стилевых файлов.
+
+\textbf{Замечание 1.} Нечеткие рисунки с низким разрешением неприемлемы.
+
+Формулы с номером записываем, например, так
+$$
+\mathrm{E}_{\alpha,1,l}(z)=\Gamma(\alpha l+1)E_{\alpha,l}(z)
+\eqno (1)
+$$
+или так
+$$
+\frac{\partial x}{\partial t_i}=A_i(t)x, \quad x\in R^n, \quad t=(t_1,t_2)\in R^2_+, \quad i=1,2,
+\eqno (2)
+$$
+или такая формула из двух равенств
+$$
+\frac{dx}{dt}=-xy^5\biggl(28p^3-64pq+\sum\limits_{k=1}^\infty b_ky^k\biggr)-p^4y^7-x^2y^3\biggl(32(3p^2-8q)+\sum\limits_{k=1}^\infty a_ky^k\biggr),
+\eqno\llap{(3)}
+$$ $$
+\frac{dy}{dt}=128x^3+x^2y^2\biggl(128p+\sum\limits_{k=1}^\infty p_ky^k\biggr)+y^6\biggl(-6p^3+32pq+\sum\limits_{k=1}^\infty c_ky^k\biggr).
+$$
+
+Длинная формула с переносами
+$$
+Z(t)e_1=\biggl(E+\int\limits_{t_0}^tQ(t_0,\tau)V(\tau)\,d\tau\biggr)e_1=\biggl[e_1+c_1\int\limits_{t_0}^tQ(t_0,\tau)\mathfrak{u}_1(\tau)\,d\tau,\,e_2\biggr]e_1=
+$$ $$ =
+\biggl[P_0e_1+c_1\sum\limits_{j=1}^sw_{\mathfrak{m}_{1,j}}(t_0,\mathfrak{u}_1)+c_1\int\limits_{t_{\mathfrak{m}_{1,s}}}^tQ(t_0,\tau)\mathfrak{u}_1(\tau)\,d\tau,\,e_2\biggr]e_1=
+$$ $$ =
+P_0e_1+c_1\sum\limits_{i=1}^sw_{\mathfrak{m}_{1,i}}(t_0,\mathfrak{u}_1)+\int\limits_{t_i}^tQ(t_0,\tau)V(\tau)e_1\,d\tau\in R_1+\mathrm{U}_\varepsilon(0)=\mathrm{U}_\varepsilon(R_1).
+$$
+
+\textbf{Теорема 1.} \textit{Если возникают серьезные трудности с применением файла TrPreamble.tex, то допускается отказ
+от указанного файла.}
+
+\textbf{Пример.} В указанном в теореме 1 случае tex-файл принимает вид
+
+\begin{verbatim}
+
+\documentclass{article}
+\usepackage[cp866]{inputenc}
+\usepackage{amssymb,amsmath}
+\usepackage[russian]{babel}
+\begin{document}
+
+УДК
+
+НАЗВАНИЕ СТАТЬИ
+
+Фамилия и инициалы автора
+
+Полное название учреждения (вуза), где выполнена работа, e-mail автора
+
+Аннотация на русском языке
+
+Текст статьи.
+
+Фамилия и инициалы автора на английском языке
+
+Название статьи на английском языке
+
+Summary (на английском)
+
+\end{document}
+
+\end{verbatim}
+
+Здесь будет вставлен рисунок.
+
+\begin{figure}[htb]
+%\setcaptionmargin{5mm}
+%\captionwidth=100mm % ширина подписи
+%\onelinecaptionstrue % если подпись однострочная
+\centerline{\includegraphics{Tr08r1.eps}}
+%\captionstyle{normal}
+\caption{Пример рисунка}
+%\addtocounter{figure}{-1}
+\end{figure}
+
+Работа выполнена при поддержке ... (проект ...).
+
+\bigskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Литература
+\begin{center}\textbf{Литература}\end{center}{\small
+
+\lit{1}{Колмогоров А.Н., Фомин С.В.}{Основы теории функций и функционального анализа. М.:~Наука, 1988.}
+\lit{2}{Скиба А.Н.}{О критических формациях //~Докл. АН БССР. 1983. Т.~27. \No~9. С.~780--782.}
+\lit{3}{Шеметков Л.А.}{Экраны ступенчатых формаций //~Тр.~VI~Всесоюзного симпозиума по теории групп. Киев, 1980. С.~37--50.}}
+
+\bigskip\bigskip
+
+\centerline{\textbf{R.~L.~First, A.~A.~Second}}
+\centerline{\textbf{On finite groups with $Q$-central elements of prime order}}
+\bigskip
+
+\centerline{\textbf{Summary}}
+
+{\small
+Finite $p$-soluble groups with maximal subgroups of $p$-length~1 are investigated. It is proved that a finite $p$-soluble
+group is of $p$-length~1 if its Sylow $p$-subgroup is extraspecial and is isomorphic to a normal Sylow $p$-subgroup of a
+minimal non-supersoluble group of odd order.}
+\label{00e}
+
+\newpage
+\end{document}

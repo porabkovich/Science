@@ -1,0 +1,83 @@
+\documentclass[11pt,twoside]{article}
+\usepackage[cp866]{inputenc}
+\usepackage{amssymb,amsmath,amscd}
+\usepackage{fancyheadings}
+\usepackage[russian]{babel}
+\usepackage{bm}
+%\usepackage{doublespace}
+\headrulewidth=0pt
+\textwidth=165mm % ширина текста
+\pagestyle{fancyplain}
+\oddsidemargin=-4.4mm % левое поле для нечетной страницы (+1 дюйм)
+\evensidemargin=-4.4mm % левое поле для четной страницы (+1 дюйм)
+\textheight=234mm % высота текста на странице
+\topmargin=-16.6mm % верхнее поле (+1 дюйм)
+\headheight=5.0mm % место для колонтитула
+\headsep=6.6mm % отступ после колонтитула 6.6 5.6
+\footskip=8.1mm % расстояние до колонтитула 8.1 7.1
+%\renewcommand{\baselinestretch}{0.9} % интерлиньяж 0.9 0.87
+% РИСУНКИ. Вставить в преамбулу
+\usepackage{graphicx}
+\usepackage{caption2}
+%
+\setcaptionwidth{\linewidth}
+%
+\renewcommand{\captionlabeldelim}{.~}
+\renewcommand{\captionlabelfont}{\bfseries}
+\renewcommand{\captionfont}{\footnotesize}
+%
+\makeatletter
+\renewcommand \thefigure{\@arabic\c@figure}
+\renewcommand \thetable{\@arabic\c@table}
+%
+\renewcommand*\caption@@@normal{%
+\parfillskip0pt plus 2fil%
+ \caption@label\captiontext\par}
+%
+\newcaptionstyle{nonumber}{%
+ \usecaptionmargin%
+ \captionfont%
+ \onelinecaption%
+ {{\parbox[t]{\realcaptionwidth}{\captiontext}}}%
+ {\captiontext}
+}%
+%
+\makeatother
+\usepackage{wrapfig}
+% РИСУНКИ
+\newcommand{\Nazva}[1]{\begin{center}\baselineskip=6.0mm{\Large\textbf{#1}}\end{center}\vspace*{0.5mm}}
+\newcommand{\Avtor}[1]{\centerline{\large\textbf{ \ #1}}\vspace*{6.0mm}}
+\newcommand{\NS}{ }
+\newcommand{\lit}[3]{\vspace*{0.7mm}\par\noindent\makebox[5.2mm][r]{#1.~}\parbox[t]{159.8mm}{{\textit{#2}}~{#3}}\hspace*{-1.6mm}}
+\newcommand{\litt}[2]{\vspace*{0.7mm}\par\noindent\makebox[5.2mm][r]{#1.~}\parbox[t]{159.8mm}{#2}\hspace*{-1.6mm}}
+\mathsurround=2pt % дополнительный пробел слева и справа от формулы в тексте
+\newcommand{\tr}{\mathop{\mathrm{tr}}\nolimits}
+\newcommand{\const}{\mathop{\mathrm{const}}\nolimits}
+\newcommand{\col}{\mathop{\mathrm{col}}\nolimits}
+\newcommand{\diag}{\mathop{\mathrm{diag}}\nolimits}
+\newcommand{\dist}{\mathop{\mathrm{dist}}\nolimits}
+\newcommand{\grad}{\mathop{\mathrm{grad}}\nolimits}
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+\newcommand{\rank}{\mathop{\mathrm{rank}}\nolimits}
+\newcommand{\rang}{\mathop{\mathrm{rang}}\nolimits}
+\newcommand{\rot}{\mathop{\mathrm{rot}}\nolimits}
+\newcommand{\sign}{\mathop{\mathrm{sign}}\nolimits}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}\nolimits}
+\newcommand{\supp}{\mathop{\mathrm{supp}}\nolimits}
+\newcommand{\DIV}{\mathop{\mathrm{div}}\nolimits}
+\newcommand{\RE}{\mathop{\mathrm{Re}}\nolimits}
+\newcommand{\IM}{\mathop{\mathrm{Im}}\nolimits}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}} % сноски метить *)
+%\setcounter{page}{1} % номер первой страницы журнала N 1
+%\setcounter{page}{145} % номер первой страницы журнала N 2
+
+\begin{document}
+
+\hyphenation{бу-дем вы-пук-лос-ти вы-пук-лой ес-ли каж-дая каж-дый каж-до-го каж-дой ког-да ко-рас-пре-де-ле-ние
+мат-ри-ца мат-риц мат-рич-ных мат-ри-цы мат-ри-цу мат-рич-но-го об-ласть об-лас-ти
+под-став-ляя пред-став-ле-но по-мощью рас-смот-рим
+сис-те-ма сис-те-мах сис-те-му сис-те-мой сис-тем сис-те-мы сис-те-ма-ми сис-те-ме сис-те-мам ско-ростью сов-па-да-ют сос-тоит
+тог-да тож-дест-вен-но тож-дест-ва управ-ле-ние управ-ля-е-мых управ-ля-е-мые управ-ля-е-ма час-ти час-тям чис-ло чис-ла}
+\renewcommand{\abstractname}{}
+
+%\end{document}
