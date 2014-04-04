@@ -77,9 +77,9 @@
 \begin{equation*}
 d(x,y)=0\Longleftrightarrow x=y,\quad d(x,y)=d(y,x),
 \end{equation*}
-и существует такая постоянная $a_d\ge 1$, что
+и существует такая постоянная $a_d\geq 1$, что
 \begin{equation}\label{eqQuasiTtiangleInequality}
-d(x,y)\le a_d[d(x,z)+d(z,y)]
+d(x,y)\leq a_d[d(x,z)+d(z,y)]
 \end{equation}
 для любых $x,y,z\in X$ (конечно, при $a_d=1$ это --- метрика). При этом мы предполагаем, что семейство открытых шаров
 \begin{equation*}
@@ -90,15 +90,15 @@ B=B(x,r)=\{y\in X:d(x,y)<r\}
 Говорят, что мера $\mu$ удовлетворяет условию удвоения, если
 существует такая постоянная $a_{\mu}>0$, что
 \begin{equation}\label{eqDoublingCondition}
-\mu B(x,2t)\le a_{\mu}\mu B(x,t),\quad x\in X,\quad t>0.
+\mu B(x,2t)\leq a_{\mu}\mu B(x,t),\quad x\in X,\quad t>0.
 \end{equation}
 
 Если выполнено условие \eqref{eqDoublingCondition}, то тройка $(X,d,\mu)$ называется пространством однородного типа. Именно такие пространства мы будем рассматривать в этой работе. Основные сведения о них можно найти в \cite{Heinonen01}.
 
 Из неравенства \eqref{eqDoublingCondition} следует, что
 \begin{equation}\label{eqDegreeDoublingCondition}
-\mu (B(x,s))\le a_{\mu}\brac{\frac{s}{t}}^{\gamma}\mu (B(x,t)),\quad x\in
-X,\;0<t\le s,
+\mu (B(x,s))\leq a_{\mu}\brac{\frac{s}{t}}^{\gamma}\mu (B(x,t)),\quad x\in
+X,\;0<t\leq s,
 \end{equation}
 где $\gamma=\log_2a_{\mu}$. Это неравенство получается простой итерацией условия (\ref{eqDoublingCondition}).
 
@@ -106,21 +106,21 @@ X,\;0<t\le s,
 \begin{equation*}%\label{eq}
 f_E=\fint \limits_Ef\,d\mu=\frac{1}{\mu(E)}\int\limits_{E}f\,d\mu
 \end{equation*}
-для среднего значения функции $f\in L^1_{\loc}(X)$ по любому измеримому множеству $E\subset X$ положительной конечной меры. Для шара $B\subset X$ обозначаем $r_B$ и $x_B$ соответственно его радиус и центр.
+для среднего значения функции $f\in L^1_{\mathrm{loc}}(X)$ по любому измеримому множеству $E\subset X$ положительной конечной меры. Для шара $B\subset X$ обозначаем $r_B$ и $x_B$ соответственно его радиус и центр.
 
-Напомним, что $x\in X$ называется точкой Лебега для функции $f\in L^1_{\loc}(X)$, если
+Напомним, что $x\in X$ называется точкой Лебега для функции $f\in L^1_{\mathrm{loc}}(X)$, если
 \begin{equation}\label{eqLebesguePoint}
 f(x)=\lim_{r\to+0}\fint_{B(x,r)}f\,d\mu.
 \end{equation}
 Если условие удвоения (\ref{eqDoublingCondition}) выполнено, то для
-каждой функции $f\in L^1_{\loc}(X)$ соотношение
+каждой функции $f\in L^1_{\mathrm{loc}}(X)$ соотношение
 (\ref{eqLebesguePoint}) выполнено $\mu$-почти всюду. Этот важный
 факт (известный как теорема Лебега о дифференцировании интегралов)
 можно найти в \cite[теорема 1.8]{Heinonen01}.
 
-Пусть $\Phi$ --- класс непрерывных положительных строго возрастающих функций $\varphi:\bbR^{+}\to \bbR^{+}$ со свойствами $\varphi(+0)=0$,  $\lim_{t\to \infty}\varphi(t)=+\infty$. $\Phi_1$ --- класс функций $\varphi \in \Phi$ со свойством: существует такая постоянная $a_\varphi$, что
+Пусть $\Phi$ --- класс непрерывных положительных строго возрастающих функций $\varphi:\mathbb{R}^{+}\to \mathbb{R}^{+}$ со свойствами $\varphi(+0)=0$,  $\lim_{t\to \infty}\varphi(t)=+\infty$. $\Phi_1$ --- класс функций $\varphi \in \Phi$ со свойством: существует такая постоянная $a_\varphi$, что
   \begin{equation*}
-\varphi(t+s)\le a_\varphi(\varphi(t)+\varphi(s)),\quad t,s\in\bbR^{+}.
+\varphi(t+s)\leq a_\varphi(\varphi(t)+\varphi(s)),\quad t,s\in\mathbb{R}^{+}.
 \end{equation*}
 
 Для функции $\varphi \in \Phi$ и шара $B\subset X$ введем два вида средних осцилляций
@@ -128,32 +128,32 @@ f(x)=\lim_{r\to+0}\fint_{B(x,r)}f\,d\mu.
 A_{\varphi}(f,B) = \inf_{c} \varphi^{-1}\brac{\fint_B \varphi(|f(x)-c|) \dmu(x)}.
 \end{equation*}
 \begin{equation*}
-\caS_{\varphi}(f, B) = \varphi^{-1}\brac{\fint_B \varphi(|f(x)-f_B|)\,d\mu(x)},
+\mathcal{S}_{\varphi}(f, B) = \varphi^{-1}\brac{\fint_B \varphi(|f(x)-f_B|)\,d\mu(x)},
 \end{equation*}
 
-В случае, когда $\varphi(t)=t^{p}$, $p>0$ будем писать $A_{p}(f,B)$ и $\caS_p(f, B)$. При $p=1$ пишем $\caS(f,B)$ и $A(f,B)$ вместо $\caS_1(f,B)$ и $A_1(f,B)$ соответственно.
+В случае, когда $\varphi(t)=t^{p}$, $p>0$ будем писать $A_{p}(f,B)$ и $\mathcal{S}_p(f, B)$. При $p=1$ пишем $\mathcal{S}(f,B)$ и $A(f,B)$ вместо $\mathcal{S}_1(f,B)$ и $A_1(f,B)$ соответственно.
 
-Пусть $B_0\subset X$ --- фиксированный шар. В работе \cite{JohnNirenberg61} в случае $X=\bbR^n$  было введено пространство функций
+Пусть $B_0\subset X$ --- фиксированный шар. В работе \cite{JohnNirenberg61} в случае $X=\mathbb{R}^n$  было введено пространство функций
 \begin{equation*}%\label{eq}
-BMO(B_0)=\fbrac{f\in L^1_{\loc}(B_0):\norma{f}^{*} \equiv \sup_{B\subset B_0} \caS(f,B) <+\infty}
+BMO(B_0)=\fbrac{f\in L^1_{\mathrm{loc}}(B_0):\norma{f}^{*} \equiv \sup_{B\subset B_0} \mathcal{S}(f,B) <+\infty}
 \end{equation*}
-и было доказано следующее утверждение: \textit{существуют постоянные $A$ и $a$, зависящие только от размерности пространства $n$, что для любого шара $B_0 \subset \bbR^n$ и $f \in BMO(B_0)$}
+и было доказано следующее утверждение: \textit{существуют постоянные $A$ и $a$, зависящие только от размерности пространства $n$, что для любого шара $B_0 \subset \mathbb{R}^n$ и $f \in BMO(B_0)$}
 \begin{equation}\label{eqJohnNirenbergInequality}
-\mu\{x \in B_0:\ |f(x)-f_{B_0}|>\lambda\} \le A \mu(B_0) \exp\brac{-\frac{a\lambda}{\norma{f}^{*}}}, \quad \lambda>0.
+\mu\{x \in B_0:\ |f(x)-f_{B_0}|>\lambda\} \leq A \mu(B_0) \exp\brac{-\frac{a\lambda}{\|f\|^{*}}}, \quad \lambda>0.
 \end{equation}
 
 Введем далее классы
 \begin{equation*}%\label{eq}
-BMO_{\varphi}(B_0)=\fbrac{f\in L^1_{\loc}(B_0):{\norma{f}^{*}_{\varphi}} \equiv \sup_{B\subset B_0} \caS_{\varphi}(f,B) <+\infty}.
+BMO_{\varphi}(B_0)=\fbrac{f\in L^1_{\mathrm{loc}}(B_0):{\|f\|^{*}_{\varphi}} \equiv \sup_{B\subset B_0} \mathcal{S}_{\varphi}(f,B) <+\infty}.
 \end{equation*}
-В случае $\varphi(t)=t^p$, $p>0$ будем писать просто $BMO_p(B_0)$. В силу неравенства Гельдера справедливы вложения $BMO_q(B_0)\subset BMO_p(B_0)$ при $0\le p<q<\infty$. Кроме того, из неравенства (\ref{eqJohnNirenbergInequality}) вытекает, что на самом деле $BMO_p(B_0)=BMO(B_0)$ при $p\ge1$ и полунорма ${\norma{f}^{*}_p}$
-эквивалентна полунорме $\norma{f}^{*}$.
+В случае $\varphi(t)=t^p$, $p>0$ будем писать просто $BMO_p(B_0)$. В силу неравенства Гельдера справедливы вложения $BMO_q(B_0)\subset BMO_p(B_0)$ при $0\leq p<q<\infty$. Кроме того, из неравенства (\ref{eqJohnNirenbergInequality}) вытекает, что на самом деле $BMO_p(B_0)=BMO(B_0)$ при $p\geq1$ и полунорма ${\|f\|^{*}_p}$
+эквивалентна полунорме $\|f\|^{*}$.
 
 Возникает естественный вопрос, справедливы ли равенства $BMO_{\varphi}(B_0)=BMO(B_0)$. Ниже будет показано, что это действительно так.
 
 В определение пространства $BMO_{\varphi}(B_0)$ заранее требуется суммируемость функций $f$ из этого пространства. Это требование выглядит искусственным, поэтому мы рассмотрим более широкий класс
 \begin{equation*}%\label{eq}
-\widehat{BMO}_{\varphi}(B_0)=\fbrac{f:{\norma{f}^{*}_{\varphi}} \equiv \sup_{B\subset B_0} A_{\varphi}(f,B) <+\infty}
+\widehat{BMO}_{\varphi}(B_0)=\fbrac{f:{\|f\|^{*}_{\varphi}} \equiv \sup_{B\subset B_0} A_{\varphi}(f,B) <+\infty}
 \end{equation*}
 и для функций этого класса докажем равенство $\widehat{BMO}_{\varphi}(B_0)=BMO(B_0)$. Для этого нам понадобится аналог неравенства (\ref{eqJohnNirenbergInequality}) для средних $A_{\varphi}(f,B)$. В качестве следствий из результатов этой работы мы приведем обобщения теорем Спанне \cite{Spanne} и Кампанато--Мейерса \cite{Campanato, Meyers}.
 
@@ -173,7 +173,7 @@ BMO_{\varphi}(B_0)=\fbrac{f\in L^1_{\loc}(B_0):{\norma{f}^{*}_{\varphi}} \equiv 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{lemma}\label{lmExistanceOfConstant}
-Пусть $\varphi\in \Phi$ и $f$ --- измеримая функция, для которой $\varphi \circ f \in L(X)$. Тогда для любого шара $B\subset X$ существует такое число $I_B^{\varphi} \in \bbR$, что
+Пусть $\varphi\in \Phi$ и $f$ --- измеримая функция, для которой $\varphi \circ f \in L(X)$. Тогда для любого шара $B\subset X$ существует такое число $I_B^{\varphi} \in \mathbb{R}$, что
 \begin{equation*}
 A_{\varphi}(f,B) = \varphi^{-1}\brac{\fint_B \varphi(|f(x)-I_B^{\varphi}|) \dmu(x)}.
 \end{equation*}
@@ -181,115 +181,115 @@ A_{\varphi}(f,B) = \varphi^{-1}\brac{\fint_B \varphi(|f(x)-I_B^{\varphi}|) \dmu(
 
 \textbf{Доказательство}. Если $\varphi$ --- непрерывна, то функция
 \begin{equation*}
-g(c)=\brac{\fint_B \varphi(|f(x)-c|) \dmu(x)},\quad c\in \bbR.
+g(c)=\brac{\fint_B \varphi(|f(x)-c|) \dmu(x)},\quad c\in \mathbb{R}.
 \end{equation*}
-непрерывна на $\bbR$ и $\lim_{c \to \infty}g(c)=+\infty$. Поэтому вне некоторого отрезка $[-c_0, c_0]$ ее значения больше, чем $2\inf_c g(c)$. По теореме Вейерштрасса на этом отрезке функция $g$ принимает свое минимальное значение.
+непрерывна на $\mathbb{R}$ и $\lim_{c \to \infty}g(c)=+\infty$. Поэтому вне некоторого отрезка $[-c_0, c_0]$ ее значения больше, чем $2\inf_c g(c)$. По теореме Вейерштрасса на этом отрезке функция $g$ принимает свое минимальное значение.
 
 Стоит заметить, что постоянная $I_B^{\varphi}$ также зависит и от $f$.
 
 В дальнейшем нам понадобится следующее известное утверждение (см., например, \cite[лемма 2.7]{Aimar85}), дающее разложение Кальдерона--Зигмунда для пространств однородного типа.
 
 \begin{lemma}\label{lmCalderonZygmundDecomposition}
-Пусть заданы неотрицательная функция $f \in L^1(X)$ и $\alpha > f_X$ $(f_X=0$, если $\mu(X)=\infty$). Тогда существует не более чем счетный набор непересекающихся шаров $\fbrac{B_j=B(r_j,x_j)}$, $j \ge 1$, со свойствами
+Пусть заданы неотрицательная функция $f \in L^1(X)$ и $\alpha > f_X$ $(f_X=0$, если $\mu(X)=\infty$). Тогда существует не более чем счетный набор непересекающихся шаров $\fbrac{B_j=B(r_j,x_j)}$, $j \geq 1$, со свойствами
 
 1) если $\caB_j=C B_j$, то
 \begin{equation*}
-\frac{1}{c} \fint_{B_j} f\dmu\le \fint_{\caB_j} f\dmu \le \alpha < \fint_{B_j} f\dmu, \quad j\ge 1;
+\frac{1}{c} \fint_{B_j} f\dmu\leq \fint_{\caB_j} f\dmu \leq \alpha < \fint_{B_j} f\dmu, \quad j\geq 1;
 \end{equation*}
 
-2) $f_B \le \alpha$ для всех шаров $B$ с центрами в точках $x \in X \setminus\bigcup_j \caB_j$ и, в частности, $f(x)\le \alpha$ для почти всех $x \in X \setminus \bigcup_j \caB_j$.
+2) $f_B \leq \alpha$ для всех шаров $B$ с центрами в точках $x \in X \setminus\bigcup_j \caB_j$ и, в частности, $f(x)\leq \alpha$ для почти всех $x \in X \setminus \bigcup_j \caB_j$.
 
-Здесь $C\ge 1$ --- некоторая постоянная, зависящая только от $a_d$ из неравенства (\ref{eqQuasiTtiangleInequality}) (можно взять $C=6a_d^4$) и $c=a_{\mu}C^{\gamma}$.
+Здесь $C\geq 1$ --- некоторая постоянная, зависящая только от $a_d$ из неравенства (\ref{eqQuasiTtiangleInequality}) (можно взять $C=6a_d^4$) и $c=a_{\mu}C^{\gamma}$.
 \end{lemma}
 
-По сравнению с оригинальной леммой 2.7 из \cite{Aimar85} в нашей формулировке добавлено левое неравенство в утверждении 1) и неравенство $f(x)\le \alpha$ в утверждении 2). Левое неравенство в утверждении 1) очевидным образом вытекает из условия удвоения \eqref{eqDegreeDoublingCondition}
+По сравнению с оригинальной леммой 2.7 из \cite{Aimar85} в нашей формулировке добавлено левое неравенство в утверждении 1) и неравенство $f(x)\leq \alpha$ в утверждении 2). Левое неравенство в утверждении 1) очевидным образом вытекает из условия удвоения \eqref{eqDegreeDoublingCondition}
 
 \begin{equation*}
- \fint_{B_j} f\dmu\le \frac{\mu(\caB_j)}{\mu(B_j)} \fint_{\caB_j} f\dmu \le c \fint_{\caB_j} f\dmu,
+ \fint_{B_j} f\dmu\leq \frac{\mu(\caB_j)}{\mu(B_j)} \fint_{\caB_j} f\dmu \leq c \fint_{\caB_j} f\dmu,
 \end{equation*}
-а неравенство $f(x)\le \alpha$ вытекает из теоремы Лебега о дифференцировании интегралов, которую можно найти в \cite[теорема 1.8]{Heinonen01}.
+а неравенство $f(x)\leq \alpha$ вытекает из теоремы Лебега о дифференцировании интегралов, которую можно найти в \cite[теорема 1.8]{Heinonen01}.
 
 Основной результат статьи содержит следующая теорема, являющаяся обобщением теоремы Джона--Ниренберга (\ref{eqJohnNirenbergInequality}).
 
 \begin{theorem}\label{thJohnNirenberg}
 Пусть заданы функция $\varphi\in\Phi_1$, шар $B_0 \subset X$, $f \in \widehat{BMO}_\varphi(B_0)$, $\Lambda>1$. Тогда справедливы неравенства
 \begin{equation*}
-\mu\{x \in B_0:\ |f(x)-I_{B_0}^{\varphi}|>\lambda\} \le A \mu(B_0) \exp\brac{-a\lambda}, \quad \lambda>0.
+\mu\{x \in B_0:\ |f(x)-I_{B_0}^{\varphi}|>\lambda\} \leq A \mu(B_0) \exp\brac{-a\lambda}, \quad \lambda>0.
 \end{equation*}
 Здесь
 \begin{equation*}%\label{eq}
-a = \frac{\ln \Lambda}{ \varphi^{-1}\brac{a_\varphi(1+c \Lambda)  \varphi(\norma{f}^{*}_\varphi)}},\quad A=c \Lambda
+a = \frac{\ln \Lambda}{ \varphi^{-1}\brac{a_\varphi(1+c \Lambda)  \varphi(\|f\|^{*}_\varphi)}},\quad A=c \Lambda
 \end{equation*}
 где $c$ ---  постоянная из леммы \ref{lmCalderonZygmundDecomposition}.
 \end{theorem}
 
 \textbf{Доказательство теоремы \ref{thJohnNirenberg}}. Мы действуем по схеме работы \cite{JohnNirenberg61} с изменениями, соответствующими нашему случаю.
 
-Применим лемму \ref{lmCalderonZygmundDecomposition} к функции $\varphi(|f(x)-I_{B_0}^{\varphi}|)$ и $\alpha = \Lambda \varphi(\norma{f}^{*}_\varphi)$, находя набор таких непересекающихся шаров $\{B_j^{(1)}\}$, $j\ge 1$, что
+Применим лемму \ref{lmCalderonZygmundDecomposition} к функции $\varphi(|f(x)-I_{B_0}^{\varphi}|)$ и $\alpha = \Lambda \varphi(\|f\|^{*}_\varphi)$, находя набор таких непересекающихся шаров $\{B_j^{(1)}\}$, $j\geq 1$, что
 \begin{equation}\label{eqFormula1}
-\Lambda \varphi(\norma{f}^{*}_\varphi)< \fint_{B_j^{(1)}} \varphi(|f(x)-I_{B_0}^{\varphi}|)\dmu(x) \le
-c  \Lambda \varphi(\norma{f}^{*}_\varphi), \quad j\ge 1
+\Lambda \varphi(\|f\|^{*}_\varphi)< \fint_{B_j^{(1)}} \varphi(|f(x)-I_{B_0}^{\varphi}|)\dmu(x) \leq
+c  \Lambda \varphi(\|f\|^{*}_\varphi), \quad j\geq 1
 \end{equation}
 и
 \begin{equation*}
-\varphi(|f(x)-I_{B_0}^{\varphi}|) \le \Lambda \varphi(\norma{f}^{*}_\varphi)
+\varphi(|f(x)-I_{B_0}^{\varphi}|) \leq \Lambda \varphi(\|f\|^{*}_\varphi)
 \quad \text{для почти всех} \quad
-x \in B_0\setminus \brac{\bigcup_{j\ge 1} \caB_j^{(1)}}.
+x \in B_0\setminus \brac{\bigcup_{j\geq 1} \caB_j^{(1)}}.
 \end{equation*}
 
 Из левого  неравенства в \eqref{eqFormula1} получаем
 \begin{equation*}
-\sum_{j\ge1} \mu(B_j^{(1)}) < \frac{1}{ \Lambda \varphi(\norma{f}^{*}_\varphi)}\sum_{j\ge1} \int_{B_j^{(1)}} \varphi(|f(x)-I_{B_0}^{\varphi}|)\dmu(x) \le
+\sum_{j\geq1} \mu(B_j^{(1)}) < \frac{1}{ \Lambda \varphi(\|f\|^{*}_\varphi)}\sum_{j\geq1} \int_{B_j^{(1)}} \varphi(|f(x)-I_{B_0}^{\varphi}|)\dmu(x) \leq
 \end{equation*}
 \begin{equation*}
-\le\frac{1}{\Lambda \varphi(\norma{f}^{*}_\varphi)} \int_{B_0} \varphi(|f(x)-I_{B_0}^{\varphi}|)\dmu(x) \le  \frac{\mu(B_0)}{\Lambda},
+\leq\frac{1}{\Lambda \varphi(\|f\|^{*}_\varphi)} \int_{B_0} \varphi(|f(x)-I_{B_0}^{\varphi}|)\dmu(x) \leq  \frac{\mu(B_0)}{\Lambda},
 \end{equation*}
 а из правого
 \begin{equation*}%\label{eq}
-\varphi(|I_{B_j^{(1)}}^{\varphi}-I_{B_0}^{\varphi}|)\le a_\varphi \brac{\fint_{B_j^{(1)}} \varphi (|f(x)-I_{B_j^{(1)}}^{\varphi}|)\dmu(x) + \fint_{B_j^{(1)}} \varphi(|f(x)-I_{B_0}^{\varphi}|)\dmu(x)} \le
+\varphi(|I_{B_j^{(1)}}^{\varphi}-I_{B_0}^{\varphi}|)\leq a_\varphi \brac{\fint_{B_j^{(1)}} \varphi (|f(x)-I_{B_j^{(1)}}^{\varphi}|)\dmu(x) + \fint_{B_j^{(1)}} \varphi(|f(x)-I_{B_0}^{\varphi}|)\dmu(x)} \leq
 \end{equation*}
 \begin{equation*}%\label{eq}
-\le  a_\varphi \brac{\varphi({\norma{f}^{*}_\varphi}) +  c  \Lambda \varphi(\norma{f}^{*}_\varphi)}= a_\varphi \varphi(\norma{f}^{*}_\varphi)\brac{1+c \Lambda} .
+\leq  a_\varphi \brac{\varphi({\|f\|^{*}_\varphi}) +  c  \Lambda \varphi(\|f\|^{*}_\varphi)}= a_\varphi \varphi(\|f\|^{*}_\varphi)\brac{1+c \Lambda} .
 \end{equation*}
 
-На каждом шаре $B_j^{(1)}$ снова применим лемму \ref{lmCalderonZygmundDecomposition}, получая шары $B_{s,j}^{(2)}$, $s\ge 1$. Перенумеруем их в простую последовательность, получая набор шаров $B_j^{(2)}$, $j\ge 1$, и продолжим процесс по индукции. На $k$-ом шаге на каждом из шаров $B_j^{(k-1)}$, $j\ge1$ к функции $\varphi(|f(x)-I_{B_j^{(k-1)}}^{\varphi}|)$ применим лемму \ref{lmCalderonZygmundDecomposition} с постоянной $\alpha = \Lambda \varphi(\norma{f}^{*}_\varphi)$ и получим набор шаров $\{B_{s,j}^{(k)}\}$, ${s\ge 1}$, внутренности которых попарно не пересекаются, что
+На каждом шаре $B_j^{(1)}$ снова применим лемму \ref{lmCalderonZygmundDecomposition}, получая шары $B_{s,j}^{(2)}$, $s\geq 1$. Перенумеруем их в простую последовательность, получая набор шаров $B_j^{(2)}$, $j\geq 1$, и продолжим процесс по индукции. На $k$-ом шаге на каждом из шаров $B_j^{(k-1)}$, $j\geq1$ к функции $\varphi(|f(x)-I_{B_j^{(k-1)}}^{\varphi}|)$ применим лемму \ref{lmCalderonZygmundDecomposition} с постоянной $\alpha = \Lambda \varphi(\|f\|^{*}_\varphi)$ и получим набор шаров $\{B_{s,j}^{(k)}\}$, ${s\geq 1}$, внутренности которых попарно не пересекаются, что
 \begin{equation}\label{eqFormula2}
-\Lambda \varphi(\norma{f}^{*}_\varphi) < \fint_{B_{s,j}^{(k)}} \varphi(|f(x)-I_{B_j^{(k-1)}}^{\varphi}|)\dmu(x) \le  c \Lambda \varphi(\norma{f}^{*}_\varphi), \quad s\ge 1
+\Lambda \varphi(\|f\|^{*}_\varphi) < \fint_{B_{s,j}^{(k)}} \varphi(|f(x)-I_{B_j^{(k-1)}}^{\varphi}|)\dmu(x) \leq  c \Lambda \varphi(\|f\|^{*}_\varphi), \quad s\geq 1
 \end{equation}
 и
 \begin{equation}\label{eqFormula3}
-\varphi(|f(x)-I_{B_j^{(k-1)}}^{\varphi}|) \le \Lambda \varphi(\norma{f}^{*}_\varphi) \quad \text{для почти всех} \quad x \in B_j^{(k-1)}\setminus \brac{\bigcup_{s\ge 1} \caB_{s,j}^{(k)}}.
+\varphi(|f(x)-I_{B_j^{(k-1)}}^{\varphi}|) \leq \Lambda \varphi(\|f\|^{*}_\varphi) \quad \text{для почти всех} \quad x \in B_j^{(k-1)}\setminus \brac{\bigcup_{s\geq 1} \caB_{s,j}^{(k)}}.
 \end{equation}
 Из левой части неравенства \eqref{eqFormula2} имеем
 \begin{equation*}
-\sum_{s\ge1} \mu(B_{s,j}^{(k)}) = \frac{1}{\Lambda \varphi(\norma{f}^{*}_\varphi)} \sum_{s\ge1} \int_{B_{s,j}^{(k)}}\varphi( |f(x)-I_{B_j^{(k-1)}}^{\varphi}|)\dmu(x) \le
+\sum_{s\geq1} \mu(B_{s,j}^{(k)}) = \frac{1}{\Lambda \varphi(\|f\|^{*}_\varphi)} \sum_{s\geq1} \int_{B_{s,j}^{(k)}}\varphi( |f(x)-I_{B_j^{(k-1)}}^{\varphi}|)\dmu(x) \leq
 \end{equation*}
 \begin{equation}\label{formula4}
-\le \frac{1}{\Lambda \varphi(\norma{f}^{*}_\varphi}) \int_{B_j^{(k-1)}} \varphi(|f(x)-I_{B_j^{(k-1)}}^{\varphi}|)\dmu(x) \le  \frac{\mu(B_j^{(k-1)})}{\Lambda}
+\leq \frac{1}{\Lambda \varphi(\|f\|^{*}_\varphi}) \int_{B_j^{(k-1)}} \varphi(|f(x)-I_{B_j^{(k-1)}}^{\varphi}|)\dmu(x) \leq  \frac{\mu(B_j^{(k-1)})}{\Lambda}
 \end{equation}
 а из правой
 \begin{equation*}
-\varphi(|I_{B_{s,j}^{(k)}}^{\varphi}-I_{B_j^{(k-1)}}^{\varphi}|) \le
+\varphi(|I_{B_{s,j}^{(k)}}^{\varphi}-I_{B_j^{(k-1)}}^{\varphi}|) \leq
 \end{equation*}
 \begin{equation*}
-\le a_\varphi \brac{\frac{1}{\mu(B_{s,j}^{(k)})}\int_{B_{s,j}^{(k)}} \varphi(|f(x)-I_{B_{s,j}^{(k)}}^{\varphi}|)\dmu(x) + \frac{1}{\mu(B_{s,j}^{(k)})}\int_{B_{s,j}^{(k)}} \varphi(|f(x)-I_{B_j^{(k-1)}}^{\varphi}|)\dmu(x)}
+\leq a_\varphi \brac{\frac{1}{\mu(B_{s,j}^{(k)})}\int_{B_{s,j}^{(k)}} \varphi(|f(x)-I_{B_{s,j}^{(k)}}^{\varphi}|)\dmu(x) + \frac{1}{\mu(B_{s,j}^{(k)})}\int_{B_{s,j}^{(k)}} \varphi(|f(x)-I_{B_j^{(k-1)}}^{\varphi}|)\dmu(x)}
 \end{equation*}
 \begin{equation}\label{eqFormula5}
- \le  a_\varphi \brac{\varphi({\norma{f}^{*}_\varphi}) +  c  \Lambda \varphi(\norma{f}^{*}_\varphi)}=a_\varphi \varphi(\norma{f}^{*}_\varphi)\brac{1+c \Lambda}.
+ \leq  a_\varphi \brac{\varphi({\|f\|^{*}_\varphi}) +  c  \Lambda \varphi(\|f\|^{*}_\varphi)}=a_\varphi \varphi(\|f\|^{*}_\varphi)\brac{1+c \Lambda}.
 \end{equation}
-Перенумеровав все шары $B_{s,j}^{(k)}$, $s,j\ge1$, в простую последовательность, получаем набор $\{B_{j}^{(k)}\}$, $j\ge 1$. При этом, из \eqref{formula4} вытекает, что
+Перенумеровав все шары $B_{s,j}^{(k)}$, $s,j\geq1$, в простую последовательность, получаем набор $\{B_{j}^{(k)}\}$, $j\geq 1$. При этом, из \eqref{formula4} вытекает, что
 \begin{equation*}
-\sum_{j\ge1} \mu(B_{j}^{(k)}) \le \frac{1}{\Lambda}\sum_{j\ge1} \mu(B_{j}^{(k-1)}) \le \brac{\frac{1}{\Lambda}}^2\sum_{j\ge1} \mu(B_{j}^{(k-2)}) \le \cdots
+\sum_{j\geq1} \mu(B_{j}^{(k)}) \leq \frac{1}{\Lambda}\sum_{j\geq1} \mu(B_{j}^{(k-1)}) \leq \brac{\frac{1}{\Lambda}}^2\sum_{j\geq1} \mu(B_{j}^{(k-2)}) \leq \cdots
 \end{equation*}
 \begin{equation}\label{eqFormula6}
-\le \brac{\frac{1}{\Lambda}}^{k-1}\sum_{j\ge1} \mu(B_{j}^{(1)}) \le \brac{\frac{1}{\Lambda}}^{k} \mu(B_0),
+\leq \brac{\frac{1}{\Lambda}}^{k-1}\sum_{j\geq1} \mu(B_{j}^{(1)}) \leq \brac{\frac{1}{\Lambda}}^{k} \mu(B_0),
 \end{equation}
-а из \eqref{eqFormula3} и \eqref{eqFormula5} следует, что для почти всех $x \in \brac{\bigcup_{j\ge 1} B_j^{(k-1)}}\setminus \brac{\bigcup_{j\ge 1} \caB_{j}^{(k)}x}$
+а из \eqref{eqFormula3} и \eqref{eqFormula5} следует, что для почти всех $x \in \brac{\bigcup_{j\geq 1} B_j^{(k-1)}}\setminus \brac{\bigcup_{j\geq 1} \caB_{j}^{(k)}x}$
 \begin{equation*}
-|f(x)-I_{B_0}^{\varphi}| \le |f(x)-I_{B_{j_{k-1}}^{(k-1)}}^{\varphi}| + |I_{B_{j_{k-1}}^{(k-1)}}^{\varphi} - I_{B_{j_{k-2}}^{(k-2)}}^{\varphi}| + \ldots + |I_{B_{j_{1}}^{(1)}}^{\varphi} - I_{B_0}^{\varphi}| \le
+|f(x)-I_{B_0}^{\varphi}| \leq |f(x)-I_{B_{j_{k-1}}^{(k-1)}}^{\varphi}| + |I_{B_{j_{k-1}}^{(k-1)}}^{\varphi} - I_{B_{j_{k-2}}^{(k-2)}}^{\varphi}| + \ldots + |I_{B_{j_{1}}^{(1)}}^{\varphi} - I_{B_0}^{\varphi}| \leq
 \end{equation*}
 \begin{equation}\label{eqFormula7}
-\le \varphi^{-1}(\Lambda\norma{f}^{*}_\varphi) + (k-1)\varphi^{-1}\brac{ a_\varphi \brac{1+c \Lambda} \varphi(\norma{f}^{*}_\varphi)}=k \varphi^{-1}\brac{ a_\varphi \brac{1+c \Lambda} \varphi(\norma{f}^{*}_\varphi)},
+\leq \varphi^{-1}(\Lambda\|f\|^{*}_\varphi) + (k-1)\varphi^{-1}\brac{ a_\varphi \brac{1+c \Lambda} \varphi(\|f\|^{*}_\varphi)}=k \varphi^{-1}\brac{ a_\varphi \brac{1+c \Lambda} \varphi(\|f\|^{*}_\varphi)},
 \end{equation}
 где индексы $j_1,\ldots, j_{k-1}$ выбраны таким образом, чтобы
 \begin{equation*}%\label{eq}
@@ -299,28 +299,28 @@ x \in B_{j_{k-1}}^{(k-1)}\subset B_{j_{k-2}}^{(k-2)} \subset\ldots \subset B_{j_
 
 Возьмем теперь произвольное $\lambda>0$. Если
 \begin{equation*}
-k \varphi^{-1}\brac{ a_\varphi \brac{1+c\Lambda} \varphi(\norma{f}^{*}_\varphi)} \le \lambda < (k+1) \varphi^{-1}\brac{ a_\varphi \brac{1+c\Lambda} \varphi(\norma{f}^{*}_\varphi)}
+k \varphi^{-1}\brac{ a_\varphi \brac{1+c\Lambda} \varphi(\|f\|^{*}_\varphi)} \leq \lambda < (k+1) \varphi^{-1}\brac{ a_\varphi \brac{1+c\Lambda} \varphi(\|f\|^{*}_\varphi)}
 \end{equation*}
 при некотором $k \in \mathbb N$, то используя условие удвоения (\ref{eqDoublingCondition}) и формулы (\ref{eqFormula6}) и (\ref{eqFormula7}) получаем
 \begin{equation*}
 \mu{\{x\in B_0:\ |f(x)-I_{B_0}^{\varphi}|>\lambda\}}=
- \mu\fbrac{{x\in B_0:|f(x)-I_{B_0}^{\varphi}|>k \varphi^{-1}\brac{ a_\varphi\brac{1+c\Lambda} \varphi(\norma{f}^{*}_\varphi)}}}
+ \mu\fbrac{{x\in B_0:|f(x)-I_{B_0}^{\varphi}|>k \varphi^{-1}\brac{ a_\varphi\brac{1+c\Lambda} \varphi(\|f\|^{*}_\varphi)}}}
 \end{equation*}
 \begin{equation*}
-\le \sum_{j\ge1} \mu(\caB_{j}^{(k)}) \le  c \sum_{j\ge1} \mu(B_{j}^{(k)}) \le  c \brac{\frac{1}{\Lambda}}^{k} \mu(B_0) = c \mu(B_0)\exp\brac{-k \ln \Lambda} \le
+\leq \sum_{j\geq1} \mu(\caB_{j}^{(k)}) \leq  c \sum_{j\geq 1} \mu(B_{j}^{(k)}) \leq  c \brac{\frac{1}{\Lambda}}^{k} \mu(B_0) = c \mu(B_0)\exp\brac{-k \ln \Lambda} \leq
 \end{equation*}
 \begin{equation*}
-\le  c \mu(B_0)\exp\brac{\brac{1-\frac{\lambda}{ \varphi^{-1} \brac{a_\varphi (1+c\Lambda) \varphi(\norma{f}^{*}_\varphi) }}}\ln \Lambda}
+\leq  c \mu(B_0)\exp\brac{\brac{1-\frac{\lambda}{ \varphi^{-1} \brac{a_\varphi (1+c\Lambda) \varphi(\|f\|^{*}_\varphi) }}}\ln \Lambda}
 \end{equation*}
 \begin{equation*}
-=  c \Lambda\mu(B_0)\exp\brac{-\frac{\lambda\ln \Lambda}{ \varphi^{-1}\brac{a_\varphi(1+c \Lambda) \varphi(\norma{f}^{*}_\varphi) }}} = c \Lambda\mu(B_0)\exp\brac{-a \Lambda},
+=  c \Lambda\mu(B_0)\exp\brac{-\frac{\lambda\ln \Lambda}{ \varphi^{-1}\brac{a_\varphi(1+c \Lambda) \varphi(\|f\|^{*}_\varphi) }}} = c \Lambda\mu(B_0)\exp\brac{-a \Lambda},
 \end{equation*}
-где $a = \frac{\ln \Lambda}{ \varphi^{-1}\brac{a_\varphi (1+c \Lambda)  \varphi(\norma{f}^{*}_\varphi)}}$. Если $\lambda < \varphi^{-1}\brac{ a_\varphi \brac{1+c\Lambda} \varphi(\norma{f}^{*}_\varphi)}$, то
+где $a = \frac{\ln \Lambda}{ \varphi^{-1}\brac{a_\varphi (1+c \Lambda)  \varphi(\|f\|^{*}_\varphi)}}$. Если $\lambda < \varphi^{-1}\brac{ a_\varphi \brac{1+c\Lambda} \varphi(\|f\|^{*}_\varphi)}$, то
 \begin{equation*}
-\mu\{x\in B_0:\ |f(x)-I_{B_0}|>\lambda\} \le
+\mu\{x\in B_0:\ |f(x)-I_{B_0}|>\lambda\} \leq
 \end{equation*}
 \begin{equation*}
-\le c \mu(B_0)\exp\brac{-a \Lambda}\exp(a \varphi^{-1}\brac{ a_\varphi \brac{1+c\Lambda} \varphi(\norma{f}^{*}_\varphi)})
+\leq c \mu(B_0)\exp\brac{-a \Lambda}\exp(a \varphi^{-1}\brac{ a_\varphi \brac{1+c\Lambda} \varphi(\|f\|^{*}_\varphi)})
 =  c \Lambda \mu(B_0)\exp\brac{-a \lambda}.
 \end{equation*}
 Положив $A =  c \Lambda$ получим утверждение теоремы.
@@ -336,24 +336,24 @@ k \varphi^{-1}\brac{ a_\varphi \brac{1+c\Lambda} \varphi(\norma{f}^{*}_\varphi)}
 \begin{corollary}\label{crEstimationOfDifferenceFunctionAndConstant}
 Пусть $\varphi \in \Phi_1$ , шар $B_0 \subset X$, функция $f\in \widehat{BMO}_\varphi(B_0)$ и $g(x)=|f(x)-I_{B_0}^\varphi|$. Тогда
 \begin{equation*}
-g^*(t) \le \frac{1}{a}\ln\frac{A\mu(B_0)}{t}, \quad 0<t<\mu(B_0).
+g^*(t) \leq \frac{1}{a}\ln\frac{A\mu(B_0)}{t}, \quad 0<t<\mu(B_0).
 \end{equation*}
 \end{corollary}
 
 \textbf{Доказательство.}
 Пусть $0<t<\mu(B_0)$. Тогда
 \begin{equation*}
-g^*(t) = \sup\{y>0:\ \mu\{x\in B_0:\ |f(x)-I_{B_0}^{\varphi}|>y\}>t\} \le
+g^*(t) = \sup\{y>0:\ \mu\{x\in B_0:\ |f(x)-I_{B_0}^{\varphi}|>y\}>t\} \leq
 \end{equation*}
 \begin{equation*}
-\le \sup\left\{y>0:\ A\mu(B_0)\exp\brac{-a y}>t\right\}
+\leq \sup\left\{y>0:\ A\mu(B_0)\exp\brac{-a y}>t\right\}
 \end{equation*}
 \begin{equation*}
-= \sup\left\{y>0:\ y < \frac{1}{a}\ln\frac{A\mu(B_0)}{t}\right\} = \frac{1}{a}\ln\frac{A\mu(B_0)}{t}=\frac{ \varphi^{-1}\brac{a_\varphi(1+c \Lambda)  \varphi(\norma{f}^{*}_\varphi)}}{\ln \Lambda}\ln\frac{с \Lambda \mu(B_0)}{t}.
+= \sup\left\{y>0:\ y < \frac{1}{a}\ln\frac{A\mu(B_0)}{t}\right\} = \frac{1}{a}\ln\frac{A\mu(B_0)}{t}=\frac{ \varphi^{-1}\brac{a_\varphi(1+c \Lambda)  \varphi(\|f\|^{*}_\varphi)}}{\ln \Lambda}\ln\frac{с \Lambda \mu(B_0)}{t}.
 \end{equation*}
 
 \begin{corollary}\label{crIntersectionOfLq}
-Пусть $\varphi \in \Phi_1$, шар $B_0 \subset \bbR$ и  функция $f\in \widehat{BMO}_\varphi(B_0)$. Тогда
+Пусть $\varphi \in \Phi_1$, шар $B_0 \subset \mathbb{R}$ и  функция $f\in \widehat{BMO}_\varphi(B_0)$. Тогда
 \begin{equation*}%\label{eq}
 \widehat{BMO}_\varphi(B_0)\subset\bigcap_{q>0} L^q(B_0)
 \end{equation*}
@@ -362,30 +362,30 @@ g^*(t) = \sup\{y>0:\ \mu\{x\in B_0:\ |f(x)-I_{B_0}^{\varphi}|>y\}>t\} \le
 \textbf{Доказательство.}
 Покажем, что $f\in L^q(B_0)$ для всех $q>0$. Пусть $g(x)=|f(x)-I_{B_0}^{\varphi}|$. Тогда, применяя следствие \ref{crEstimationOfDifferenceFunctionAndConstant}, получим
 \begin{equation*}
-\int_{B_0} |f(x)-I_{B_0}^{\varphi}|^q\dmu(x) = \int_0^{\mu(B_0)} (g^*(t))^q dt \le \brac{\frac{1}{a}}^{q}\int_0^{\mu(B_0)} \ln^{q}\frac{A\mu(B_0)}{t}dt < +\infty.
+\int_{B_0} |f(x)-I_{B_0}^{\varphi}|^q\dmu(x) = \int_0^{\mu(B_0)} (g^*(t))^q dt \leq \brac{\frac{1}{a}}^{q}\int_0^{\mu(B_0)} \ln^{q}\frac{A\mu(B_0)}{t}dt < +\infty.
 \end{equation*}
 
 
 \begin{corollary}\label{crBMOPhi1InBMO}
-Пусть функция $\varphi \in \Phi_1$, шар $B_0 \subset \bbR$ и функция $f\in \widehat{BMO}_\varphi(B_0)$. Тогда $f \in BMO(B_0)$ и выполнена оценка
+Пусть функция $\varphi \in \Phi_1$, шар $B_0 \subset \mathbb{R}$ и функция $f\in \widehat{BMO}_\varphi(B_0)$. Тогда $f \in BMO(B_0)$ и выполнена оценка
 
 \begin{equation*}
-\sup_{B\subset B_0}\fint_B |f(x)-f_B|\dmu(x) \le \frac{2 \brac{1 + \ln (c \Lambda)}}{\ln \Lambda} \varphi^{-1}\brac{(1+c \Lambda)  \varphi(\norma{f}^{*}_\varphi)}
+\sup_{B\subset B_0}\fint_B |f(x)-f_B|\dmu(x) \leq \frac{2 \brac{1 + \ln (c \Lambda)}}{\ln \Lambda} \varphi^{-1}\brac{(1+c \Lambda)  \varphi(\|f\|^{*}_\varphi)}
 \end{equation*}
 
 \end{corollary}
 
 \textbf{Доказательство.}
-Пусть шар $B \subset B_0$, $h=f|_{B}$ -- сужение функции $f$ на шар $B$. Тогда $h \in \widehat{BMO}_\varphi(B)$, $\norma{h}^{*}_\varphi\le \norma{f}^{*}_\varphi$. Обозначим $g(x)=|h(x)-I_{B}^{\varphi}|$. Тогда
+Пусть шар $B \subset B_0$, $h=f|_{B}$ -- сужение функции $f$ на шар $B$. Тогда $h \in \widehat{BMO}_\varphi(B)$, $\norma{h}^{*}_\varphi\leq \|f\|^{*}_\varphi$. Обозначим $g(x)=|h(x)-I_{B}^{\varphi}|$. Тогда
 \begin{equation*}
-\fint_B |f(x)-f_B|\dmu(x) \le 2\fint_B |f(x)-I_{B}^{\varphi}|\dmu(x) \le 2\fint_0^{\mu(B)} g^*(t)dt
+\fint_B |f(x)-f_B|\dmu(x) \leq 2\fint_B |f(x)-I_{B}^{\varphi}|\dmu(x) \leq 2\fint_0^{\mu(B)} g^*(t)dt
 \end{equation*}
 \begin{equation}\label{eqEstimateOfBmoNorm}
-\le  \frac{2}{a}\fint_0^{\mu(B)} \ln\frac{A\mu(B)}{t}dt = \frac{2A}{a}\int_0^{1/A} \ln\frac{1}{t}dt=\frac{2}{a}\brac{\ln A +1}.
+\leq  \frac{2}{a}\fint_0^{\mu(B)} \ln\frac{A\mu(B)}{t}dt = \frac{2A}{a}\int_0^{1/A} \ln\frac{1}{t}dt=\frac{2}{a}\brac{\ln A +1}.
 \end{equation}
 Таким образом,
 \begin{equation*}
-\sup_{B\subset B_0}\fint_B |f(x)-f_B|\dmu(x) \le \frac{2}{a}\brac{\ln A +1} = \frac{2 \brac{1 + \ln (c \Lambda)}}{\ln \Lambda} \varphi^{-1}\brac{a_\varphi(1+c \Lambda)  \varphi(\norma{f}^{*}_\varphi)}< + \infty.
+\sup_{B\subset B_0}\fint_B |f(x)-f_B|\dmu(x) \leq \frac{2}{a}\brac{\ln A +1} = \frac{2 \brac{1 + \ln (c \Lambda)}}{\ln \Lambda} \varphi^{-1}\brac{a_\varphi(1+c \Lambda)  \varphi(\|f\|^{*}_\varphi)}< + \infty.
 \end{equation*}
 
 На самом деле, в следствии \ref{crBMOPhi1InBMO} от некоторых предположений можно избавиться, если не заботиться об оценке.
@@ -411,43 +411,43 @@ g^*(t) = \sup\{y>0:\ \mu\{x\in B_0:\ |f(x)-I_{B_0}^{\varphi}|>y\}>t\} \le
 
 Обозначим
 \begin{equation*}
-\mu_\varphi(f,t) \equiv \sup_{\substack{B\subset B_0\\ 0<r_B\le t}} A_{\varphi}(f,B) = \sup_{\substack{B\subset B_0\\ 0<r_B\le t}} \inf_{c\in \bbR} \varphi^{-1}\brac{\fint_B \varphi(|f(x)-c|) \dmu(x)}.
+\mu_\varphi(f,t) \equiv \sup_{\substack{B\subset B_0\\ 0<r_B\leq t}} A_{\varphi}(f,B) = \sup_{\substack{B\subset B_0\\ 0<r_B\leq t}} \inf_{c\in \mathbb{R}} \varphi^{-1}\brac{\fint_B \varphi(|f(x)-c|) \dmu(x)}.
 \end{equation*}
 
 Очевидно, что функция $\mu_\varphi(f,t)$ возрастает по $t$. В случае, если $\varphi(t)=t^p$ пишем просто $\mu_p(f,t)$. Если $p=1$, то в качестве $\mu_1(f,t)$ можно использовать функцию
 
 \begin{equation*}
-\mu_1(f,t) \equiv \sup_{\substack{B\subset B_0\\ 0<r_B\le t}} \inf_{c\in \bbR} \brac{\fint_B |f(x)-f_B| \dmu(x)}.
+\mu_1(f,t) \equiv \sup_{\substack{B\subset B_0\\ 0<r_B\leq t}} \inf_{c\in \mathbb{R}} \brac{\fint_B |f(x)-f_B| \dmu(x)}.
 \end{equation*}
 Это вытекает из очевидных неравенств
 \begin{equation*}
-\fint_B |f(x)-f_B|\dmu(x) \le 2\fint_B |f(x)-I_{B}^{\varphi}|\dmu(x)
+\fint_B |f(x)-f_B|\dmu(x) \leq 2\fint_B |f(x)-I_{B}^{\varphi}|\dmu(x)
 \end{equation*}
 \begin{equation*}
-\fint_B |f(x)-I_{B}^{\varphi}|\dmu(x) \le \fint_B |f(x)-f_B|\dmu(x)
+\fint_B |f(x)-I_{B}^{\varphi}|\dmu(x) \leq \fint_B |f(x)-f_B|\dmu(x)
 \end{equation*}
 
 
 \begin{corollary}\label{crEquivalenceOfMu}
 Если $\varphi \in \Phi_1$, $f \in \widehat{BMO}_{\varphi}(B_0)$, то \begin{equation}\label{eqEstimateOfMu1}
-\mu_1(f,t) \le
+\mu_1(f,t) \leq
 \frac{2 \brac{1 + \ln (c \Lambda)}}{\ln \Lambda} \varphi^{-1}\brac{a_\varphi(1+c \Lambda)  \varphi(\mu_\varphi(f,t))}.
 \end{equation}.
 \end{corollary}
 
-\textbf{Доказательство.} Зафиксируем $0<t\le r_{B_0}$ и пусть $B \subset B_0$, $r_B\le t$.
+\textbf{Доказательство.} Зафиксируем $0<t\leq r_{B_0}$ и пусть $B \subset B_0$, $r_B\leq t$.
 
- Пусть $h=f|_{B}$ -- сужение функции $f$ на шар $B$. Тогда $h \in \widehat{BMO}_\varphi(B)$, $\norma{h}^{*}_\varphi\le \norma{f}^{*}_\varphi$. Обозначим $g(x)=|h(x)-I_{B}^{\varphi}|$.
+ Пусть $h=f|_{B}$ -- сужение функции $f$ на шар $B$. Тогда $h \in \widehat{BMO}_\varphi(B)$, $\norma{h}^{*}_\varphi\leq \|f\|^{*}_\varphi$. Обозначим $g(x)=|h(x)-I_{B}^{\varphi}|$.
 Тогда используя \eqref{eqEstimateOfBmoNorm}
 \begin{equation*}
-\fint_B |f(x)-f_B|\dmu(x) \le
+\fint_B |f(x)-f_B|\dmu(x) \leq
 \frac{2 \brac{1 + \ln (c \Lambda)}}{\ln \Lambda} \varphi^{-1}\brac{a_\varphi(1+c \Lambda)  \varphi(\mu_\varphi(f,t))}.
 \end{equation*}
-Переходя к верхней грани по всем шарам $B \subset B_0$, $\mu(B)\le t$, получим \eqref{eqEstimateOfMu1}.
+Переходя к верхней грани по всем шарам $B \subset B_0$, $\mu(B)\leq t$, получим \eqref{eqEstimateOfMu1}.
 
 Для формулировки следующей теоремы введем понятие модуля непрерывности функции $f\in C(X)$ как
 \begin{equation*}%\label{eq}
-\omega(f,\delta)=\max \limits_{d(x,y) \le \delta} |f(x) - f(y)|, \, 0<\delta< 1.
+\omega(f,\delta)=\max \limits_{d(x,y) \leq \delta} |f(x) - f(y)|, \, 0<\delta< 1.
 \end{equation*}
 
 
@@ -460,19 +460,19 @@ g^*(t) = \sup\{y>0:\ \mu\{x\in B_0:\ |f(x)-I_{B_0}^{\varphi}|>y\}>t\} \le
 
 Тогда $f$ эквивалентна некоторой функции $g\in C(X)$ и
 \begin{equation}\label{eqEsimateOfModulusByMu}
-\omega(g,\delta)\le M \int\limits_{0}^{\delta}  \varphi^{-1} (a_\varphi(1+c\Lambda) \varphi(\mu_{\varphi}(f,t)))\,\frac{d t}{t},\quad 0<\delta< 1,
+\omega(g,\delta)\leq M \int\limits_{0}^{\delta}  \varphi^{-1} (a_\varphi(1+c\Lambda) \varphi(\mu_{\varphi}(f,t)))\,\frac{d t}{t},\quad 0<\delta< 1,
 \end{equation}
 где $M=2 (1+a_{\mu} 2^{\gamma}) \frac{2 \brac{1 + \ln (c \Lambda)}}{\ln \Lambda}$.
 \end{theorem}
 
 \textbf{Доказательство.} В силу неравенства \eqref{eqEstimateOfMu1} достаточно провести доказательство для $\mu_1(f,t)$. Рассмотрим два шара $B_1, B_2 \subset X$, таких, что $B_2 =2 B_1$. Тогда для любого $y \in B_1$ имеет место неравенство
 \begin{equation*}%\label{}
-|f_{B_1}-f_{B_2}| \le |f_{B_1}-f(y)| +|f_{B_2}-f(y)|.
+|f_{B_1}-f_{B_2}| \leq |f_{B_1}-f(y)| +|f_{B_2}-f(y)|.
 \end{equation*}
 
 Интегрируя это неравенство по шару $B_1$, получим
 \begin{equation}\label{eqEstimateOfTwoMeansInPDegree}
-|f_{B_1}-f_{B_2}| \le \fint\limits_{B_1} |f -  f_{B_1}|
+|f_{B_1}-f_{B_2}| \leq \fint\limits_{B_1} |f -  f_{B_1}|
 \dmu +\fint\limits_{B_1} |f - f_{B_2}|
 \dmu .
 \end{equation}
@@ -480,14 +480,14 @@ g^*(t) = \sup\{y>0:\ \mu\{x\in B_0:\ |f(x)-I_{B_0}^{\varphi}|>y\}>t\} \le
 Так как  $B_1 \subset B_2$, то из \eqref{eqDegreeDoublingCondition} следует
 
 \begin{equation}\label{eqEstimateOfMeansIntegrals}
-\fint\limits_{B_1} |f - f_{B_2} | \dmu \le \frac{\mu(B_2)}{\mu(B_1)}\bigg(\fint\limits_{B_2} |f - f_{B_2}| \dmu\bigg) \le \beta \fint\limits_{B_2} |f - f_{B_2}| \dmu,
+\fint\limits_{B_1} |f - f_{B_2} | \dmu \leq \frac{\mu(B_2)}{\mu(B_1)}\bigg(\fint\limits_{B_2} |f - f_{B_2}| \dmu\bigg) \leq \beta \fint\limits_{B_2} |f - f_{B_2}| \dmu,
 \end{equation}
 где $\beta=a_{\mu} 2^{\gamma}$.
 
 Из (\ref{eqEstimateOfTwoMeansInPDegree}) и (\ref{eqEstimateOfMeansIntegrals}) очевидным образом следует, что
 
 \begin{equation*}%\label{ineqMu4}
-|f_{B_1}-f_{B_2}| \le \fint\limits_{B_1} |f - f_{B_1}|
+|f_{B_1}-f_{B_2}| \leq \fint\limits_{B_1} |f - f_{B_1}|
 \dmu + \beta \fint\limits_{B_2} |f - f_{B_2}|
 \dmu
 \end{equation*}
@@ -495,7 +495,7 @@ g^*(t) = \sup\{y>0:\ \mu\{x\in B_0:\ |f(x)-I_{B_0}^{\varphi}|>y\}>t\} \le
 Таким образом, в силу возрастания функции $\mu_{1}(f,t)$ и предыдущего неравенства
 
 \begin{equation}\label{eqEstimateOfTwoMeans}
-|f_{B_1}-f_{B_2}| \le \mu_{1} (f,r_{B_1}) +  \beta\mu_{1}(f,r_{B_2}) \le (1+\beta)\mu_{1}(f,r_{B_2}).
+|f_{B_1}-f_{B_2}| \leq \mu_{1} (f,r_{B_1}) +  \beta\mu_{1}(f,r_{B_2}) \leq (1+\beta)\mu_{1}(f,r_{B_2}).
 \end{equation}
 
 Рассмотрим любую точку Лебега $x\in X$ и $r>0$. Из теоремы Лебега о дифференцировании следует, что $f_{B_k}$ сходятся к $f(x)$ при $k\to\infty$ почти всюду. Это означает, что
@@ -505,26 +505,26 @@ f(x)=\lim_{k\to\infty}f_{B_k}=f_{B(x,r)}+\sum_{k=0}^\infty[f_{B_{k+1}}-f_{B_k}],
 где $B_k=B(x, 2^{-k}r)$. Тогда из (\ref{eqEstimateOfTwoMeans}) и (\ref{eqMainConditionOnMu}) вытекает
 \begin{equation*}
 |f(x) - f_{B(x,r)}|=
-\abs{\sum_{k=0}^\infty[f_{B_{k+1}}-f_{B_k}]} \le
+\abs{\sum_{k=0}^\infty[f_{B_{k+1}}-f_{B_k}]} \leq
 \end{equation*}
 \begin{equation*}
-\le (1+\beta) \sum_{k=0}^\infty \mu_{1}(f,r_{B_k}) \le (1+\beta)  \sum_{k=0}^\infty \int\limits_{r_{B_{k+1}}}^{r_{B_k}}  \mu_{1}(f,t) \,\frac{d t}{t}  \le (1+\beta)  \int\limits_{0}^{r}  \mu_{1}(f,t)\,\frac{d t}{t}<\infty.
+\leq (1+\beta) \sum_{k=0}^\infty \mu_{1}(f,r_{B_k}) \leq (1+\beta)  \sum_{k=0}^\infty \int\limits_{r_{B_{k+1}}}^{r_{B_k}}  \mu_{1}(f,t) \,\frac{d t}{t}  \leq (1+\beta)  \int\limits_{0}^{r}  \mu_{1}(f,t)\,\frac{d t}{t}<\infty.
 \end{equation*}
 
 Из этого следует, что для любых двух точек Лебега $x,y \in X$  и $r=d(x,y)$
 \begin{equation*}
-|f(x) - f(y)|\le |f_{B(x, r)}-f(x)| + |f_{B(x, r)}-f_{B(y, 2 r)}| +|f_{B(y, 2 r)}-f(y)| \le
+|f(x) - f(y)|\leq |f_{B(x, r)}-f(x)| + |f_{B(x, r)}-f_{B(y, 2 r)}| +|f_{B(y, 2 r)}-f(y)| \leq
 \end{equation*}
 
 \begin{equation*}
-\le (1+\beta)\brac{\int \limits_{0}^{r} \mu_{1}(f,t)\,\frac{d t}{t} + \mu_{1}(f,2 r) +\int\limits_{0}^{2 r} \mu_{1}(f,t)\,\frac{d t}{t}}\le
+\leq (1+\beta)\brac{\int \limits_{0}^{r} \mu_{1}(f,t)\,\frac{d t}{t} + \mu_{1}(f,2 r) +\int\limits_{0}^{2 r} \mu_{1}(f,t)\,\frac{d t}{t}}\leq
 \end{equation*}
 
 \begin{equation*}
-\le (1+\beta)\brac{\int\limits_{0}^{r} \mu_{1}(f,t)\,\frac{d t}{t} + \int\limits_{r}^{2 r} \mu_{1}(f,t)\,\frac{d t}{t} +\int\limits_{0}^{2 r} \mu_{1}(f,t)\,\frac{d t}{t}} \le
+\leq (1+\beta)\brac{\int\limits_{0}^{r} \mu_{1}(f,t)\,\frac{d t}{t} + \int\limits_{r}^{2 r} \mu_{1}(f,t)\,\frac{d t}{t} +\int\limits_{0}^{2 r} \mu_{1}(f,t)\,\frac{d t}{t}} \leq
 \end{equation*}
 \begin{equation*}
- \le 2 (1+\beta) \int\limits_{0}^{2 r} \mu_{1}(f,t)\,\frac{d t}{t} \le M \int\limits_{0}^{2 r}  \varphi^{-1} (a_\varphi(1+c\Lambda) \varphi(\mu_{\varphi}(f,t)))\,\frac{d t}{t} < \infty.
+ \leq 2 (1+\beta) \int\limits_{0}^{2 r} \mu_{1}(f,t)\,\frac{d t}{t} \leq M \int\limits_{0}^{2 r}  \varphi^{-1} (a_\varphi(1+c\Lambda) \varphi(\mu_{\varphi}(f,t)))\,\frac{d t}{t} < \infty.
 \end{equation*}
 
 Так как множество точек Лебега для $f$ плотно в $X$, то $f$ можно единственным образом продолжить с множества точек Лебега на все пространство $X$ до функции $g$, удовлетворяющей неравенству
@@ -533,7 +533,7 @@ f(x)=\lim_{k\to\infty}f_{B_k}=f_{B(x,r)}+\sum_{k=0}^\infty[f_{B_{k+1}}-f_{B_k}],
 \end{equation*}
 И теорема доказана.
 
-Сравним теорему \ref{thEsimateOfModulusByMu} с предшествующими результатами. В частном случае $t^p$, $p=1$, $X=Q$ --- куб в $\bbR^n$ ее утверждение было получено другим, значительно более сложным способом в работе С.~Спанне \cite{Spanne}. Теорема \ref{thEsimateOfModulusByMu} дает усиление этого результата даже для функций $t^p$, $0<p\leq 1$,  так как условие (\ref{eqEsimateOfModulusByMu}) тем сильнее, чем меньше $p$.
+Сравним теорему \ref{thEsimateOfModulusByMu} с предшествующими результатами. В частном случае $t^p$, $p=1$, $X=Q$ --- куб в $\mathbb{R}^n$ ее утверждение было получено другим, значительно более сложным способом в работе С.~Спанне \cite{Spanne}. Теорема \ref{thEsimateOfModulusByMu} дает усиление этого результата даже для функций $t^p$, $0<p\leq 1$,  так как условие (\ref{eqEsimateOfModulusByMu}) тем сильнее, чем меньше $p$.
 
 
 
@@ -550,16 +550,16 @@ f(x)=\lim_{k\to\infty}f_{B_k}=f_{B(x,r)}+\sum_{k=0}^\infty[f_{B_{k+1}}-f_{B_k}],
 \end{equation*}
 %В случае $\eta(t)=t^{\alpha}$, $\alpha>0$, будем писать $H^{\alpha}$ вместо $H^{\eta}$.
 
-%Обычно классы $H^{\eta}$ рассматриваются при условии $\eta\in\Omega(1)$. Это связано с тем, что если, например, $X=[0,1]^n$ и $\eta\in\Omega(\alpha)$ при некотором $\alpha>1$ (или, более общо, $\eta(t)=o(t)$ при $t\to+0$), то класс $H^{\eta}(X)$ состоит только из тождественных постоянных. В случае же общих метрических пространств $X$ возможны ситуации, когда классы $H^{\alpha}(X)$ нетривиальны при некоторых $\alpha>1$. Например, на кривой Коха это так при $0<\alpha\le\frac{\ln 4}{\ln 3}$ \cite{Jonsson}. Этим объясняется то, что мы рассматриваем классы $H^{\eta}(X)$ с $\eta\in\Omega(\infty)$.
+%Обычно классы $H^{\eta}$ рассматриваются при условии $\eta\in\Omega(1)$. Это связано с тем, что если, например, $X=[0,1]^n$ и $\eta\in\Omega(\alpha)$ при некотором $\alpha>1$ (или, более общо, $\eta(t)=o(t)$ при $t\to+0$), то класс $H^{\eta}(X)$ состоит только из тождественных постоянных. В случае же общих метрических пространств $X$ возможны ситуации, когда классы $H^{\alpha}(X)$ нетривиальны при некоторых $\alpha>1$. Например, на кривой Коха это так при $0<\alpha\leq\frac{\ln 4}{\ln 3}$ \cite{Jonsson}. Этим объясняется то, что мы рассматриваем классы $H^{\eta}(X)$ с $\eta\in\Omega(\infty)$.
 
 
-В \cite{IvanishkoKrotovPorabkovich12} доказано, что если $f\in L^1_{\loc}(X)$, $\eta\in\Omega(\infty)$, $p> 0$, и для некоторого $R_0>0$ выполнено условие
+В \cite{IvanishkoKrotovPorabkovich12} доказано, что если $f\in L^1_{\mathrm{loc}}(X)$, $\eta\in\Omega(\infty)$, $p> 0$, и для некоторого $R_0>0$ выполнено условие
 \begin{equation}\label{eqCampanatoCondition}
 \sup_{B:r_B<R_0}\frac{1}{\eta(r_B)}\brac{\fint_{B}|f-f_B|^p\dmu}^{1/p}<+\infty,
   \end{equation}
-то $f$ эквивалентна некоторой функции класса $H^{\eta}(X)$. В частном случае $p=1$, $\eta(t)=t^{\alpha}$ и $X\subset\bbR^n$ этот результат --- классическая теорема К.Кампанато--Н.Мейерса \cite{Campanato}, \cite{Meyers} (см. также более поздний результат из \cite{Gorka}).
+то $f$ эквивалентна некоторой функции класса $H^{\eta}(X)$. В частном случае $p=1$, $\eta(t)=t^{\alpha}$ и $X\subset\mathbb{R}^n$ этот результат --- классическая теорема К.Кампанато--Н.Мейерса \cite{Campanato}, \cite{Meyers} (см. также более поздний результат из \cite{Gorka}).
 
-Этот результат является простым следствием из теоремы \ref{thEsimateOfModulusByMu}, причем без дополнительного условия $f\in L^1_{\loc}(X)$. Действительно, в силу условия (\ref{eqCampanatoCondition}) $\mu_p(f,t) \lesssim \eta(t)$. Интегрируя это неравенство по $t$ и используя (\ref{eqEsimateOfModulusByMu}), получим
+Этот результат является простым следствием из теоремы \ref{thEsimateOfModulusByMu}, причем без дополнительного условия $f\in L^1_{\mathrm{loc}}(X)$. Действительно, в силу условия (\ref{eqCampanatoCondition}) $\mu_p(f,t) \lesssim \eta(t)$. Интегрируя это неравенство по $t$ и используя (\ref{eqEsimateOfModulusByMu}), получим
 \begin{equation*}
 \omega(f,\delta)\lesssim \int\limits_{0}^{\delta} \mu_p(f,t)\,\frac{d t}{t} \lesssim \int\limits_{0}^{\delta} \eta(t)\,\frac{d t}{t},\quad 0<\delta< 1.
 \end{equation*}
@@ -653,10 +653,10 @@ t_n=\inf\fbrac{x:(\varphi(t)>n+1,t>x),(x-t_{n-1}>2 (t_{n-1}-t_{n-2})) }
 \varphi(x)=\sum \limits_{n=1}^{\infty}\brac{\frac{x-t_{n-1}}{t_n-t_{n-1}}+n-1}\chi_{[{t_{n-1},t_n]}}(x)
 \end{equation*}
 
-Тогда, $\varphi(x)\le \varphi(x)+1$ и $\varphi$ удовлетворяет условиям теоремы \ref{thJohnNirenberg}. Отсюда, учитывая что
+Тогда, $\varphi(x)\leq \varphi(x)+1$ и $\varphi$ удовлетворяет условиям теоремы \ref{thJohnNirenberg}. Отсюда, учитывая что
 
 \begin{equation*}
-\sup_{B\subset B_0}\inf_{c}\brac{\fint_B \varphi(|f(x)-c|) \dmu(x)} \le  \sup_{B\subset B_0}\inf_{c}\brac{\fint_B \varphi(|f(x)-c|) \dmu(x)} +1<\infty,
+\sup_{B\subset B_0}\inf_{c}\brac{\fint_B \varphi(|f(x)-c|) \dmu(x)} \leq  \sup_{B\subset B_0}\inf_{c}\brac{\fint_B \varphi(|f(x)-c|) \dmu(x)} +1<\infty,
 \end{equation*}
 получаем, что $f\in BMO(B_0)$.
 
@@ -670,16 +670,16 @@ t_n=\inf\fbrac{x:(\varphi(t)>n+1,t>x),(x-t_{n-1}>2 (t_{n-1}-t_{n-2})) }
 \end{lemma}
 \textbf{Доказательство}. Рассмотрим разность
 \begin{equation*}
-\varphi(|I_{B_k}-I_{B_{k+1}}|)\le \varphi(|f(x)-I_{B_k}|) + \varphi(|f(x)-I_{B_{k+1}}|)
+\varphi(|I_{B_k}-I_{B_{k+1}}|)\leq \varphi(|f(x)-I_{B_k}|) + \varphi(|f(x)-I_{B_{k+1}}|)
 \end{equation*}
 
 Проинтегрировав ее по $B_{k+1}$, получим
 
 \begin{equation*}
-\varphi(|I_{B_k}-I_{B_{k+1}}|)\le \fint_{B_{k+1}} \varphi(|f(x)-I_{B_k}|) \dmu(x) + \fint_{B_{k+1}} \varphi(|f(x)-I_{B_{k+1}}|) \dmu(x) \le
+\varphi(|I_{B_k}-I_{B_{k+1}}|)\leq \fint_{B_{k+1}} \varphi(|f(x)-I_{B_k}|) \dmu(x) + \fint_{B_{k+1}} \varphi(|f(x)-I_{B_{k+1}}|) \dmu(x) \leq
 \end{equation*}
 \begin{equation*}
-\le K \fint_{B_k} \varphi(|f(x)-I_{B_k}|) \dmu(x) + \fint_{B_{k+1}} \varphi(|f(x)-I_{B_{k+1}}|) \dmu(x) \le \eta(r_{B_{k}}) \caC_{\eta}^{\varphi}(f) + \eta(r_{B_{k+1}}) \caC_{\eta}^{\varphi}(f),
+\leq K \fint_{B_k} \varphi(|f(x)-I_{B_k}|) \dmu(x) + \fint_{B_{k+1}} \varphi(|f(x)-I_{B_{k+1}}|) \dmu(x) \leq \eta(r_{B_{k}}) \caC_{\eta}^{\varphi}(f) + \eta(r_{B_{k+1}}) \caC_{\eta}^{\varphi}(f),
 \end{equation*}
 где \begin{equation*}
 \caC_{\eta}^{\varphi}(f)=\sup_{B\subset B_0} \frac{1}{\eta(r_B)} \fint_{B} \varphi(|f(x)-I_{B}|)

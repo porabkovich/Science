@@ -130,38 +130,95 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textbf{1. Обозначения.} Пусть $(X,d,\mu)$ --- метрическое пространство с $\sigma$-конечной борелевской мерой $\mu$ и метрикой $d$. Для $x\in X$ и $r>0$
-$$
-B(x,r)=\{y\in X:d(x,y)<r\}
-$$
-обозначает открытый шар с центром $x$ радиуса $r$. При этом мы предполагаем, что мера любого шара положительна и конечна.
+\textbf{1. Обозначения.} Пусть $(X,d,\mu)$ --- хаусдорфово пространство с регулярной
+борелевской мерой $\mu$ и квазиметрикой $d$. Последнее означает, что
+функция $d:X \times X \to [0,\infty )$ удовлетворяет условиям
+\begin{equation*}
+d(x,y)=0\Longleftrightarrow x=y,\quad d(x,y)=d(y,x),
+\end{equation*}
 
-Говорят, что мера $\mu$ удовлетворяет условию удвоения, если существует такое число $a_{\mu}>0$, что
-$$\label{eqDoublingCondition}
-\mu(B(x,2r))\le a_{\mu}\mu(B(x,r)),\quad x\in X,\quad r>0.
-\eqno(1)
-$$
-Это условие предполагается выполненным на протяжении всей работы. В таком случае тройка $(X,d,\mu)$ называется пространством
-однородного типа [1]. Основные сведения о таких пространствах можно найти в [2].
+и существует такая постоянная $a_d\ge 1$, что
+\begin{equation}\label{eqQuasiTtiangleInequality}
+d(x,y)\le a_d[d(x,z)+d(z,y)]
+\end{equation}
+для любых $x,y,z\in X$ (конечно, при $a_d=1$ это --- метрика). При этом мы предполагаем, что семейство открытых шаров
+\begin{equation*}
+B=B(x,r)=\{y\in X:d(x,y)<r\}
+\end{equation*}
+образует базу окрестностей топологии $X$ и что мера любого шара положительна и конечна. Также для произвольной положительной постоянной $c$ будем обозначать  $cB=c B(x,r) = B(x,c r).$
 
-Условию (1) можно придать количественный вид --- легко видеть, что  при условии (1) для некоторого $\gamma>0$
-выполнено неравенство
-$$
-\mu( B(x,R))\leq c \bigg(\frac{R}{r}\bigg)^{\gamma}\mu( B(x,r)),\quad x\in X,\;0<r\leq R \eqno(2)
-$$
-(можно взять $\gamma=\log_2a_{\mu}$, $c=a_{\mu}$).
+Говорят, что мера $\mu$ удовлетворяет условию удвоения, если
+существует такая постоянная $a_{\mu}>0$, что
+\begin{equation}\label{eqDoublingCondition}
+\mu B(x,2t)\le a_{\mu}\mu B(x,t),\quad x\in X,\quad t>0.
+\end{equation}
 
-На протяжении всей работы будет использоваться обозначение
-$$%\label{eqMeanValue}
-f_A=\fint \limits_Af\,d\mu=\frac{1}{\mu(A)}\int\limits_{A}f\,d\mu
-$$
-для среднего значения функции $f\in L^1(A)$ по измеримому множеству $A\subset X$ конечной положительной меры. Для шара $B\subset X$ обозначаем $r_B$ и $x_B$ соответственно его радиус и центр.
+Если выполнено условие \eqref{eqDoublingCondition}, то тройка $(X,d,\mu)$ называется пространством однородного типа. Именно такие пространства мы будем рассматривать в этой работе. Основные сведения о них можно найти в [2].
 
-Будем говорить, что функция $f:X\to\mathbb{R}$ принадлежит классу Гельдера $H^{\alpha}(X)$, если для некоторого $r_0>0$
-$$
-\sup\left\{\frac{|f(x)-f(y)|}{d(x,y)^{\alpha}}:x,y\in X,\;0<d(x,y)<r_0\;\right\}<+\infty.
-$$
+Из неравенства \eqref{eqDoublingCondition} следует, что
+\begin{equation}\label{eqDegreeDoublingCondition}
+\mu (B(x,s))\leq a_{\mu}(\frac{s}{t})^{\gamma}\mu (B(x,t)),\quad x\in X,\;0<t\leq s,
+\end{equation}
+где $\gamma=\log_2a_{\mu}$. Это неравенство получается простой итерацией условия (\ref{eqDoublingCondition}).
 
+На протяжении всей работы будем использовать следующие обозначения
+\begin{equation*}%\label{eq}
+f_E=\fint \limits_Ef\,d\mu=\frac{1}{\mu(E)}\int\limits_{E}f\,d\mu
+\end{equation*}
+для среднего значения функции $f\in L^1_{\mathrm{loc}}(X)$ по любому измеримому множеству $E\subset X$ положительной конечной меры. Для шара $B\subset X$ обозначаем $r_B$ и $x_B$ соответственно его радиус и центр.
+
+Напомним, что $x\in X$ называется точкой Лебега для функции $f\in L^1_{\mathrm{loc}}(X)$, если
+\begin{equation}\label{eqLebesguePoint}
+f(x)=\lim_{r\to+0}\fint_{B(x,r)}f\,d\mu.
+\end{equation}
+
+Если условие удвоения (\ref{eqDoublingCondition}) выполнено, то для
+каждой функции $f\in L^1_{\mathrm{loc}}(X)$ соотношение
+(\ref{eqLebesguePoint}) выполнено $\mu$-почти всюду. Этот важный
+факт (известный как теорема Лебега о дифференцировании интегралов)
+можно найти в [2, теорема 1.8]. 
+
+Пусть $\Phi$ --- класс непрерывных положительных строго возрастающих функций $\varphi:\mathbb{R}^{+}\to \mathbb{R}^{+}$ со свойствами $\varphi(+0)=0$,  $\lim_{t\to \infty}\varphi(t)=+\infty$. $\Phi_1$ --- класс функций $\varphi \in \Phi$ со свойством: существует такая постоянная $a_\varphi$, что
+  \begin{equation*}
+\varphi(t+s)\le a_\varphi(\varphi(t)+\varphi(s)),\quad t,s\in\mathbb{R}^{+}.
+\end{equation*}
+
+Для функции $\varphi \in \Phi$ и шара $B\subset X$ введем два вида средних осцилляций
+\begin{equation*}%\label{eq}
+A_{\varphi}(f,B) = \inf_{c} \varphi^{-1}(\fint_B \varphi(|f(x)-c|) d \mu(x)).
+\end{equation*}
+\begin{equation*}
+\mathcal{S}_{\varphi}(f, B) = \varphi^{-1}(\fint_B \varphi(|f(x)-f_B|)\,d\mu(x)),
+\end{equation*}
+
+В случае, когда $\varphi(t)=t^{p}$, $p>0$ будем писать $A_{p}(f,B)$ и $\mathcal{S}_p(f, B)$. При $p=1$ пишем $\mathcal{S}(f,B)$ и $A(f,B)$ вместо $\mathcal{S}_1(f,B)$ и $A_1(f,B)$ соответственно.
+
+Пусть $B_0\subset X$ --- фиксированный шар. В работе \cite{JohnNirenberg61} в случае $X=\mathbb{R}^n$  было введено пространство функций
+\begin{equation*}%\label{eq}
+BMO(B_0)=\{f\in L^1_{\mathrm{loc}}(B_0):\|f\|^{*} \equiv \sup_{B\subset B_0} \mathcal{S}(f,B) <+\infty\}
+\end{equation*}x
+и было доказано следующее утверждение: \textit{существуют постоянные $A$ и $a$, зависящие только от размерности пространства $n$, что для любого шара $B_0 \subset \mathbb{R}^n$ и $f \in BMO(B_0)$}
+\begin{equation}\label{eqJohnNirenbergInequality}
+\mu\{x \in B_0:\ |f(x)-f_{B_0}|>\lambda\} \leq A \mu(B_0) \exp(-\frac{a\lambda}{\|f\|^{*}}), \quad \lambda>0.
+\end{equation}
+
+Введем далее классы
+\begin{equation*}%\label{eq}
+BMO_{\varphi}(B_0)=\{f\in L^1_{\mathrm{loc}}(B_0):{\|f\|^{*}_{\varphi}} \equiv \sup_{B\subset B_0} \mathcal{S}_{\varphi}(f,B) <+\infty\}.
+\end{equation*}
+В случае $\varphi(t)=t^p$, $p>0$ будем писать просто $BMO_p(B_0)$. В силу неравенства Гельдера справедливы вложения $BMO_q(B_0)\subset BMO_p(B_0)$ при $0\leq p<q<\infty$. Кроме того, из неравенства (\ref{eqJohnNirenbergInequality}) вытекает, что на самом деле $BMO_p(B_0)=BMO(B_0)$ при $p\geq1$ и полунорма ${\|f\|^{*}_p}$
+эквивалентна полунорме $\|f\|^{*}$.
+
+Возникает естественный вопрос, справедливы ли равенства $BMO_{\varphi}(B_0)=BMO(B_0)$. Ниже будет показано, что это действительно так.
+
+В определение пространства $BMO_{\varphi}(B_0)$ заранее требуется суммируемость функций $f$ из этого пространства. Это требование выглядит искусственным, поэтому мы рассмотрим более широкий класс
+\begin{equation*}%\label{eq}
+\widehat{BMO}_{\varphi}(B_0)=\{f:{\|f\|^{*}_{\varphi}} \equiv \sup_{B\subset B_0} A_{\varphi}(f,B) <+\infty\}
+\end{equation*}
+и для функций этого класса докажем равенство $\widehat{BMO}_{\varphi}(B_0)=BMO(B_0)$. Для этого нам понадобится аналог неравенства (\ref{eqJohnNirenbergInequality}) для средних $A_{\varphi}(f,B)$. В качестве следствий из результатов этой работы мы приведем обобщения теорем Спанне [5] и Кампанато--Мейерса [6,7].
+
+Результаты, подобные нашим, были получены в работе [9], правда с несколько иными условиями на функцию $\varphi$.
+Кроме того, отметим недавнюю работу [10], в которой также рассматривается задача нахождения возможно более слабых условий, при которых функция принадлежит классу $BMO$. Методы этой работы не связаны с неравенством Джона--Ниренберга.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -401,26 +458,27 @@ $$
 \end{center}
 
 {\small
-\lit{1}{Coifman R.R., Weiss G.}{Analyse harmonique non-commutative sur certain espaces homogen\'es. New York--Berlin--Heidelberg: Springer--Verlag, 1971. Lecture Notes in Math. V. 242.}
+\lit{1}{John F., Nirenberg L.}{On functions of bounded mean oscillation //Comm. Pure Appl. Math. 1961. V. 14., \No 2 P. 415-426.}
 \lit{2}{Heinonen J.}{Lectures on analysis on metric spaces. New York--Berlin--Heidelberg: Springer-Verlag, 2001.}
-\lit{3}{Campanato C.}{Proprieta di holderianita di alcune classi di funzioni. //~Ann. Sc. Norm. Super. Pisa Cl. Sci. 1963. V. 17, \No
-1-2. P. 175--188}
-\lit{4}{Гилбарг Д., Трудингер Н.}{Эллиптические дифференциальные уравнения с частными производными второго порядка. М.: Наука, 1989.}
-\lit{5}{Giaquinta M.}{Multiple integrals in the calculus of variations and nonlinear elliptic systems. Princeton: Princeton University Press, 1983.}
-\lit{6}{Meyers N..J.}{Mean oscillation over cubes and H\"older continuity. //~Proc. Amer. Math. Soc. 1964. V. 15, \No 5. P.717-–721.}
-\lit{7}{Gorka P.}{Campanato theorem on metric measure spaces. // Ann. Acad. Sci. Fenn. 2009. V. 34. P. 523--528.}
-\lit{8}{Иванишко И.А., Кротов В.Г.}{Оценки максимальных функций Кальдерона--Коляды на пространствах однородного типа. // Труды Института математики НАН Беларуси. 2004. Т. 12, \No 1. С. 64--67.}
-\lit{9}{Jonsson A.}{Haar wavelets of higher order on fractals and regularity of functions. // J. Math. Anal. Appl. 2004. V. 290, \No 1. P. 86–-104}
+\lit{3}{Aimar H.}{Singular integrals and approximate identities on spaces of homogeneous type // TAMS. 1985. Vol. 292. P. 135-153.}
+\lit{4}{Иванишко~И.А., Кротов~ В.Г., Порабкович А.И.}{Обобщение теоремы Кампанато-–Мейерса // Труды Института математики НАН Беларуси. 2012. Т. 20, \No 2. C. 30--35.}
+\lit{5}{Spanne S.}{Some function spaces defined using the mean oscillation over cubes // Ann. Scuola norm. super. Pisa. 1965. V.~19, \No~4. P.~593--608.}
+\lit{6}{Campanato C.}{Proprieta di holderianita di alcune classi di funzioni. // ~Ann. Sc. Norm. Super. Pisa Cl. Sci. 1963. V. 17, \No 1-2. P. 175--188}
+\lit{7}{Meyers N. J.}{Mean oscillation over cubes and H\"older continuity. // ~Proc. Amer. Math. Soc. 1964. V. 15, \No 5. P.717-–721.}
+\lit{8}{Gorka P.}{Campanato theorem on metric measure spaces. // Ann. Acad. Sci. Fenn. 2009. V. 34. P. 523--528.}
+\lit{9}{R. Long, L. Yang.}{BMO functions in spaces of homogeneous type. // Sci. Sinica Ser. 1984. V 27. \No 7. P. 695–708.}
+\lit{10}{A. A. Logunov, L. Slavin, D. M. Stolyarov, V. Vasyunin, P. B. Zatitskiy.}{Weak integral conditions for BMO. // 2013. arXiv:1309.6780v1.}
 }
 
+  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \bigskip\bigskip
 
-\centerline{\textbf{I.~A.~Ivanishko, V.~G.~Krotov, A.~I.~Porabkovich}}
-\centerline{\textbf{A generalization of Campanato--Meyers' theorem}}
+\centerline{\textbf{A.~I.~Porabkovich, R.~V.~Shanin}}
+\centerline{\textbf{A generalization of John--Nirenberg' inequailty}}
 \bigskip
 
 \centerline{\textbf{Summary}}
