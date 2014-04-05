@@ -176,7 +176,7 @@ f(x)=\lim_{r\to+0}\fint_{B(x,r)}f\,d\mu.
 каждой функции $f\in L^1_{\mathrm{loc}}(X)$ соотношение
 (\ref{eqLebesguePoint}) выполнено $\mu$-почти всюду. Этот важный
 факт (известный как теорема Лебега о дифференцировании интегралов)
-можно найти в [2, теорема 1.8]. 
+можно найти в [2, теорема 1.8].
 
 Пусть $\Phi$ --- класс непрерывных положительных строго возрастающих функций $\varphi:\mathbb{R}^{+}\to \mathbb{R}^{+}$ со свойствами $\varphi(+0)=0$,  $\lim_{t\to \infty}\varphi(t)=+\infty$. $\Phi_1$ --- класс функций $\varphi \in \Phi$ со свойством: существует такая постоянная $a_\varphi$, что
   \begin{equation*}
@@ -223,67 +223,64 @@ BMO_{\varphi}(B_0)=\{f\in L^1_{\mathrm{loc}}(B_0):{\|f\|^{*}_{\varphi}} \equiv \
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textbf{2. Теорема Кампанато--Мейерса.} В работе [3] К.Кампанато доказал следующий критерий принадлежности функции классу Гельдера на евклидовом пространстве в терминах поведения ее интегральных средних. Этот результат играет важную роль при изучении свойств регулярности решений эллиптических уравнений с частными производными (см., например, [4, c. 206], [5, глава 3]).
+\textbf{2. Вспомогательные утверждения.}
 
-\textbf{Теорема 1 (C.Campanato, [3]).} \textit{Пусть $Y\subset\mathbb{R}^n$ --- ограниченная область со свойством:
-существует такое число $a_{Y}>0$, что для всех $y\in Y$ и $0<r\le 1$ выполнено неравенство}
+\textbf{Лемма 1.} \label{lmExistanceOfConstant}
+\textit{
+Пусть $\varphi\in \Phi$ и $f$ --- измеримая функция, для которой $\varphi \circ f \in L(X)$. Тогда для любого шара $B\subset X$ существует такое число $I_B^{\varphi} \in \mathbb{R}$, что}
+\begin{equation*}
+A_{\varphi}(f,B) = \varphi^{-1}(\fint_B \varphi(|f(x)-I_B^{\varphi}|) d \mu(x)).
+\end{equation*}
 
-$$
-\mu(B(y,r)\cap Y)\ge a_{Y} r^{n}.
-\eqno(3)
-$$
 
-\textit{Если $p\ge 1$, $0<\alpha\le 1$, $f\in L^{1}_{{\rm loc}}(Y)$ и
-$$
-\sup_{B: x_B\in Y,\;r_B<1}r_B^{-\alpha}\left(\fint_{B\cap Y}|f-f_{B\cap Y}|^p\,d\mu\right)^{1/p}<+\infty,
-\eqno(4)_p
-$$
-то $f$ эквивалентна функции из класса Гельдера $H^{\alpha}(Y)$}.
+\textbf{Доказательство}. Если $\varphi$ --- непрерывна, то функция
+\begin{equation*}
+g(c)=(\fint_B \varphi(|f(x)-c|) \,d\mu(x)),\quad c\in \mathbb{R}.
+\end{equation*}
+непрерывна на $\mathbb{R}$ и $\lim_{c \to \infty}g(c)=+\infty$. Поэтому вне некоторого отрезка $[-c_0, c_0]$ ее значения больше, чем $2\inf_c g(c)$. По теореме Вейерштрасса на этом отрезке функция $g$ принимает свое минимальное значение.
 
-В теореме 1 $\mu$ --- мера Лебега на $\mathbb{R}^n$.
+Стоит заметить, что постоянная $I_B^{\varphi}$ также зависит и от $f$.
 
-Очевидно, что функция из класса $H^{\alpha}(Y)$ удовлетворяет условию (4)${}_p$. Поэтому теорема 1 на самом деле дает характеризацию классов Гельдера.
+В дальнейшем нам понадобится следующее известное утверждение (см., например, [3,лемма 2.7]), дающее разложение Кальдерона--Зигмунда для пространств однородного типа.
 
-Несколько позже утверждение, подобное теореме 1, независимо установил также Н.Мейерс [6]. Отличия в формулировке у Мейерса такие:  рассматривались функции на единичном кубе в $\mathbb{R}^n$ и вместо шкалы классов $H^{\alpha}$ --- более общая шкала $H^{\omega}$ (определение см. ниже).
+\textbf{Лемма 2.}\label{lmCalderonZygmundDecomposition}
+\textit{Пусть заданы неотрицательная функция $f \in L^1(X)$ и $\alpha > f_X$ $(f_X=0$, если $\mu(X)=\infty$). Тогда существует не более чем счетный набор непересекающихся шаров $\{B_j=B(r_j,x_j)\}$, $j \geq 1$, со свойствами}
 
-Недавно в работе [7] теорема 1 была перенесена на некоторый класс общих метрических пространств с мерой.
+\textit{ 1) если $\mathcal{B}_j=C B_j$, то}
+\begin{equation*}
+\frac{1}{c} \fint_{B_j} f\,d\mu\leq \fint_{\mathcal{B}_j} f\,d\mu \leq \alpha < \fint_{B_j} f\,d\mu, \quad j\geq 1;
+\end{equation*}
 
-\textbf{Теорема 2 (P.Gorka, [7]).} \textit{Пусть $(X,d,\mu)$ --- метрическое пространство с мерой, удовлетворяющей условию удвоения (1) и условию непрерывности}
+\textit{2) $f_B \leq \alpha$ для всех шаров $B$ с центрами в точках $x \in X \setminus\bigcup_j \mathcal{B}_j$ и, в частности, $f(x)\leq \alpha$ для почти всех $x \in X \setminus \bigcup_j \mathcal{B}_j$.}
 
-$$
-\lim_{y\to x}\mu([B(x,r)\setminus B(y,r)]\cup[B(y,r)\setminus B(x,r)])=0\text{ для любых }x\in X,\;r>0.
-$$
+\textit{Здесь $C\geq 1$ --- некоторая постоянная, зависящая только от $a_d$ из неравенства (\ref{eqQuasiTtiangleInequality}) (можно взять $C=6a_d^4$) и $c=a_{\mu}C^{\gamma}$.}
 
-\textit{Пусть $Y \subset X$ --- открытое предкомпактное множество со свойством: существует такое $a_Y>0$, что для всех $y\in Y$ и $0<r<1$ выполнено неравенство}
-$$
-\mu(B(y,r)\cap Y)\ge a_Y\mu(B(y,r)).
-\eqno(5)
-$$
+По сравнению с оригинальной леммой 2.7 из [3] в нашей формулировке добавлено левое неравенство в утверждении 1) и неравенство $f(x)\leq \alpha$ в утверждении 2). Левое неравенство в утверждении 1) очевидным образом вытекает из условия удвоения \eqref{eqDegreeDoublingCondition}
 
-\textit{Если $p\ge 1$, $0<\alpha\le 1$, то $f\in L^p(Y)$ эквивалентна функции из класса $H^{\alpha}(Y)$ тогда и только тогда, когда выполнено условие (4)${}_p$.}
+\begin{equation*}
+ \fint_{B_j} f\,d\mu\leq \frac{\mu(\mathcal{B}_j)}{\mu(B_j)} \fint_{\mathcal{B}_j} f\,d\mu \leq c \fint_{\mathcal{B}_j} f\,d\mu,
+\end{equation*}
+а неравенство $f(x)\leq \alpha$ вытекает из теоремы Лебега о дифференцировании интегралов, которую можно найти в [2,теорема 1.8].
 
-Отметим, что основное условие (4)${}_p$ не зависит от изменения значений функции на множестве меры нуль, поэтому в теоремах 1 и 2 можно говорить только об эквивалентности функции класса $H^{\alpha}(Y)$.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textbf{3. Основной результат.} Нашей целью в этой работе является обобщение теорем 1 и 2 в нескольких направлениях. Прежде всего, мы сделаем это при менее ограничительных условиях на $X$ и существенно проще. Кроме того, как и в [6] мы рассмотрим более общую шкалу пространств гладких функций, чем $H^{\alpha}$. Наконец, и это особенно важно, мы будем рассматривать условие (4)${}_p$ при всех $p>0$ (комментарии по этому поводу см. после формулировки теоремы 3).
+\textbf{3. Обобщение неравенства Джона--Ниренберга} Основной результат статьи содержит следующая теорема, являющаяся обобщением теоремы Джона--Ниренберга (\ref{eqJohnNirenbergInequality}).
 
-Для $\alpha>0$  определим $\Omega(\alpha)$ как класс положительных возрастающих функций $\omega:\mathbb{R}_+\to\mathbb{R}_+$, для которых при некотором $0<\delta<\alpha$ функция $\omega(t)t^{-\delta}$ возрастает, а функция $\omega(t)t^{-\alpha}$ убывает. Пусть еще
-$$
-\Omega(\infty)=\bigcup_{\alpha>0}\Omega(\alpha).
-$$
+\textbf{Теорема 1.}\label{thJohnNirenberg}
+\textit{Пусть заданы функция $\varphi\in\Phi_1$, шар $B_0 \subset X$, $f \in \widehat{BMO}_\varphi(B_0)$, $\Lambda>1$. Тогда справедливы неравенства}
+\begin{equation*}
+\mu\{x \in B_0:\ |f(x)-I_{B_0}^{\varphi}|>\lambda\} \leq A \mu(B_0) \exp(-a\lambda), \quad \lambda>0.
+\end{equation*}
+\textit{Здесь}
+\begin{equation*}%\label{eq}
+a = \frac{\ln \Lambda}{ \varphi^{-1}(a_\varphi(1+c \Lambda)  \varphi(\|f\|^{*}_\varphi))},\quad A=c \Lambda
+\end{equation*}
+\textit{где $c$ ---  постоянная из леммы \ref{lmCalderonZygmundDecomposition}}.
 
-Пусть $\omega\in\Omega(\infty)$. Будем говорить, что функция $f:X\to\mathbb{R}$ принадлежит обобщенному классу Гельдера $H^{\omega}(X)$, если для некоторого $r_0>0$
-$$
-\sup\left\{\frac{|f(x)-f(y)|}{\omega(d(x,y))}:x,y\in X,\;0<d(x,y)<r_0\right\}<+\infty.
-$$
-В случае $\omega(t)=t^{\alpha}$, $\alpha>0$, будем писать (как выше) $H^{\alpha}$ вместо $H^{\omega}$.
-
-Обычно классы $H^{\omega}$ рассматриваются при условии $\omega\in\Omega(1)$. Это связано с тем, что если, например, $X=[0,1]^n$ и $\omega\in\Omega(\alpha)$ при некотором $\alpha>1$ (или, более общо, $\omega(t)=o(t)$ при $t\to+0$), то класс $H^{\omega}(X)$ состоит только из тождественных постоянных. В случае же общих метрических пространств $X$ возможны ситуации, когда классы $H^{\alpha}(X)$ нетривиальны при некоторых $\alpha>1$. Например, на кривой Коха это так при $0<\alpha\le\frac{\ln 4}{\ln 3}$ [9]. Этим объясняется то, что мы рассматриваем классы $H^{\omega}(X)$ с $\omega\in\Omega(\infty)$.
-
-Теперь мы готовы к формулировке нашего основного результата.
 
 \textbf{Теорема 3.} \textit{Пусть $(X,d,\mu)$ --- метрическое пространство с мерой, удовлетворяющей условию удвоения (1), $\omega\in\Omega(\infty)$, $p> 0$ и задана функция  $f\in L^1_{\rm loc}(X)$.}
 
@@ -308,146 +305,336 @@ $$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textbf{4. Вспомогательные утверждения.}  Мы будем использовать следующее соглашение. Запись $A\lesssim B$ всегда означает, что $A\le cB$, где $c$ некоторая положительная постоянная зависящая, возможно, от некоторых параметров, но эти зависимости для нас несущественны (эти постоянные могут быть различными даже в пределах одной строки).
+\textbf{4. Доказательство теоремы \ref{thJohnNirenberg}} Мы действуем по схеме работы [1] с изменениями, соответствующими нашему случаю.
 
-Напомним, что $x\in X$ называется точкой Лебега для функции $f\in L^1_{\rm loc}(X)$, если
-$$%\label{eqLebesguePoint}
-f(x)=\lim_{r\to+0}\fint_{B(x,r)}f\,d\mu.
-\eqno(7)
-$$
-Множество всех точек Лебега функции $f$ на $X$ обозначаем $\Lambda(f)$.
-
-\textbf{Лемма 1.} \textit{Если выполнено условие удвоения (1), то для каждой функции $f\in L^1_{\rm loc}(X)$ соотношение (7) выполнено $\mu$-почти всюду.}
-
-Этот важный факт, известный как теорема Лебега о дифференцировании интегралов, можно найти, например, в [2, теорема 1.8].
-
-\textbf{Лемма 2.}
-\textit{Пусть выполнено условие (2), $0<r_1\le r_2$, $B(x_1,r_1)\subset B(x_2,r_2)$. Тогда}
-$$
-\frac{\mu (B(x_2,r_2))}{\mu (B(x_1,r_1))}\lesssim
-\bigg(\frac{r_2}{r_1}\bigg)^{\gamma}.
-$$
-
-Эта лемма имеется в [8].
-
-\textbf{Лемма 3.}
-\textit{Пусть $f\in L^1_{\rm loc}(X)$ удовлетворяет условию (6)${}_p$ с $0<p\le 1$ и $\omega\in\Omega(\infty)$. Тогда если $x_1 , x_2 \in X$, $0<r=d(x_1,x_2)<\frac{R_0}{2}$, то
-$$
-|f_{B(x_1,r)}-f_{B(x_2,r)}|\lesssim \omega(r)
-$$
-где.}
-
-
-\textbf{ Доказательство.} Действительно
-$$
-|f_{B(x_1,r)}-f_{B(x_2,r)}|^p\leq |f_{B(x_1,r)}-f_{B(x_2, 2 r)}|^p +|f_{B(x_2, 2 r)}-f_{B(x_2,r)}|^p
-\eqno(8)
-$$
-
-Оценим первое слагаемое справа
-$$
-|f_{B(x_1,r)}-f_{B(x_2, 2 r)}|^p \leq |f(y)-f_{B(x_1, r)}|^p  +|f(y)-f_{B(x_2, 2 r)}|^p
-$$
-
-Усредним это неравенство по $y\in B(x_1,r)$ и воспользуемся леммой 2
-
-$$
-|f_{B(x_1,r)}-f_{B(x_2, 2 r)}|^p \leq \fint\limits_{B(x_1,r)}|f-f_{B(x_1, r)}|^p\,d\mu + \fint\limits_{B(x_1,r)}|f-f_{B(x_2, 2 r)}|^p\,d\mu \leq
-$$
-$$
-\leq \fint\limits_{B(x_1,r)}|f-f_{B(x_1, r)}|^p\,d\mu + \frac{\mu (B(x_2, 2 r))}{\mu (B(x_1, r))} \fint\limits_{B(x_2, 2 r)}|f-f_{B(x_2, 2 r)}|^p\,d\mu \lesssim
-$$
-$$
-\lesssim \fint\limits_{B(x_1,r)}|f-f_{B(x_1, r)}|^p\,d\mu + \fint\limits_{B(x_2, 2 r)}|f-f_{B(x_2, 2 r)}|^p\,d\mu\lesssim\omega(r)^p
-$$
-в силу условия (6)${}_p$.
-
-Аналогично оценивается и второе слагаемое справа в (8)
-$$
-|f_{B(x_2, 2 r)}-f_{B(x_2,r)}|^p\lesssim \fint\limits_{B(x_2,r)}|f-f_{B(x_2, r)}|^p\,d\mu +
-\fint\limits_{B(x_2, 2 r)}|f-f_{B(x_2, 2 r)}|^p\,d\mu\lesssim\omega(r)^p
-$$
-и лемма доказана.
-
-\textbf{Лемма 4.}
-\textit{Пусть $f\in L^1_{\rm loc}(X)$ и выполнено условие (6)${}_p$ с $0<p\le 1$ и $\omega\in\Omega(\infty)$. Тогда для любой точки Лебега $x\in \Lambda(f)$ и $0<r<R_0$}
-$$
-|f(x)-f_{B(x,r)}|\lesssim \omega(r).
-$$
-
-\textbf{ Доказательство.} По определению точки Лебега
-$$
-f(x)=\lim_{k\to\infty}f_{B_k}=f_{B(x,r)}+\sum_{k=0}^\infty[f_{B_{k+1}}-f_{B_k}],
-$$
-где $B_k=B(x, 2^{-k}r)$. Поэтому
-$$
-|f(x) - f_{B(x,r)}|=
-\left|\sum_{k=0}^\infty[f_{B_{k+1}}-f_{B_k}]\right| \le
-\sum_{k=0}^\infty |f_{B_{k+1}}-f_{B_k}|.
-$$
-
-Каждое слагаемое справа оценим отдельно. Сначала запишем для любого $y$
-$$|f_{B_{k+1}} - f_{B_k}|^p\le |f(y) - f_{B_{k+1}}|^p+|f(y) - f_{B_k}|^p $$
-и усредним это неравенство по $y\in B_{k+1}$. В силу леммы 2 получим следующее
-$$
-|f_{B_{k+1}} - f_{B_k}|^p\le\fint_{B_{k+1}} |f-f_{B_{k+1}}|^p\,d\mu + \frac{\mu (B_{k})}{\mu(B_{k+1})} \fint_{B_{k}} \left|f-f_{B_{k}}\right|^p\,d\mu
-\lesssim \omega(2^{-k} r)^{p}
-$$
+Применим лемму \ref{lmCalderonZygmundDecomposition} к функции $\varphi(|f(x)-I_{B_0}^{\varphi}|)$ и $\alpha = \Lambda \varphi(\|f\|^{*}_\varphi)$, находя набор таких непересекающихся шаров $\{B_j^{(1)}\}$, $j\geq 1$, что
+\begin{equation}\label{eqFormula1}
+\Lambda \varphi(\|f\|^{*}_\varphi)< \fint_{B_j^{(1)}} \varphi(|f(x)-I_{B_0}^{\varphi}|)\,d\mu(x) \leq
+c  \Lambda \varphi(\|f\|^{*}_\varphi), \quad j\geq 1
+\end{equation}
 и
-$$
-|f_{B_{k+1}}-f_{B_k}|\lesssim \omega(2^{-k}r)
- $$
+\begin{equation*}
+\varphi(|f(x)-I_{B_0}^{\varphi}|) \leq \Lambda \varphi(\|f\|^{*}_\varphi)
+\quad \text{для почти всех} \quad
+x \in B_0\setminus \left(\bigcup_{j\geq 1} \mathcal{B}_j^{(1)}\right).
+\end{equation*}
 
-Так как $\omega\in\Omega(\infty)$, то при некотором $\delta>0$ функция $\omega(t)t^{-\delta}$ возрастает. Поэтому
-$$
-\sum_{k=0}^\infty |f_{B_{k+1}}-f_{B_k}|\lesssim\sum_{k=0}^\infty  \omega(2^{-k} r)\lesssim
-\omega(r)\sum_{k=0}^\infty2^{-k\delta}\lesssim\omega(r)
-$$
-и лемма доказана.
+Из левого  неравенства в \eqref{eqFormula1} получаем
+\begin{equation*}
+\sum_{j\geq1} \mu(B_j^{(1)}) < \frac{1}{ \Lambda \varphi(\|f\|^{*}_\varphi)}\sum_{j\geq1} \int_{B_j^{(1)}} \varphi(|f(x)-I_{B_0}^{\varphi}|)\,d\mu(x) \leq
+\end{equation*}
+\begin{equation*}
+\leq\frac{1}{\Lambda \varphi(\|f\|^{*}_\varphi)} \int_{B_0} \varphi(|f(x)-I_{B_0}^{\varphi}|)\,d\mu(x) \leq  \frac{\mu(B_0)}{\Lambda},
+\end{equation*}
+а из правого
+\begin{equation*}%\label{eq}
+\varphi(|I_{B_j^{(1)}}^{\varphi}-I_{B_0}^{\varphi}|)\leq a_\varphi \left(\fint_{B_j^{(1)}} \varphi (|f(x)-I_{B_j^{(1)}}^{\varphi}|)\,d\mu(x) + \fint_{B_j^{(1)}} \varphi(|f(x)-I_{B_0}^{\varphi}|)\,d\mu(x)\right) \leq
+\end{equation*}
+\begin{equation*}%\label{eq}
+\leq  a_\varphi \left(\varphi({\|f\|^{*}_\varphi}) +  c  \Lambda \varphi(\|f\|^{*}_\varphi)\right)= a_\varphi \varphi(\|f\|^{*}_\varphi)(1+c \Lambda) .
+\end{equation*}
 
+На каждом шаре $B_j^{(1)}$ снова применим лемму \ref{lmCalderonZygmundDecomposition}, получая шары $B_{s,j}^{(2)}$, $s\geq 1$. Перенумеруем их в простую последовательность, получая набор шаров $B_j^{(2)}$, $j\geq 1$, и продолжим процесс по индукции. На $k$-ом шаге на каждом из шаров $B_j^{(k-1)}$, $j\geq1$ к функции $\varphi(|f(x)-I_{B_j^{(k-1)}}^{\varphi}|)$ применим лемму \ref{lmCalderonZygmundDecomposition} с постоянной $\alpha = \Lambda \varphi(\|f\|^{*}_\varphi)$ и получим набор шаров $\{B_{s,j}^{(k)}\}$, ${s\geq 1}$, внутренности которых попарно не пересекаются, что
+\begin{equation}\label{eqFormula2}
+\Lambda \varphi(\|f\|^{*}_\varphi) < \fint_{B_{s,j}^{(k)}} \varphi(|f(x)-I_{B_j^{(k-1)}}^{\varphi}|)\,d\mu(x) \leq  c \Lambda \varphi(\|f\|^{*}_\varphi), \quad s\geq 1
+\end{equation}
+и
+\begin{equation}\label{eqFormula3}
+\varphi(|f(x)-I_{B_j^{(k-1)}}^{\varphi}|) \leq \Lambda \varphi(\|f\|^{*}_\varphi) \quad \text{для почти всех} \quad x \in B_j^{(k-1)}\setminus \left(\bigcup_{s\geq 1} \mathcal{B}_{s,j}^{(k)}\right).
+\end{equation}
+Из левой части неравенства \eqref{eqFormula2} имеем
+\begin{equation*}
+\sum_{s\geq1} \mu(B_{s,j}^{(k)}) = \frac{1}{\Lambda \varphi(\|f\|^{*}_\varphi)} \sum_{s\geq1} \int_{B_{s,j}^{(k)}}\varphi( |f(x)-I_{B_j^{(k-1)}}^{\varphi}|)\,d\mu(x) \leq
+\end{equation*}
+\begin{equation}\label{formula4}
+\leq \frac{1}{\Lambda \varphi(\|f\|^{*}_\varphi}) \int_{B_j^{(k-1)}} \varphi(|f(x)-I_{B_j^{(k-1)}}^{\varphi}|)\,d\mu(x) \leq  \frac{\mu(B_j^{(k-1)})}{\Lambda}
+\end{equation}
+а из правой
+\begin{equation*}
+\varphi(|I_{B_{s,j}^{(k)}}^{\varphi}-I_{B_j^{(k-1)}}^{\varphi}|) \leq
+\end{equation*}
+\begin{equation*}
+\leq a_\varphi \left(\frac{1}{\mu(B_{s,j}^{(k)})}\int_{B_{s,j}^{(k)}} \varphi(|f(x)-I_{B_{s,j}^{(k)}}^{\varphi}|)\,d\mu(x) + \frac{1}{\mu(B_{s,j}^{(k)})}\int_{B_{s,j}^{(k)}} \varphi(|f(x)-I_{B_j^{(k-1)}}^{\varphi}|)\,d\mu(x)\right)
+\end{equation*}
+\begin{equation}\label{eqFormula5}
+ \leq  a_\varphi \left(\varphi({\|f\|^{*}_\varphi}) +  c  \Lambda \varphi(\|f\|^{*}_\varphi)\right)=a_\varphi \varphi(\|f\|^{*}_\varphi)(1+c \Lambda).
+\end{equation}
 
+Перенумеровав все шары $B_{s,j}^{(k)}$, $s,j\geq1$, в простую последовательность, получаем набор $\{B_{j}^{(k)}\}$, $j\geq 1$. При этом, из \eqref{formula4} вытекает, что
+\begin{equation*}
+\sum_{j\geq1} \mu(B_{j}^{(k)}) \leq \frac{1}{\Lambda}\sum_{j\geq1} \mu(B_{j}^{(k-1)}) \leq (\frac{1}{\Lambda})^2\sum_{j\geq1} \mu(B_{j}^{(k-2)}) \leq \cdots
+\end{equation*}
+\begin{equation}\label{eqFormula6}
+\leq \left(\frac{1}{\Lambda}\right)^{k-1}\sum_{j\geq1} \mu(B_{j}^{(1)}) \leq \left(\frac{1}{\Lambda}\right)^{k} \mu(B_0),
+\end{equation}
+а из \eqref{eqFormula3} и \eqref{eqFormula5} следует, что для почти всех $x \in \left(\bigcup_{j\geq 1} B_j^{(k-1)}\right)\setminus \left(\bigcup_{j\geq 1} \mathcal{B}_{j}^{(k)}\right)$
+\begin{equation*}
+|f(x)-I_{B_0}^{\varphi}| \leq |f(x)-I_{B_{j_{k-1}}^{(k-1)}}^{\varphi}| + |I_{B_{j_{k-1}}^{(k-1)}}^{\varphi} - I_{B_{j_{k-2}}^{(k-2)}}^{\varphi}| + \ldots + |I_{B_{j_{1}}^{(1)}}^{\varphi} - I_{B_0}^{\varphi}| \leq
+\end{equation*}
+\begin{equation}\label{eqFormula7}
+\leq \varphi^{-1}(\Lambda\|f\|^{*}_\varphi) + (k-1)\varphi^{-1} \left( a_\varphi (1+c \Lambda) \varphi(\|f\|^{*}_\varphi)\right)=k \varphi^{-1}\left( a_\varphi (1+c \Lambda) \varphi(\|f\|^{*}_\varphi)\right),
+\end{equation}
+где индексы $j_1,\ldots, j_{k-1}$ выбраны таким образом, чтобы
+\begin{equation*}%\label{eq}
+x \in B_{j_{k-1}}^{(k-1)}\subset B_{j_{k-2}}^{(k-2)} \subset\ldots \subset B_{j_{1}}^{(1)} \subset B_0.
+\end{equation*}
+После этого переходим к $(k+1)$-му шагу.
+
+Возьмем теперь произвольное $\lambda>0$. Если
+\begin{equation*}
+k \varphi^{-1} \left( a_\varphi (1+c\Lambda) \varphi(\|f\|^{*}_\varphi)\right) \leq \lambda < (k+1) \varphi^{-1} \left( a_\varphi (1+c\Lambda) \varphi(\|f\|^{*}_\varphi)\right)
+\end{equation*}
+при некотором $k \in \mathbb N$, то используя условие удвоения (\ref{eqDoublingCondition}) и формулы (\ref{eqFormula6}) и (\ref{eqFormula7}) получаем
+\begin{equation*}
+\mu{\{x\in B_0:\ |f(x)-I_{B_0}^{\varphi}|>\lambda\}}=
+ \mu\{{x\in B_0:|f(x)-I_{B_0}^{\varphi}|>k \varphi^{-1} \left( a_\varphi(1+c\Lambda) \varphi(\|f\|^{*}_\varphi)\right)}\}
+\end{equation*}
+\begin{equation*}
+\leq \sum_{j\geq1} \mu(\mathcal{B}_{j}^{(k)}) \leq  c \sum_{j\geq 1} \mu(B_{j}^{(k)}) \leq  c \left(\frac{1}{\Lambda}\right)^{k} \mu(B_0) = c \mu(B_0)\exp\left(-k \ln \Lambda\right) \leq
+\end{equation*}
+\begin{equation*}
+\leq  c \mu(B_0)\exp\left(\left(-\frac{\lambda}{ \varphi^{-1} \left(a_\varphi (1+c\Lambda) \varphi(\|f\|^{*}_\varphi) \right)}\right)\ln \Lambda\right)
+\end{equation*}
+\begin{equation*}
+=  c \Lambda\mu(B_0)\exp \left(-\frac{\lambda\ln \Lambda}{ \varphi^{-1} \left(a_\varphi(1+c \Lambda) \varphi(\|f\|^{*}_\varphi) \right)}\right) = c \Lambda\mu(B_0)\exp(-a \Lambda),
+\end{equation*}
+где $a = \frac{\ln \Lambda}{ \varphi^{-1} \left(a_\varphi (1+c \Lambda)  \varphi(\|f\|^{*}_\varphi)\right)}$. Если $\lambda < \varphi^{-1} \left( a_\varphi (1+c\Lambda) \varphi(\|f\|^{*}_\varphi)\right)$, то
+\begin{equation*}
+\mu\{x\in B_0:\ |f(x)-I_{B_0}|>\lambda\} \leq
+\end{equation*}
+\begin{equation*}
+\leq c \mu(B_0)\exp\left(-a \Lambda \right) \exp \left( a \varphi^{-1}\left( a_\varphi (1+c\Lambda) \varphi(\|f\|^{*}_\varphi)\right)\right)
+=  c \Lambda \mu(B_0)\exp\left(-a \lambda\right).
+\end{equation*}
+Положив $A =  c \Lambda$ получим утверждение теоремы.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textbf{5. Доказательство теоремы 3.} Пусть выполнено условие (6)${}_p$. В силу неравенства Гельдера оно тем сильнее, чем больше $p$, поэтому можно предположить, что $0<p\le1$. Пусть $x_1,x_2\in\Lambda(f)$ и $0<r = d(x_1,x_2)<\frac{R_0}{2}$, тогда
-$$
-|f(x_1)-f(x_2)| \le
-|f(x_1)-f_{B(x_1,r)}|+|f(x_2)-f_{B(x_2,r)}|+|f_{B(x_1,r)}-f_{B(x_2,r)}|.
-\eqno(9)
-$$
+\textbf{5. Следствия}
 
-Первые два слагаемых справа в (9) оцениваются с помощью леммы 4
-$$
-|f(x_1)-f_{B(x_1,r)}|+|f(x_2)-f_{B(x_2,r)}|\lesssim\omega(r),
-$$
-а последнее ---  с помощью леммы 3
-$$
-|f_{B(x_1,r)}-f_{B(x_2,r)}|\lesssim\omega(r).
-$$
 
-Отсюда вытекает, что для любых точек Лебега $x_1,x_2\in\Lambda(f)$ выполнено неравенство
-$$
-|f(x_1)-f(x_2)|\lesssim\omega(d(x_1,x_2)).
-\eqno(10)
-$$
+Приведем несколько следствий, вытекающих из этой теоремы.
 
-Очевидно, что множество точек Лебега $\Lambda(f)$ плотно в $X$  --- мера любого шара $B\subset X$ положительна и почти все точки из $B$ принадлежат  $\Lambda(f)$. Поэтому функцию $f$ можно единственным образом продолжить с множества Лебега $\Lambda(f)$ на все $X$ с сохранением неравенства (10).
+\textbf{Следствие 1.}\label{crEstimationOfDifferenceFunctionAndConstant}
+\textit{Пусть $\varphi \in \Phi_1$ , шар $B_0 \subset X$, функция $f\in \widehat{BMO}_\varphi(B_0)$ и $g(x)=|f(x)-I_{B_0}^\varphi|$. Тогда}
+\begin{equation*}
+g^*(t) \leq \frac{1}{a}\ln\frac{A\mu(B_0)}{t}, \quad 0<t<\mu(B_0).
+\end{equation*}
 
-Обратное утверждение очевидно. В самом деле, пусть $f$ эквивалентна некоторой функции класса $H^{\omega}(X)$. Тогда для любого шара $B\subset X$ с $r_B<r_0$
-$$
-\fint_{B}|f(x)-f_{B}|^p \, d\mu(x)=\fint_{B}\left|\fint_B[f(x)-f(y)]\,d\mu(y)\right|^p\,d\mu(x)\lesssim
-$$
-$$
-\lesssim \fint_{B}\left[\fint_B\omega(r_B)\,d\mu(y)\right]^p\,d\mu(x)\lesssim\omega(r_B)^{p}
-$$
-и доказательство теоремы 3 закончено.
 
-\textbf{5. Доказательство теоремы 4.} Применим теорему 3 к множеству $Y$, снабженному индуцированными метрикой и мерой. Необходимо лишь проверить условие удвоения (1) для пространства $Y$. Оно следует из (5) и (1) для пространства $X$
-$$
-\mu(B(y,2r)\cap Y)\le\mu(B(y,2r))\le a_{\mu}\mu(B(y,r))\le \frac{a_{\mu}}{a_Y}\mu(B(y,r)\cap Y).
-$$
+\textbf{Доказательство.}
+Пусть $0<t<\mu(B_0)$. Тогда
+\begin{equation*}
+g^*(t) = \sup\{y>0:\ \mu\{x\in B_0:\ |f(x)-I_{B_0}^{\varphi}|>y\}>t\} \leq
+\end{equation*}
+\begin{equation*}
+\leq \sup\left\{y>0:\ A\mu(B_0)\exp(-a y)>t\right\}
+\end{equation*}
+\begin{equation*}
+= \sup\left\{y>0:\ y < \frac{1}{a}\ln\frac{A\mu(B_0)}{t}\right\} = \frac{1}{a}\ln\frac{A\mu(B_0)}{t}=\frac{ \varphi^{-1}\left(a_\varphi(1+c \Lambda)  \varphi(\|f\|^{*}_\varphi)\right)}{\ln \Lambda}\ln\frac{с \Lambda \mu(B_0)}{t}.
+\end{equation*}
 
+\textbf{Следствие 2.}\label{crIntersectionOfLq}
+\textit{Пусть $\varphi \in \Phi_1$, шар $B_0 \subset \mathbb{R}$ и  функция $f\in \widehat{BMO}_\varphi(B_0)$. Тогда}
+\begin{equation*}%\label{eq}
+\widehat{BMO}_\varphi(B_0)\subset\bigcap_{q>0} L^q(B_0)
+\end{equation*}
+
+
+\textbf{Доказательство.}
+Покажем, что $f\in L^q(B_0)$ для всех $q>0$. Пусть $g(x)=|f(x)-I_{B_0}^{\varphi}|$. Тогда, применяя следствие \ref{crEstimationOfDifferenceFunctionAndConstant}, получим
+\begin{equation*}
+\int_{B_0} |f(x)-I_{B_0}^{\varphi}|^q\,d\mu(x) = \int_0^{\mu(B_0)} (g^*(t))^q dt \leq \left(\frac{1}{a}\right)^{q}\int_0^{\mu(B_0)} \ln^{q}\frac{A\mu(B_0)}{t}dt < +\infty.
+\end{equation*}
+
+
+\textbf{Следствие 3.}\label{crBMOPhi1InBMO}
+\textit{Пусть функция $\varphi \in \Phi_1$, шар $B_0 \subset \mathbb{R}$ и функция $f\in \widehat{BMO}_\varphi(B_0)$. Тогда $f \in BMO(B_0)$ и выполнена оценка}
+
+\begin{equation*}
+\sup_{B\subset B_0}\fint_B |f(x)-f_B|\,d\mu(x) \leq \frac{2 \left(1 + \ln (c \Lambda)\right)}{\ln \Lambda} \varphi^{-1}\left((1+c \Lambda)  \varphi(\|f\|^{*}_\varphi)\right)
+\end{equation*}
+
+\textbf{Доказательство.}
+Пусть шар $B \subset B_0$, $h=f|_{B}$ -- сужение функции $f$ на шар $B$. Тогда $h \in \widehat{BMO}_\varphi(B)$, $\|h\|^{*}_\varphi\leq \|f\|^{*}_\varphi$. Обозначим $g(x)=|h(x)-I_{B}^{\varphi}|$. Тогда
+\begin{equation*}
+\fint_B |f(x)-f_B|\,d\mu(x) \leq 2\fint_B |f(x)-I_{B}^{\varphi}|\,d\mu(x) \leq 2\fint_0^{\mu(B)} g^*(t)dt
+\end{equation*}
+\begin{equation}\label{eqEstimateOfBmoNorm}
+\leq  \frac{2}{a}\fint_0^{\mu(B)} \ln\frac{A\mu(B)}{t}dt = \frac{2A}{a}\int_0^{1/A} \ln\frac{1}{t}dt=\frac{2}{a} (\ln A +1).
+\end{equation}
+Таким образом,
+\begin{equation*}
+\sup_{B\subset B_0}\fint_B |f(x)-f_B|\,d\mu(x) \leq \frac{2}{a}(\ln A +1) = \frac{2 \left(1 + \ln (c \Lambda)\right)}{\ln \Lambda} \varphi^{-1}\left(a_\varphi(1+c \Lambda)  \varphi(\|f\|^{*}_\varphi)\right)< + \infty.
+\end{equation*}
+
+На самом деле, в следствии \ref{crBMOPhi1InBMO} от некоторых предположений можно избавиться, если не заботиться об оценке.
+
+\textbf{Следствие 4.}
+\textit{Пусть функция $\varphi\in \Phi$ и шар $B_0 \subset X$. Тогда если}
+\begin{equation*}
+\sup_{B\subset B_0}\inf_{c}\left(\fint_B \varphi(|f(x)-c|) \,d\mu(x)\right)<\infty,
+\end{equation*}
+\textit{то $f\in BMO(B_0)$}.
+
+
+Это утверждение вытекает из следствия \ref{crBMOPhi1InBMO} по аналогии с работой \cite{Slavin13}.
+
+\textbf{6. Обобщение теорем Кампанато--Мейерса и Спанне.} Обозначим
+\begin{equation*}
+\mu_\varphi(f,t) \equiv \sup_{\substack{B\subset B_0\\ 0<r_B\leq t}} A_{\varphi}(f,B) = \sup_{\substack{B\subset B_0\\ 0<r_B\leq t}} \inf_{c\in \mathbb{R}} \varphi^{-1}\left(\fint_B \varphi(|f(x)-c|) \,d\mu(x)\right).
+\end{equation*}
+
+Очевидно, что функция $\mu_\varphi(f,t)$ возрастает по $t$. В случае, если $\varphi(t)=t^p$ пишем просто $\mu_p(f,t)$. Если $p=1$, то в качестве $\mu_1(f,t)$ можно использовать функцию
+
+\begin{equation*}
+\mu_1(f,t) \equiv \sup_{\substack{B\subset B_0\\ 0<r_B\leq t}} \inf_{c\in \mathbb{R}} \left(\fint_B |f(x)-f_B| \,d\mu(x)\right).
+\end{equation*}
+Это вытекает из очевидных неравенств
+\begin{equation*}
+\fint_B |f(x)-f_B|\,d\mu(x) \leq 2\fint_B |f(x)-I_{B}^{\varphi}|\,d\mu(x)
+\end{equation*}
+\begin{equation*}
+\fint_B |f(x)-I_{B}^{\varphi}|\,d\mu(x) \leq \fint_B |f(x)-f_B|\,d\mu(x)
+\end{equation*}
+
+
+\textbf{Следствие 5.}\label{crEquivalenceOfMu}
+\textit{Если $\varphi \in \Phi_1$, $f \in \widehat{BMO}_{\varphi}(B_0)$, то }
+\begin{equation}\label{eqEstimateOfMu1}
+\mu_1(f,t) \leq
+\frac{2 \left(1 + \ln (c \Lambda)\right)x}{\ln \Lambda} \varphi^{-1}\left(a_\varphi(1+c \Lambda)  \varphi(\mu_\varphi(f,t))\right).
+\end{equation}.
+
+\textbf{Доказательство.} Зафиксируем $0<t\leq r_{B_0}$ и пусть $B \subset B_0$, $r_B\leq t$.
+
+ Пусть $h=f|_{B}$ -- сужение функции $f$ на шар $B$. Тогда $h \in \widehat{BMO}_\varphi(B)$, $\|h\|^{*}_\varphi\leq \|f\|^{*}_\varphi$. Обозначим $g(x)=|h(x)-I_{B}^{\varphi}|$.
+Тогда используя \eqref{eqEstimateOfBmoNorm}
+\begin{equation*}
+\fint_B |f(x)-f_B|\,d\mu(x) \leq
+\frac{2 \left(1 + \ln (c \Lambda)\right)}{\ln \Lambda} \varphi^{-1}\left(a_\varphi(1+c \Lambda)  \varphi(\mu_\varphi(f,t))\right).
+\end{equation*}
+Переходя к верхней грани по всем шарам $B \subset B_0$, $\mu(B)\leq t$, получим \eqref{eqEstimateOfMu1}.
+
+Для формулировки следующей теоремы введем понятие модуля непрерывности функции $f\in C(X)$ как
+\begin{equation*}%\label{eq}
+\omega(f,\delta)=\max \limits_{d(x,y) \leq \delta} |f(x) - f(y)|, \, 0<\delta< 1.
+\end{equation*}
+
+
+\textbf{Теорема 2.}\label{thEsimateOfModulusByMu}
+\textit{Пусть $\varphi \in \Phi_1$, $f \in \widehat{BMO}_{\varphi}(B)$ для любого шара $B\in X$ и выполнено условие}
+\begin{equation}\label{eqMainConditionOnMu}
+\int\limits_{0}^{1} \varphi^{-1} (a_\varphi(1+c\Lambda) \varphi(\mu_{\varphi}(f,t)))
+\,\frac{d t}{t}<\infty.
+\end{equation}
+
+\textit{Тогда $f$ эквивалентна некоторой функции $g\in C(X)$ и}
+\begin{equation}\label{eqEsimateOfModulusByMu}
+\omega(g,\delta)\leq M \int\limits_{0}^{\delta}  \varphi^{-1} (a_\varphi(1+c\Lambda) \varphi(\mu_{\varphi}(f,t)))\,\frac{d t}{t},\quad 0<\delta< 1,
+\end{equation}
+\textit{где $M=2 (1+a_{\mu} 2^{\gamma}) \frac{2 \left(1 + \ln (c \Lambda)\right)}{\ln \Lambda}$.}
+
+\textbf{Доказательство.} В силу неравенства \eqref{eqEstimateOfMu1} достаточно провести доказательство для $\mu_1(f,t)$. Рассмотрим два шара $B_1, B_2 \subset X$, таких, что $B_2 =2 B_1$. Тогда для любого $y \in B_1$ имеет место неравенство
+\begin{equation*}%\label{}
+|f_{B_1}-f_{B_2}| \leq |f_{B_1}-f(y)| +|f_{B_2}-f(y)|.
+\end{equation*}
+
+Интегрируя это неравенство по шару $B_1$, получим
+\begin{equation}\label{eqEstimateOfTwoMeansInPDegree}
+|f_{B_1}-f_{B_2}| \leq \fint\limits_{B_1} |f -  f_{B_1}|
+\,d\mu +\fint\limits_{B_1} |f - f_{B_2}|
+\,d\mu .
+\end{equation}
+
+Так как  $B_1 \subset B_2$, то из \eqref{eqDegreeDoublingCondition} следует
+
+\begin{equation}\label{eqEstimateOfMeansIntegrals}
+\fint\limits_{B_1} |f - f_{B_2} | \,d\mu \leq \frac{\mu(B_2)}{\mu(B_1)}\bigg(\fint\limits_{B_2} |f - f_{B_2}| \,d\mu\bigg) \leq \beta \fint\limits_{B_2} |f - f_{B_2}| \,d\mu,
+\end{equation}
+где $\beta=a_{\mu} 2^{\gamma}$.
+
+Из (\ref{eqEstimateOfTwoMeansInPDegree}) и (\ref{eqEstimateOfMeansIntegrals}) очевидным образом следует, что
+
+\begin{equation*}%\label{ineqMu4}
+|f_{B_1}-f_{B_2}| \leq \fint\limits_{B_1} |f - f_{B_1}|
+\,d\mu + \beta \fint\limits_{B_2} |f - f_{B_2}|
+\,d\mu
+\end{equation*}
+
+Таким образом, в силу возрастания функции $\mu_{1}(f,t)$ и предыдущего неравенства
+
+\begin{equation}\label{eqEstimateOfTwoMeans}
+|f_{B_1}-f_{B_2}| \leq \mu_{1} (f,r_{B_1}) +  \beta\mu_{1}(f,r_{B_2}) \leq (1+\beta)\mu_{1}(f,r_{B_2}).
+\end{equation}
+
+Рассмотрим любую точку Лебега $x\in X$ и $r>0$. Из теоремы Лебега о дифференцировании следует, что $f_{B_k}$ сходятся к $f(x)$ при $k\to\infty$ почти всюду. Это означает, что
+\begin{equation*}
+f(x)=\lim_{k\to\infty}f_{B_k}=f_{B(x,r)}+\sum_{k=0}^\infty[f_{B_{k+1}}-f_{B_k}],
+\end{equation*}
+где $B_k=B(x, 2^{-k}r)$. Тогда из (\ref{eqEstimateOfTwoMeans}) и (\ref{eqMainConditionOnMu}) вытекает
+\begin{equation*}
+|f(x) - f_{B(x,r)}|= \left|\sum_{k=0}^\infty[f_{B_{k+1}}-f_{B_k}]\right| \leq
+\end{equation*}
+\begin{equation*}
+\leq (1+\beta) \sum_{k=0}^\infty \mu_{1}(f,r_{B_k}) \leq (1+\beta)  \sum_{k=0}^\infty \int\limits_{r_{B_{k+1}}}^{r_{B_k}}  \mu_{1}(f,t) \,\frac{d t}{t}  \leq (1+\beta)  \int\limits_{0}^{r}  \mu_{1}(f,t)\,\frac{d t}{t}<\infty.
+\end{equation*}
+
+Из этого следует, что для любых двух точек Лебега $x,y \in X$  и $r=d(x,y)$
+\begin{equation*}
+|f(x) - f(y)|\leq |f_{B(x, r)}-f(x)| + |f_{B(x, r)}-f_{B(y, 2 r)}| +|f_{B(y, 2 r)}-f(y)| \leq
+\end{equation*}
+
+\begin{equation*}
+\leq (1+\beta)\left(\int \limits_{0}^{r} \mu_{1}(f,t)\,\frac{d t}{t} + \mu_{1}(f,2 r) +\int\limits_{0}^{2 r} \mu_{1}(f,t)\,\frac{d t}{t}\right)\leq
+\end{equation*}
+
+\begin{equation*}
+\leq (1+\beta)\left(\int\limits_{0}^{r} \mu_{1}(f,t)\,\frac{d t}{t} + \int\limits_{r}^{2 r} \mu_{1}(f,t)\,\frac{d t}{t} +\int\limits_{0}^{2 r} \mu_{1}(f,t)\,\frac{d t}{t}\right) \leq
+\end{equation*}
+\begin{equation*}
+ \leq 2 (1+\beta) \int\limits_{0}^{2 r} \mu_{1}(f,t)\,\frac{d t}{t} \leq M \int\limits_{0}^{2 r}  \varphi^{-1} (a_\varphi(1+c\Lambda) \varphi(\mu_{\varphi}(f,t)))\,\frac{d t}{t} < \infty.
+\end{equation*}
+
+Так как множество точек Лебега для $f$ плотно в $X$, то $f$ можно единственным образом продолжить с множества точек Лебега на все пространство $X$ до функции $g$, удовлетворяющей неравенству
+\begin{equation*}
+|g(x_1)-g(x_2)| < \infty,\quad x_1,x_2\in X.
+\end{equation*}
+И теорема доказана.
+
+Сравним теорему \ref{thEsimateOfModulusByMu} с предшествующими результатами. В частном случае $t^p$, $p=1$, $X=Q$ --- куб в $\mathbb{R}^n$ ее утверждение было получено другим, значительно более сложным способом в работе С.~Спанне \cite{Spanne}. Теорема \ref{thEsimateOfModulusByMu} дает усиление этого результата даже для функций $t^p$, $0<p\leq 1$,  так как условие (\ref{eqEsimateOfModulusByMu}) тем сильнее, чем меньше $p$.
+
+
+
+В качестве следствия из теоремы \ref{thEsimateOfModulusByMu} мы получим основной результат работы \cite{IvanishkoKrotovPorabkovich12}, дающий описание классов Гельдера в терминах поведения средних Стеклова.
+
+Для $\alpha>0$  определим $\Omega(\alpha)$ как класс положительных возрастающих функций $\eta:\mathbb{R}_+\to\mathbb{R}_+$, для которых при некотором $0<\delta<\alpha$ функция $\eta(t)t^{-\delta}$ возрастает, а функция $\eta(t)t^{-\alpha}$ убывает. Пусть еще
+\begin{equation*}%\label{eq}
+\Omega(\infty)=\bigcup_{\alpha>0}\Omega(\alpha).
+\end{equation*}
+
+Пусть $\eta\in\Omega(\infty)$. Будем говорить, что функция $f:X\to\mathbb{R}$ принадлежит обобщенному классу Гельдера $H^{\eta}(X)$, если для некоторого $r_0>0$
+\begin{equation*}%\label{eq}
+\sup\left\{\frac{|f(x)-f(y)|}{\eta(d(x,y))}:x,y\in X,\,0<d(x,y)<r_0\right\}<+\infty.
+\end{equation*}
+%В случае $\eta(t)=t^{\alpha}$, $\alpha>0$, будем писать $H^{\alpha}$ вместо $H^{\eta}$.
+
+%Обычно классы $H^{\eta}$ рассматриваются при условии $\eta\in\Omega(1)$. Это связано с тем, что если, например, $X=[0,1]^n$ и $\eta\in\Omega(\alpha)$ при некотором $\alpha>1$ (или, более общо, $\eta(t)=o(t)$ при $t\to+0$), то класс $H^{\eta}(X)$ состоит только из тождественных постоянных. В случае же общих метрических пространств $X$ возможны ситуации, когда классы $H^{\alpha}(X)$ нетривиальны при некоторых $\alpha>1$. Например, на кривой Коха это так при $0<\alpha\leq\frac{\ln 4}{\ln 3}$ \cite{Jonsson}. Этим объясняется то, что мы рассматриваем классы $H^{\eta}(X)$ с $\eta\in\Omega(\infty)$.
+
+
+В \cite{IvanishkoKrotovPorabkovich12} доказано, что если $f\in L^1_{\mathrm{loc}}(X)$, $\eta\in\Omega(\infty)$, $p> 0$, и для некоторого $R_0>0$ выполнено условие
+\begin{equation}\label{eqCampanatoCondition}
+\sup_{B:r_B<R_0}\frac{1}{\eta(r_B)}\left(\fint_{B}|f-f_B|^p\,d\mu\right)^{1/p}<+\infty,
+  \end{equation}
+то $f$ эквивалентна некоторой функции класса $H^{\eta}(X)$. В частном случае $p=1$, $\eta(t)=t^{\alpha}$ и $X\subset\mathbb{R}^n$ этот результат --- классическая теорема К.Кампанато--Н.Мейерса \cite{Campanato}, \cite{Meyers} (см. также более поздний результат из \cite{Gorka}).
+
+Этот результат является простым следствием из теоремы \ref{thEsimateOfModulusByMu}, причем без дополнительного условия $f\in L^1_{\mathrm{loc}}(X)$. Действительно, в силу условия (\ref{eqCampanatoCondition}) $\mu_p(f,t) \lesssim \eta(t)$. Интегрируя это неравенство по $t$ и используя (\ref{eqEsimateOfModulusByMu}), получим
+\begin{equation*}
+\omega(f,\delta)\lesssim \int\limits_{0}^{\delta} \mu_p(f,t)\,\frac{d t}{t} \lesssim \int\limits_{0}^{\delta} \eta(t)\,\frac{d t}{t},\quad 0<\delta< 1.
+\end{equation*}
+Так как $\eta\in\Omega(\infty)$, то правая часть последнего неравенства оценивается сверху через $\eta(\delta)$
+и $\omega(f,\delta)\lesssim \eta(\delta),\quad 0<\delta< 1$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -470,7 +657,7 @@ $$
 \lit{10}{A. A. Logunov, L. Slavin, D. M. Stolyarov, V. Vasyunin, P. B. Zatitskiy.}{Weak integral conditions for BMO. // 2013. arXiv:1309.6780v1.}
 }
 
-  
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
