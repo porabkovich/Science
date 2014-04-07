@@ -121,7 +121,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{abstract}\noindent
-Доказано обобщение теоремы Кампанато--Мейерса, дающей описание классов Гельдера на подмножествах евклидового пространства в терминах поведения средних Стеклова. Это обобщение справедливо на любом метрическом пространстве с мерой, удовлетворяющей условию удвоения.
+Доказано обобщение неравенства Джона--Ниренберга, дающей описание классов $BMO$. Это обобщение справедливо на любом метрическом пространстве с мерой, удовлетворяющей условию удвоения.
 \end{abstract}
 
 \bigskip
@@ -153,7 +153,7 @@ B=B(x,r)=\{y\in X:d(x,y)<r\}
 \mu B(x,2t)\le a_{\mu}\mu B(x,t),\quad x\in X,\quad t>0.
 \end{equation}
 
-Если выполнено условие \eqref{eqDoublingCondition}, то тройка $(X,d,\mu)$ называется пространством однородного типа. Именно такие пространства мы будем рассматривать в этой работе. Основные сведения о них можно найти в [2].
+Если выполнено условие \eqref{eqDoublingCondition}, то тройка $(X,d,\mu)$ называется пространством однородного типа. Именно такие пространства мы будем рассматривать в этой работе. Основные сведения о них можно найти в [1].
 
 Из неравенства \eqref{eqDoublingCondition} следует, что
 \begin{equation}\label{eqDegreeDoublingCondition}
@@ -176,7 +176,7 @@ f(x)=\lim_{r\to+0}\fint_{B(x,r)}f\,d\mu.
 каждой функции $f\in L^1_{\mathrm{loc}}(X)$ соотношение
 (\ref{eqLebesguePoint}) выполнено $\mu$-почти всюду. Этот важный
 факт (известный как теорема Лебега о дифференцировании интегралов)
-можно найти в [2, теорема 1.8].
+можно найти в [1, теорема 1.8].
 
 Пусть $\Phi$ --- класс непрерывных положительных строго возрастающих функций $\varphi:\mathbb{R}^{+}\to \mathbb{R}^{+}$ со свойствами $\varphi(+0)=0$,  $\lim_{t\to \infty}\varphi(t)=+\infty$. $\Phi_1$ --- класс функций $\varphi \in \Phi$ со свойством: существует такая постоянная $a_\varphi$, что
   \begin{equation*}
@@ -193,10 +193,10 @@ A_{\varphi}(f,B) = \inf_{c} \varphi^{-1}(\fint_B \varphi(|f(x)-c|) d \mu(x)).
 
 В случае, когда $\varphi(t)=t^{p}$, $p>0$ будем писать $A_{p}(f,B)$ и $\mathcal{S}_p(f, B)$. При $p=1$ пишем $\mathcal{S}(f,B)$ и $A(f,B)$ вместо $\mathcal{S}_1(f,B)$ и $A_1(f,B)$ соответственно.
 
-Пусть $B_0\subset X$ --- фиксированный шар. В работе \cite{JohnNirenberg61} в случае $X=\mathbb{R}^n$  было введено пространство функций
+Пусть $B_0\subset X$ --- фиксированный шар. В работе [2] в случае $X=\mathbb{R}^n$  было введено пространство функций
 \begin{equation*}%\label{eq}
 BMO(B_0)=\{f\in L^1_{\mathrm{loc}}(B_0):\|f\|^{*} \equiv \sup_{B\subset B_0} \mathcal{S}(f,B) <+\infty\}
-\end{equation*}x
+\end{equation*}
 и было доказано следующее утверждение: \textit{существуют постоянные $A$ и $a$, зависящие только от размерности пространства $n$, что для любого шара $B_0 \subset \mathbb{R}^n$ и $f \in BMO(B_0)$}
 \begin{equation}\label{eqJohnNirenbergInequality}
 \mu\{x \in B_0:\ |f(x)-f_{B_0}|>\lambda\} \leq A \mu(B_0) \exp(-\frac{a\lambda}{\|f\|^{*}}), \quad \lambda>0.
@@ -215,10 +215,10 @@ BMO_{\varphi}(B_0)=\{f\in L^1_{\mathrm{loc}}(B_0):{\|f\|^{*}_{\varphi}} \equiv \
 \begin{equation*}%\label{eq}
 \widehat{BMO}_{\varphi}(B_0)=\{f:{\|f\|^{*}_{\varphi}} \equiv \sup_{B\subset B_0} A_{\varphi}(f,B) <+\infty\}
 \end{equation*}
-и для функций этого класса докажем равенство $\widehat{BMO}_{\varphi}(B_0)=BMO(B_0)$. Для этого нам понадобится аналог неравенства (\ref{eqJohnNirenbergInequality}) для средних $A_{\varphi}(f,B)$. В качестве следствий из результатов этой работы мы приведем обобщения теорем Спанне [5] и Кампанато--Мейерса [6,7].
+и для функций этого класса докажем равенство $\widehat{BMO}_{\varphi}(B_0)=BMO(B_0)$. Для этого нам понадобится аналог неравенства (\ref{eqJohnNirenbergInequality}) для средних $A_{\varphi}(f,B)$. В качестве следствий из результатов этой работы мы приведем обобщения теорем Спанне [3] и Кампанато--Мейерса [4,5].
 
-Результаты, подобные нашим, были получены в работе [9], правда с несколько иными условиями на функцию $\varphi$.
-Кроме того, отметим недавнюю работу [10], в которой также рассматривается задача нахождения возможно более слабых условий, при которых функция принадлежит классу $BMO$. Методы этой работы не связаны с неравенством Джона--Ниренберга.
+Результаты, подобные нашим, были получены в работе [6], правда с несколько иными условиями на функцию $\varphi$.
+Кроме того, отметим недавнюю работу [7], в которой также рассматривается задача нахождения возможно более слабых условий, при которых функция принадлежит классу $BMO$. Методы этой работы не связаны с неравенством Джона--Ниренберга.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -241,7 +241,7 @@ g(c)=(\fint_B \varphi(|f(x)-c|) \,d\mu(x)),\quad c\in \mathbb{R}.
 
 Стоит заметить, что постоянная $I_B^{\varphi}$ также зависит и от $f$.
 
-В дальнейшем нам понадобится следующее известное утверждение (см., например, [3,лемма 2.7]), дающее разложение Кальдерона--Зигмунда для пространств однородного типа.
+В дальнейшем нам понадобится следующее известное утверждение (см., например, [8, лемма 2.7]), дающее разложение Кальдерона--Зигмунда для пространств однородного типа.
 
 \textbf{Лемма 2.}\label{lmCalderonZygmundDecomposition}
 \textit{Пусть заданы неотрицательная функция $f \in L^1(X)$ и $\alpha > f_X$ $(f_X=0$, если $\mu(X)=\infty$). Тогда существует не более чем счетный набор непересекающихся шаров $\{B_j=B(r_j,x_j)\}$, $j \geq 1$, со свойствами}
@@ -255,12 +255,12 @@ g(c)=(\fint_B \varphi(|f(x)-c|) \,d\mu(x)),\quad c\in \mathbb{R}.
 
 \textit{Здесь $C\geq 1$ --- некоторая постоянная, зависящая только от $a_d$ из неравенства (\ref{eqQuasiTtiangleInequality}) (можно взять $C=6a_d^4$) и $c=a_{\mu}C^{\gamma}$.}
 
-По сравнению с оригинальной леммой 2.7 из [3] в нашей формулировке добавлено левое неравенство в утверждении 1) и неравенство $f(x)\leq \alpha$ в утверждении 2). Левое неравенство в утверждении 1) очевидным образом вытекает из условия удвоения \eqref{eqDegreeDoublingCondition}
+По сравнению с оригинальной леммой 2.7 из [8] в нашей формулировке добавлено левое неравенство в утверждении 1) и неравенство $f(x)\leq \alpha$ в утверждении 2). Левое неравенство в утверждении 1) очевидным образом вытекает из условия удвоения \eqref{eqDegreeDoublingCondition}
 
 \begin{equation*}
  \fint_{B_j} f\,d\mu\leq \frac{\mu(\mathcal{B}_j)}{\mu(B_j)} \fint_{\mathcal{B}_j} f\,d\mu \leq c \fint_{\mathcal{B}_j} f\,d\mu,
 \end{equation*}
-а неравенство $f(x)\leq \alpha$ вытекает из теоремы Лебега о дифференцировании интегралов, которую можно найти в [2,теорема 1.8].
+а неравенство $f(x)\leq \alpha$ вытекает из теоремы Лебега о дифференцировании интегралов.
 
 
 
@@ -282,32 +282,13 @@ a = \frac{\ln \Lambda}{ \varphi^{-1}(a_\varphi(1+c \Lambda)  \varphi(\|f\|^{*}_\
 \textit{где $c$ ---  постоянная из леммы \ref{lmCalderonZygmundDecomposition}}.
 
 
-\textbf{Теорема 3.} \textit{Пусть $(X,d,\mu)$ --- метрическое пространство с мерой, удовлетворяющей условию удвоения (1), $\omega\in\Omega(\infty)$, $p> 0$ и задана функция  $f\in L^1_{\rm loc}(X)$.}
-
-\textit{Тогда $f$ эквивалентна некоторой функции класса $H^{\omega}(X)$ тогда и только тогда, когда для некоторого $R_0>0$ выполнено условие}
-$$
-\sup_{B:r_B<R_0}\frac{1}{\omega(r_B)}\left(\fint_{B}|f-f_B|^p\,d\mu\right)^{1/p}<+\infty.
-\eqno(6)_p
-$$
-
-Отметим, что в силу неравенства Гельдера условие (4)${}_p$ тем сильнее, чем больше $p$. Поэтому мы существенно ослабляем основное условие (4)${}_p$, рассматривая его при всех $p>0$. Кроме того, из теоремы 2 вытекает, что условие (4)${}_p$ обладает свойством самоулучшения --- из (4)${}_p$ следует (4)${}_q$ при $1\le p<q$. Мы распространяем этот эффект на случай $0<p<q$.
-
-В качестве следствия из теоремы 3 извлечем утверждение, которое является непосредственным обобщением теорем 1 и 2.
-
-\textbf{Теорема 4.} \textit{Пусть $(X,d,\mu)$ --- метрическое пространство с мерой, удовлетворяющей условию удвоения (1), $p>0$, $\omega\in\Omega(\infty)$. Пусть $Y \subset X$ --- подмножество со свойством: существует такое $a_Y>0$, что для всех $y\in Y$ и $0<r<1$ выполнено неравенство (5).}
-
-\textit{Тогда $f\in L^1_{\rm loc}(Y)$ эквивалентна некоторой функции класса $H^{\omega}(Y)$ тогда и только тогда, когда для некоторого $R_0>0$ выполнено условие}
-$$
-\sup_{B:x_B\in Y,\;r_B<R_0}\frac{1}{\omega(r_B)}\left(\fint_{B\cap Y}|f-f_{B\cap Y}|^p\,d\mu\right)^{1/p}<+\infty.
-$$
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textbf{4. Доказательство теоремы \ref{thJohnNirenberg}} Мы действуем по схеме работы [1] с изменениями, соответствующими нашему случаю.
+\textbf{4. Доказательство теоремы 1.} Мы действуем по схеме работы [2] с изменениями, соответствующими нашему случаю.
 
-Применим лемму \ref{lmCalderonZygmundDecomposition} к функции $\varphi(|f(x)-I_{B_0}^{\varphi}|)$ и $\alpha = \Lambda \varphi(\|f\|^{*}_\varphi)$, находя набор таких непересекающихся шаров $\{B_j^{(1)}\}$, $j\geq 1$, что
+Применим лемму 2 к функции $\varphi(|f(x)-I_{B_0}^{\varphi}|)$ и $\alpha = \Lambda \varphi(\|f\|^{*}_\varphi)$, находя набор таких непересекающихся шаров $\{B_j^{(1)}\}$, $j\geq 1$, что
 \begin{equation}\label{eqFormula1}
 \Lambda \varphi(\|f\|^{*}_\varphi)< \fint_{B_j^{(1)}} \varphi(|f(x)-I_{B_0}^{\varphi}|)\,d\mu(x) \leq
 c  \Lambda \varphi(\|f\|^{*}_\varphi), \quad j\geq 1
@@ -398,7 +379,9 @@ k \varphi^{-1} \left( a_\varphi (1+c\Lambda) \varphi(\|f\|^{*}_\varphi)\right) \
 \begin{equation*}
 =  c \Lambda\mu(B_0)\exp \left(-\frac{\lambda\ln \Lambda}{ \varphi^{-1} \left(a_\varphi(1+c \Lambda) \varphi(\|f\|^{*}_\varphi) \right)}\right) = c \Lambda\mu(B_0)\exp(-a \Lambda),
 \end{equation*}
-где $a = \frac{\ln \Lambda}{ \varphi^{-1} \left(a_\varphi (1+c \Lambda)  \varphi(\|f\|^{*}_\varphi)\right)}$. Если $\lambda < \varphi^{-1} \left( a_\varphi (1+c\Lambda) \varphi(\|f\|^{*}_\varphi)\right)$, то
+где $a = \frac{\ln \Lambda}{ \varphi^{-1} \left(a_\varphi (1+c \Lambda)  \varphi(\|f\|^{*}_\varphi)\right)}$. 
+
+Если $\lambda < \varphi^{-1} \left( a_\varphi (1+c\Lambda) \varphi(\|f\|^{*}_\varphi)\right)$, то
 \begin{equation*}
 \mu\{x\in B_0:\ |f(x)-I_{B_0}|>\lambda\} \leq
 \end{equation*}
@@ -411,10 +394,7 @@ k \varphi^{-1} \left( a_\varphi (1+c\Lambda) \varphi(\|f\|^{*}_\varphi)\right) \
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\textbf{5. Следствия}
-
-
-Приведем несколько следствий, вытекающих из этой теоремы.
+\textbf{5. Следствия.} Приведем несколько следствий, вытекающих из этой теоремы.
 
 \textbf{Следствие 1.}\label{crEstimationOfDifferenceFunctionAndConstant}
 \textit{Пусть $\varphi \in \Phi_1$ , шар $B_0 \subset X$, функция $f\in \widehat{BMO}_\varphi(B_0)$ и $g(x)=|f(x)-I_{B_0}^\varphi|$. Тогда}
@@ -443,7 +423,7 @@ g^*(t) = \sup\{y>0:\ \mu\{x\in B_0:\ |f(x)-I_{B_0}^{\varphi}|>y\}>t\} \leq
 
 
 \textbf{Доказательство.}
-Покажем, что $f\in L^q(B_0)$ для всех $q>0$. Пусть $g(x)=|f(x)-I_{B_0}^{\varphi}|$. Тогда, применяя следствие \ref{crEstimationOfDifferenceFunctionAndConstant}, получим
+Покажем, что $f\in L^q(B_0)$ для всех $q>0$. Пусть $g(x)=|f(x)-I_{B_0}^{\varphi}|$. Тогда, применяя следствие 1, получим
 \begin{equation*}
 \int_{B_0} |f(x)-I_{B_0}^{\varphi}|^q\,d\mu(x) = \int_0^{\mu(B_0)} (g^*(t))^q dt \leq \left(\frac{1}{a}\right)^{q}\int_0^{\mu(B_0)} \ln^{q}\frac{A\mu(B_0)}{t}dt < +\infty.
 \end{equation*}
@@ -469,7 +449,7 @@ g^*(t) = \sup\{y>0:\ \mu\{x\in B_0:\ |f(x)-I_{B_0}^{\varphi}|>y\}>t\} \leq
 \sup_{B\subset B_0}\fint_B |f(x)-f_B|\,d\mu(x) \leq \frac{2}{a}(\ln A +1) = \frac{2 \left(1 + \ln (c \Lambda)\right)}{\ln \Lambda} \varphi^{-1}\left(a_\varphi(1+c \Lambda)  \varphi(\|f\|^{*}_\varphi)\right)< + \infty.
 \end{equation*}
 
-На самом деле, в следствии \ref{crBMOPhi1InBMO} от некоторых предположений можно избавиться, если не заботиться об оценке.
+На самом деле, в следствии 3 от некоторых предположений можно избавиться, если не заботиться об оценке.
 
 \textbf{Следствие 4.}
 \textit{Пусть функция $\varphi\in \Phi$ и шар $B_0 \subset X$. Тогда если}
@@ -479,7 +459,7 @@ g^*(t) = \sup\{y>0:\ \mu\{x\in B_0:\ |f(x)-I_{B_0}^{\varphi}|>y\}>t\} \leq
 \textit{то $f\in BMO(B_0)$}.
 
 
-Это утверждение вытекает из следствия \ref{crBMOPhi1InBMO} по аналогии с работой \cite{Slavin13}.
+Это утверждение вытекает из следствия 3 по аналогии с работой [7].
 
 \textbf{6. Обобщение теорем Кампанато--Мейерса и Спанне.} Обозначим
 \begin{equation*}
@@ -603,11 +583,11 @@ f(x)=\lim_{k\to\infty}f_{B_k}=f_{B(x,r)}+\sum_{k=0}^\infty[f_{B_{k+1}}-f_{B_k}],
 \end{equation*}
 И теорема доказана.
 
-Сравним теорему \ref{thEsimateOfModulusByMu} с предшествующими результатами. В частном случае $t^p$, $p=1$, $X=Q$ --- куб в $\mathbb{R}^n$ ее утверждение было получено другим, значительно более сложным способом в работе С.~Спанне \cite{Spanne}. Теорема \ref{thEsimateOfModulusByMu} дает усиление этого результата даже для функций $t^p$, $0<p\leq 1$,  так как условие (\ref{eqEsimateOfModulusByMu}) тем сильнее, чем меньше $p$.
+Сравним теорему \ref{thEsimateOfModulusByMu} с предшествующими результатами. В частном случае $t^p$, $p=1$, $X=Q$ --- куб в $\mathbb{R}^n$ ее утверждение было получено другим, значительно более сложным способом в работе С.~Спанне [3]. Теорема 2 дает усиление этого результата даже для функций $t^p$, $0<p\leq 1$,  так как условие (\ref{eqEsimateOfModulusByMu}) тем сильнее, чем меньше $p$.
 
 
 
-В качестве следствия из теоремы \ref{thEsimateOfModulusByMu} мы получим основной результат работы \cite{IvanishkoKrotovPorabkovich12}, дающий описание классов Гельдера в терминах поведения средних Стеклова.
+В качестве следствия из теоремы 2 мы получим основной результат работы [9], дающий описание классов Гельдера в терминах поведения средних Стеклова.
 
 Для $\alpha>0$  определим $\Omega(\alpha)$ как класс положительных возрастающих функций $\eta:\mathbb{R}_+\to\mathbb{R}_+$, для которых при некотором $0<\delta<\alpha$ функция $\eta(t)t^{-\delta}$ возрастает, а функция $\eta(t)t^{-\alpha}$ убывает. Пусть еще
 \begin{equation*}%\label{eq}
@@ -623,13 +603,13 @@ f(x)=\lim_{k\to\infty}f_{B_k}=f_{B(x,r)}+\sum_{k=0}^\infty[f_{B_{k+1}}-f_{B_k}],
 %Обычно классы $H^{\eta}$ рассматриваются при условии $\eta\in\Omega(1)$. Это связано с тем, что если, например, $X=[0,1]^n$ и $\eta\in\Omega(\alpha)$ при некотором $\alpha>1$ (или, более общо, $\eta(t)=o(t)$ при $t\to+0$), то класс $H^{\eta}(X)$ состоит только из тождественных постоянных. В случае же общих метрических пространств $X$ возможны ситуации, когда классы $H^{\alpha}(X)$ нетривиальны при некоторых $\alpha>1$. Например, на кривой Коха это так при $0<\alpha\leq\frac{\ln 4}{\ln 3}$ \cite{Jonsson}. Этим объясняется то, что мы рассматриваем классы $H^{\eta}(X)$ с $\eta\in\Omega(\infty)$.
 
 
-В \cite{IvanishkoKrotovPorabkovich12} доказано, что если $f\in L^1_{\mathrm{loc}}(X)$, $\eta\in\Omega(\infty)$, $p> 0$, и для некоторого $R_0>0$ выполнено условие
+В [9] доказано, что если $f\in L^1_{\mathrm{loc}}(X)$, $\eta\in\Omega(\infty)$, $p> 0$, и для некоторого $R_0>0$ выполнено условие
 \begin{equation}\label{eqCampanatoCondition}
 \sup_{B:r_B<R_0}\frac{1}{\eta(r_B)}\left(\fint_{B}|f-f_B|^p\,d\mu\right)^{1/p}<+\infty,
   \end{equation}
-то $f$ эквивалентна некоторой функции класса $H^{\eta}(X)$. В частном случае $p=1$, $\eta(t)=t^{\alpha}$ и $X\subset\mathbb{R}^n$ этот результат --- классическая теорема К.Кампанато--Н.Мейерса \cite{Campanato}, \cite{Meyers} (см. также более поздний результат из \cite{Gorka}).
+то $f$ эквивалентна некоторой функции класса $H^{\eta}(X)$. В частном случае $p=1$, $\eta(t)=t^{\alpha}$ и $X\subset\mathbb{R}^n$ этот результат --- классическая теорема К.Кампанато--Н.Мейерса [4], [5] (см. также более поздний результат из [10]).
 
-Этот результат является простым следствием из теоремы \ref{thEsimateOfModulusByMu}, причем без дополнительного условия $f\in L^1_{\mathrm{loc}}(X)$. Действительно, в силу условия (\ref{eqCampanatoCondition}) $\mu_p(f,t) \lesssim \eta(t)$. Интегрируя это неравенство по $t$ и используя (\ref{eqEsimateOfModulusByMu}), получим
+Этот результат является простым следствием из теоремы 2, причем без дополнительного условия $f\in L^1_{\mathrm{loc}}(X)$. Действительно, в силу условия (\ref{eqCampanatoCondition}) $\mu_p(f,t) \lesssim \eta(t)$. Интегрируя это неравенство по $t$ и используя (\ref{eqEsimateOfModulusByMu}), получим
 \begin{equation*}
 \omega(f,\delta)\lesssim \int\limits_{0}^{\delta} \mu_p(f,t)\,\frac{d t}{t} \lesssim \int\limits_{0}^{\delta} \eta(t)\,\frac{d t}{t},\quad 0<\delta< 1.
 \end{equation*}
@@ -645,16 +625,26 @@ f(x)=\lim_{k\to\infty}f_{B_k}=f_{B(x,r)}+\sum_{k=0}^\infty[f_{B_{k+1}}-f_{B_k}],
 \end{center}
 
 {\small
-\lit{1}{John F., Nirenberg L.}{On functions of bounded mean oscillation //Comm. Pure Appl. Math. 1961. V. 14., \No 2 P. 415-426.}
-\lit{2}{Heinonen J.}{Lectures on analysis on metric spaces. New York--Berlin--Heidelberg: Springer-Verlag, 2001.}
-\lit{3}{Aimar H.}{Singular integrals and approximate identities on spaces of homogeneous type // TAMS. 1985. Vol. 292. P. 135-153.}
-\lit{4}{Иванишко~И.А., Кротов~ В.Г., Порабкович А.И.}{Обобщение теоремы Кампанато-–Мейерса // Труды Института математики НАН Беларуси. 2012. Т. 20, \No 2. C. 30--35.}
-\lit{5}{Spanne S.}{Some function spaces defined using the mean oscillation over cubes // Ann. Scuola norm. super. Pisa. 1965. V.~19, \No~4. P.~593--608.}
-\lit{6}{Campanato C.}{Proprieta di holderianita di alcune classi di funzioni. // ~Ann. Sc. Norm. Super. Pisa Cl. Sci. 1963. V. 17, \No 1-2. P. 175--188}
-\lit{7}{Meyers N. J.}{Mean oscillation over cubes and H\"older continuity. // ~Proc. Amer. Math. Soc. 1964. V. 15, \No 5. P.717-–721.}
-\lit{8}{Gorka P.}{Campanato theorem on metric measure spaces. // Ann. Acad. Sci. Fenn. 2009. V. 34. P. 523--528.}
-\lit{9}{R. Long, L. Yang.}{BMO functions in spaces of homogeneous type. // Sci. Sinica Ser. 1984. V 27. \No 7. P. 695–708.}
-\lit{10}{A. A. Logunov, L. Slavin, D. M. Stolyarov, V. Vasyunin, P. B. Zatitskiy.}{Weak integral conditions for BMO. // 2013. arXiv:1309.6780v1.}
+\lit{1}{Heinonen J.}{Lectures on analysis on metric spaces. New York--Berlin--Heidelberg: Springer-Verlag, 2001.}
+\lit{2}{John F., Nirenberg L.}{On functions of bounded mean oscillation //Comm. Pure Appl. Math. 1961. V. 14., \No 2 P. 415-426.}
+
+\lit{3}{Spanne S.}{Some function spaces defined using the mean oscillation over cubes // Ann. Scuola norm. super. Pisa. 1965. V.~19, \No~4. P.~593--608.}
+\lit{4}{Campanato C.}{Proprieta di holderianita di alcune classi di funzioni. // ~Ann. Sc. Norm. Super. Pisa Cl. Sci. 1963. V. 17, \No 1-2. P. 175--188}
+\lit{5}{Meyers N. J.}{Mean oscillation over cubes and H\"older continuity. // ~Proc. Amer. Math. Soc. 1964. V. 15, \No 5. P.717-–721.}
+
+\lit{6}{R. Long, L. Yang.}{BMO functions in spaces of homogeneous type. // Sci. Sinica Ser. 1984. V 27. \No 7. P. 695–708.}
+\lit{7}{A. A. Logunov, L. Slavin, D. M. Stolyarov, V. Vasyunin, P. B. Zatitskiy.}{Weak integral conditions for BMO. // 2013. arXiv:1309.6780v1.}
+\lit{8}{Aimar H.}{Singular integrals and approximate identities on spaces of homogeneous type // TAMS. 1985. Vol. 292. P. 135-153.}
+
+\lit{9}{Иванишко~И.А., Кротов~ В.Г., Порабкович А.И.}{Обобщение теоремы Кампанато-–Мейерса // Труды Института математики НАН Беларуси. 2012. Т. 20, \No 2. C. 30--35.}
+\lit{10}{Gorka P.}{Campanato theorem on metric measure spaces. // Ann. Acad. Sci. Fenn. 2009. V. 34. P. 523--528.}
+
+
+
+
+
+
+
 }
 
 
@@ -671,7 +661,7 @@ f(x)=\lim_{k\to\infty}f_{B_k}=f_{B(x,r)}+\sum_{k=0}^\infty[f_{B_{k+1}}-f_{B_k}],
 \centerline{\textbf{Summary}}
 
 {\small
-We prove a generalization of classic Campanato's theorem giving the characterization of H\"older classes on subsets of Euclidean space in terms of the Steklov means behavior. This generalization uses $L^p$-mean oscillation for $p>0$, and is valid for arbitrary metric space with doubling measure.
+We prove a generalization of classic John--Nirenberg's theorem giving the characterization of $BMO$ classes. This generalization is valid for arbitrary metric space with doubling measure.
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
