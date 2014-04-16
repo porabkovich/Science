@@ -141,11 +141,11 @@ d(x,y)=0\Longleftrightarrow x=y,\quad d(x,y)=d(y,x),
 \begin{equation}\label{eqQuasiTtiangleInequality}
 d(x,y)\le a_d[d(x,z)+d(z,y)]
 \end{equation}
-для любых $x,y,z\in X$ (конечно, при $a_d=1$ это --- метрика). При этом мы предполагаем, что семейство открытых шаров
+для любых $x,y,z\in X$. При этом мы предполагаем, что семейство открытых шаров
 \begin{equation*}
 B=B(x,r)=\{y\in X:d(x,y)<r\}
 \end{equation*}
-образует базу окрестностей топологии $X$ и что мера любого шара положительна и конечна. Также для произвольной положительной постоянной $c$ будем обозначать  $cB=c B(x,r) = B(x,c r).$
+образует базу окрестностей топологии $X$ и мера любого шара положительна и конечна. Также для произвольной положительной постоянной $c$ будем обозначать  $cB=c B(x,r) = B(x,c r).$
 
 Говорят, что мера $\mu$ удовлетворяет условию удвоения, если
 существует такая постоянная $a_{\mu}>0$, что
@@ -161,11 +161,13 @@ B=B(x,r)=\{y\in X:d(x,y)<r\}
 \end{equation}
 где $\gamma=\log_2a_{\mu}$. Это неравенство получается простой итерацией условия (\ref{eqDoublingCondition}).
 
-На протяжении всей работы будем использовать следующие обозначения
+
+Среднее значение функции $f\in L^1_{\mathrm{loc}}(X)$ на измеримом множестве $E\subset X$ положительной конечной меры будем обозначать
+
 \begin{equation*}%\label{eq}
-f_E=\fint \limits_Ef\,d\mu=\frac{1}{\mu(E)}\int\limits_{E}f\,d\mu
+f_E=\fint \limits_Ef\,d\mu=\frac{1}{\mu(E)}\int\limits_{E}f\,d\mu.
 \end{equation*}
-для среднего значения функции $f\in L^1_{\mathrm{loc}}(X)$ по любому измеримому множеству $E\subset X$ положительной конечной меры. Для шара $B\subset X$ обозначаем $r_B$ и $x_B$ соответственно его радиус и центр.
+Для шара $B\subset X$ будем обозначать $r_B$ и $x_B$ соответственно его радиус и центр.
 
 Напомним, что $x\in X$ называется точкой Лебега для функции $f\in L^1_{\mathrm{loc}}(X)$, если
 \begin{equation}\label{eqLebesguePoint}
@@ -277,7 +279,7 @@ g(c)=(\fint_B \varphi(|f(x)-c|) \,d\mu(x)),\quad c\in \mathbb{R}.
 \end{equation*}
 \textit{Здесь}
 \begin{equation*}%\label{eq}
-a = \frac{\ln \Lambda}{ \varphi^{-1}(a_\varphi(1+c \Lambda)  \varphi(\|f\|^{*}_\varphi))},\quad A=c \Lambda
+a = \frac{\ln \Lambda}{ \varphi^{-1}(a_\varphi(1+c \Lambda)  \varphi(\|f\|^{*}_\varphi))},\quad A=c \Lambda,
 \end{equation*}
 \textit{где $c$ ---  постоянная из леммы \ref{lmCalderonZygmundDecomposition}}.
 
@@ -502,19 +504,35 @@ g^*(t) = \sup\{y>0:\ \mu\{x\in B_0:\ |f(x)-I_{B_0}^{\varphi}|>y\}>t\} \leq
 \omega(f,\delta)=\max \limits_{d(x,y) \leq \delta} |f(x) - f(y)|, \, 0<\delta< 1.
 \end{equation*}
 
+Также приведем почти очевидную лемму.
+
+\textbf{Лемма 3.} \textit{Пусть $0<r_1\le r_2$ и $B(x_1,r_1)\subset B(x_2,r_2)$. Тогда}
+\begin{equation*}%\label{}
+\frac{\mu B(x_2,r_2)}{\mu B(x_1,r_1)}\lesssim
+\left(\frac{r_2}{r_1}\right)^{\gamma}.
+\end{equation*}
+
+
+\textbf{Доказательство.} При наших условиях $B(x_2,r_2)\subset
+B(x_1,2 a_d r_2)$. Сле\-до\-ва\-тель\-но, в силу условия
+(\ref{eqDegreeDoublingCondition})
+\begin{equation*}%\label{}
+\frac{\mu B(x_2,r_2)}{\mu B(x_1,r_1)}= \frac{\mu B(x_1,2 a_d r_2)}{\mu
+B(x_1,r_1)}\cdot\frac{\mu B(x_2,r_2)}{\mu B(x_1,2 a_d r_2)}
+\leq c_1 \left(\frac{r_2}{r_1}\right)^{\gamma}.
+\end{equation*}
 
 \textbf{Теорема 2.}\label{thEsimateOfModulusByMu}
-\textit{Пусть $\varphi \in \Phi_1$, $f \in \widehat{BMO}_{\varphi}(B)$ для любого шара $B\in X$ и выполнено условие}
+\textit{Пусть $\varphi \in \Phi_1$, $f \in \widehat{BMO}_{\varphi}(B)$ для любого шара $B\subset X$ и выполнено условие}
 \begin{equation}\label{eqMainConditionOnMu}
 \int\limits_{0}^{1} \varphi^{-1} (a_\varphi(1+c\Lambda) \varphi(\mu_{\varphi}(f,t)))
 \,\frac{d t}{t}<\infty.
 \end{equation}
-
 \textit{Тогда $f$ эквивалентна некоторой функции $g\in C(X)$ и}
 \begin{equation}\label{eqEsimateOfModulusByMu}
 \omega(g,\delta)\leq M \int\limits_{0}^{\delta}  \varphi^{-1} (a_\varphi(1+c\Lambda) \varphi(\mu_{\varphi}(f,t)))\,\frac{d t}{t},\quad 0<\delta< 1,
 \end{equation}
-\textit{где $M=2 (1+a_{\mu} 2^{\gamma}) \frac{2 \left(1 + \ln (c \Lambda)\right)}{\ln \Lambda}$.}
+\textit{где $M=(1+c_2) (1+a_{\mu} 2^{\gamma}) \frac{2 \left(1 + \ln (c \Lambda)\right)}{\ln \Lambda}$ и постоянная $c_2$ зависит только от пространства $X$.}
 
 \textbf{Доказательство.} В силу \eqref{eqEstimateOfMu1} достаточно провести доказательство для $\mu_1(f,t)$. Рассмотрим два шара $B_1, B_2 \subset X$, таких, что $B_2 =2 B_1$. Тогда для любого $y \in B_1$ имеет место неравенство
 \begin{equation*}%\label{}
@@ -563,18 +581,30 @@ f(x)=\lim_{k\to\infty}f_{B_k}=f_{B(x,r)}+\sum_{k=0}^\infty[f_{B_{k+1}}-f_{B_k}],
 
 Из этого следует, что для любых двух точек Лебега $x,y \in X$  и $r=d(x,y)$
 \begin{equation*}
-|f(x) - f(y)|\leq |f_{B(x, r)}-f(x)| + |f_{B(x, r)}-f_{B(y, 2 r)}| +|f_{B(y, 2 r)}-f(y)| \leq
+|f(x) - f(y)|\leq |f_{B(x, r)}-f(x)| + |f_{B(x, r)}-f_{B(y, 2 r)}| +|f_{B(y, 2 r)}-f(y)|.
+\end{equation*}
+Оценим отдельно $|f_{B(x, r)}-f_{B(y, 2 r)}|$.
+\begin{equation*}
+|f_{B(x, r)}-f_{B(y, 2 r)}| \leq |f(z) - f_{B(x, r)}| + |f(z)-f_{B(y, 2 r)}|.
+\end{equation*}
+ Усредняя это неравенство по $z\in B(x,r)$ и используя Лемму 3 получаем
+\begin{equation*}
+|f_{B(x, r)}-f_{B(y, 2 r)}|\leq  \fint\limits_{B(x, r)} |f(z) - f_{B(x, r)}|\,d\mu(z) + \fint\limits_{B(x, r)} |f(z) - f_{B(y, 2 r)}|\,d\mu(z) \leq
 \end{equation*}
 
 \begin{equation*}
-\leq (1+\beta)\left(\int \limits_{0}^{r} \mu_{1}(f,t)\,\frac{d t}{t} + \mu_{1}(f,2 r) +\int\limits_{0}^{2 r} \mu_{1}(f,t)\,\frac{d t}{t}\right)\leq
+\leq  \left(\fint\limits_{B(x, r)} |f(z) - f_{B(x, r)}|\,d\mu(z) + c_1 \fint\limits_{B(y, 2 r)} |f(z) - f_{B(y, 2 r)}|\,d\mu(z) \right) \leq c_2 \mu_{1}(f,2 r).
+\end{equation*}
+Таким образом, 
+\begin{equation*}
+|f(x) - f(y)|\leq (1+\beta)\left(\int \limits_{0}^{r} \mu_{1}(f,t)\,\frac{d t}{t} + c_2\mu_{1}(f,2 r) +\int\limits_{0}^{2 r} \mu_{1}(f,t)\,\frac{d t}{t}\right)\leq
 \end{equation*}
 
 \begin{equation*}
-\leq (1+\beta)\left(\int\limits_{0}^{r} \mu_{1}(f,t)\,\frac{d t}{t} + \int\limits_{r}^{2 r} \mu_{1}(f,t)\,\frac{d t}{t} +\int\limits_{0}^{2 r} \mu_{1}(f,t)\,\frac{d t}{t}\right) \leq
+\leq (1+\beta)\left(\int\limits_{0}^{r} \mu_{1}(f,t)\,\frac{d t}{t} + c_2 \int\limits_{r}^{2 r} \mu_{1}(f,t)\,\frac{d t}{t} +\int\limits_{0}^{2 r} \mu_{1}(f,t)\,\frac{d t}{t}\right) \leq
 \end{equation*}
 \begin{equation*}
- \leq 2 (1+\beta) \int\limits_{0}^{2 r} \mu_{1}(f,t)\,\frac{d t}{t} \leq M \int\limits_{0}^{2 r}  \varphi^{-1} (a_\varphi(1+c\Lambda) \varphi(\mu_{\varphi}(f,t)))\,\frac{d t}{t} < \infty.
+ \leq (1+c_2) (1+\beta) \int\limits_{0}^{2 r} \mu_{1}(f,t)\,\frac{d t}{t} \leq M \int\limits_{0}^{2 r}  \varphi^{-1} (a_\varphi(1+c\Lambda) \varphi(\mu_{\varphi}(f,t)))\,\frac{d t}{t} < \infty.
 \end{equation*}
 
 Так как множество точек Лебега для $f$ плотно в $X$, то $f$ можно единственным образом продолжить с множества точек Лебега на все пространство $X$ до функции $g$, удовлетворяющей неравенству
