@@ -412,7 +412,7 @@ g^*(t) = \sup\{y>0:\ \mu\{x\in B_0:\ |f(x)-I_{B_0}^{\varphi}|>y\}>t\} \leq
 \leq \sup\left\{y>0:\ A\mu(B_0)\exp(-a y)>t\right\}
 \end{equation*}
 \begin{equation*}
-= \sup\left\{y>0:\ y < \frac{1}{a}\ln\frac{A\mu(B_0)}{t}\right\} = \frac{1}{a}\ln\frac{A\mu(B_0)}{t}=\frac{ \varphi^{-1}\left(a_\varphi(1+c \Lambda)  \varphi(\|f\|^{*}_\varphi)\right)}{\ln \Lambda}\ln\frac{с \Lambda \mu(B_0)}{t}.
+= \sup\left\{y>0:\ y < \frac{1}{a}\ln\frac{A\mu(B_0)}{t}\right\} = \frac{1}{a}\ln\frac{A\mu(B_0)}{t}=\frac{ \varphi^{-1}\left(a_\varphi(1+c \Lambda)  \varphi(\|f\|^{*}_\varphi)\right)}{\ln \Lambda}\ln\frac{c \Lambda \mu(B_0)}{t}.
 \end{equation*}
 
 \textbf{Следствие 2.}\label{crIntersectionOfLq}
@@ -466,7 +466,7 @@ g^*(t) = \sup\{y>0:\ \mu\{x\in B_0:\ |f(x)-I_{B_0}^{\varphi}|>y\}>t\} \leq
 \mu_\varphi(f,t) \equiv \sup_{\substack{B\subset B_0\\ 0<r_B\leq t}} A_{\varphi}(f,B) = \sup_{\substack{B\subset B_0\\ 0<r_B\leq t}} \inf_{c\in \mathbb{R}} \varphi^{-1}\left(\fint_B \varphi(|f(x)-c|) \,d\mu(x)\right).
 \end{equation*}
 
-Очевидно, что функция $\mu_\varphi(f,t)$ возрастает по $t$. В случае, если $\varphi(t)=t^p$ пишем просто $\mu_p(f,t)$. Если $p=1$, то в качестве $\mu_1(f,t)$ можно использовать функцию
+Очевидно, что функция $\mu_\varphi(f,t)$ возрастает по $t$. В случае, если $\varphi(t)=t^p$, $p>0$, пишем просто $\mu_p(f,t)$. Если $p=1$, то в качестве $\mu_1(f,t)$ можно использовать функцию
 
 \begin{equation*}
 \mu_1(f,t) \equiv \sup_{\substack{B\subset B_0\\ 0<r_B\leq t}} \inf_{c\in \mathbb{R}} \left(\fint_B |f(x)-f_B| \,d\mu(x)\right).
@@ -516,7 +516,7 @@ g^*(t) = \sup\{y>0:\ \mu\{x\in B_0:\ |f(x)-I_{B_0}^{\varphi}|>y\}>t\} \leq
 \end{equation}
 \textit{где $M=2 (1+a_{\mu} 2^{\gamma}) \frac{2 \left(1 + \ln (c \Lambda)\right)}{\ln \Lambda}$.}
 
-\textbf{Доказательство.} В силу неравенства \eqref{eqEstimateOfMu1} достаточно провести доказательство для $\mu_1(f,t)$. Рассмотрим два шара $B_1, B_2 \subset X$, таких, что $B_2 =2 B_1$. Тогда для любого $y \in B_1$ имеет место неравенство
+\textbf{Доказательство.} В силу \eqref{eqEstimateOfMu1} достаточно провести доказательство для $\mu_1(f,t)$. Рассмотрим два шара $B_1, B_2 \subset X$, таких, что $B_2 =2 B_1$. Тогда для любого $y \in B_1$ имеет место неравенство
 \begin{equation*}%\label{}
 |f_{B_1}-f_{B_2}| \leq |f_{B_1}-f(y)| +|f_{B_2}-f(y)|.
 \end{equation*}
